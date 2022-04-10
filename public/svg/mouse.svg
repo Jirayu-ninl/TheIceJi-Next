@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="39" height="54" viewBox="0 0 39 54">
+  <defs>
+    <filter id="Rectangle_30" x="0" y="0" width="39" height="54" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_31" x="9" y="8" width="21" height="25" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="ic_mouse" transform="translate(8.511 9.478)">
+    <g transform="matrix(1, 0, 0, 1, -8.51, -9.48)" filter="url(#Rectangle_30)">
+      <g id="Rectangle_30-2" data-name="Rectangle 30" transform="translate(9 9)" fill="none" stroke="#fff" stroke-width="2">
+        <rect width="21" height="36" rx="10.5" stroke="none"/>
+        <rect x="1" y="1" width="19" height="34" rx="9.5" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -8.51, -9.48)" filter="url(#Rectangle_31)">
+      <rect id="Rectangle_31-2" data-name="Rectangle 31" width="3" height="7" rx="1.5" transform="translate(18 17)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
