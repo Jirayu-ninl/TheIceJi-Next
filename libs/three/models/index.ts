@@ -1,1 +1,1 @@
-// export { default as Wraith } from './Wraith'
+export { default as Wraith } from './Wraith'

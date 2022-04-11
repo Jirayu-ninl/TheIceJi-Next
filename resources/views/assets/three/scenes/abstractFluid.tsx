@@ -10,8 +10,8 @@ import {
 import Color from 'views/theme/color'
 
 export default function Scene() {
-  const sphere = useRef()
-  const light = useRef()
+  const sphere = useRef(null)
+  const light = useRef(null)
   const [mode, setMode] = useState(false)
   const [hovered, setHovered] = useState(false)
 

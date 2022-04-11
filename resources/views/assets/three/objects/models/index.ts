@@ -1,1 +1,1 @@
-export { default as IJNtext } from './IJNtext'
+export { default as IJNLogo } from './IJNLogo'

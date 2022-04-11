@@ -18,7 +18,7 @@ import {
 
 function MainSphere({ material, Hover }) {
   const [hovered, setHovered] = Hover
-  const main = useRef()
+  const main = useRef(null)
 
   useFrame(({ clock, mouse }) => {
     main.current.rotation.z = clock.getElapsedTime() * 0.4
@@ -107,7 +107,7 @@ function Scene({ Hover }) {
     { path: '/three/blob/cube/' }
   )
   // We use `useResource` to be able to delay rendering the spheres until the material is ready
-  const [matRef, material] = useResource()
+  const [matRef, material] = useResource(false)
 
   return (
     <>
@@ -132,7 +132,7 @@ function Scene({ Hover }) {
 export default function App() {
   const [hovered, setHovered] = useState(false)
   const Hover = [hovered, setHovered]
-  const light = useRef()
+  const light = useRef(null)
 
   useFrame((state) => {
     light.current.position.x = state.mouse.x * 20

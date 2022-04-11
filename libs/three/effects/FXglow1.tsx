@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import { useThree, useFrame } from 'react-three-fiber'
+import { useThree, useFrame } from '@react-three/fiber'
 import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader'
 
 export default function Effects() {

@@ -17,9 +17,9 @@ export default function Particles({
   size = 512,
   ...props
 }) {
-  const sphere = useRef()
-  const simRef = useRef()
-  const renderRef = useRef()
+  const sphere = useRef(null)
+  const simRef = useRef(null)
+  const renderRef = useRef(null)
   // Set up FBO
   const [scene] = useState(() => new THREE.Scene())
   const [camera] = useState(

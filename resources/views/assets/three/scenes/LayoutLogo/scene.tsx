@@ -13,12 +13,12 @@ function Scene() {
     { path: '/three/blob/cube/' }
   )
 
-  const [matRef, material] = useResource()
+  const [setMaterial, material] = useResource(false)
 
   return (
     <>
       <MeshDistortMaterial
-        ref={matRef}
+        ref={setMaterial}
         envMap={envMap}
         bumpMap={bumpMap}
         color={Color.secondary[1]}

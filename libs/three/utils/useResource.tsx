@@ -4,7 +4,7 @@ function useResource(optionalRef) {
   const [_, forceUpdate] = useState(false)
   const localRef = useRef(undefined)
   const ref = optionalRef ? optionalRef : localRef
-  useLayoutEffect(() => void forceUpdate((i) => !i), [ref.current])
+  useLayoutEffect(() => void forceUpdate((i) => !i), [])
   return [ref, ref.current]
 }
 

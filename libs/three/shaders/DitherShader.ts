@@ -1,13 +1,13 @@
 export const DitherShader = {
   uniforms: {
-    tDiffuse: { type: "t", value: null },
-    tDither: { type: "t", value: null },
-    tPalette: { type: "t", value: null },
+    tDiffuse: { type: 't', value: null },
+    tDither: { type: 't', value: null },
+    tPalette: { type: 't', value: null },
 
-    u_bit_depth: { type: "i", value: 32 },
+    u_bit_depth: { type: 'i', value: 32 },
     u_contrast: { value: 1 },
     u_offset: { value: 0 },
-    u_dither_size: { type: "i", value: 2 },
+    u_dither_size: { type: 'i', value: 2 },
   },
   vertexShader: /*glsl*/ `
     varying vec2 vUv;

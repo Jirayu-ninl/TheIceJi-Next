@@ -1,6 +1,6 @@
 export const NoiseShader = {
   uniforms: {
-    tDiffuse: { type: "t", value: null },
+    tDiffuse: { type: 't', value: null },
     amount: { value: 0.08 },
     speed: { value: 0.5 },
     time: { value: 0 },

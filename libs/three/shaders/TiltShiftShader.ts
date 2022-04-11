@@ -1,10 +1,10 @@
 export const TiltShiftShader = {
   uniforms: {
-    tDiffuse: { type: "t", value: null },
-    focusPos: { type: "f", value: 0.5 }, // focus Y position 0 = bottom, 1 = top
-    range: { type: "f", value: 0.5 }, // distance to fade between none and full blur
-    offset: { type: "f", value: 0.02 }, // blur distance
-    strength: { type: "f", value: 0.9 }, // 0 = passthru, 1 = full
+    tDiffuse: { type: 't', value: null },
+    focusPos: { type: 'f', value: 0.5 }, // focus Y position 0 = bottom, 1 = top
+    range: { type: 'f', value: 0.5 }, // distance to fade between none and full blur
+    offset: { type: 'f', value: 0.02 }, // blur distance
+    strength: { type: 'f', value: 0.9 }, // 0 = passthru, 1 = full
   },
   vertexShader: /*glsl*/ `
     varying vec2 vUv;

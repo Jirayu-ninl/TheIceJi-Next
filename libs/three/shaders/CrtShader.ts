@@ -1,11 +1,19 @@
-import { Mesh, OrthographicCamera, PlaneBufferGeometry, Scene, ShaderMaterial, UniformsUtils, Vector2 } from "three"
-import { DIMENSIONS } from "../const"
+import {
+  Mesh,
+  OrthographicCamera,
+  PlaneBufferGeometry,
+  Scene,
+  ShaderMaterial,
+  UniformsUtils,
+  Vector2,
+} from 'three'
+import { DIMENSIONS } from '../const'
 
 export const CrtShader = {
   uniforms: {
     tDiffuse: { value: null },
     iResolution: {
-      type: "vec2",
+      type: 'vec2',
       value: new Vector2(DIMENSIONS.width - 3, DIMENSIONS.height - 2),
     },
   },
