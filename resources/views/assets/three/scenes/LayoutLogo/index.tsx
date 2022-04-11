@@ -29,9 +29,7 @@ export default function App() {
           color={'#463e34'}
         />
       </PerspectiveCamera>
-      <Suspense
-        fallback={null}
-      >
+      <Suspense fallback={null}>
         <Scene />
       </Suspense>
       <EffectComposer>
@@ -39,7 +37,7 @@ export default function App() {
           focusDistance={0}
           focalLength={0.02}
           bokehScale={2}
-          height={480}
+          height={400}
         />
         <Bloom
           luminanceThreshold={0}

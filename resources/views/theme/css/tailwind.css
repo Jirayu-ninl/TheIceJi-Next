@@ -65,7 +65,7 @@
 /* *! Element */
 
 .Btn-white-40 {
-  @apply p-1 text-xs md:px-3 md:py-1 md:text-base xl:text-xs xxl:text-base bg-white border border-solid rounded border-white/40 bg-opacity-20 backdrop-filter backdrop-blur-md;
+  @apply p-1 text-xs md:px-3 md:py-1 md:text-base xl:text-xs xxl:text-base bg-white/20 border rounded border-white/40 backdrop-blur-md;
 }
 
 .NotiBadge-primary {
@@ -77,19 +77,19 @@
 }
 
 .Card-back-md-40 {
-  @apply bg-black/40 rounded-md backdrop-filter backdrop-blur-md;
+  @apply bg-black/40 rounded-md backdrop-blur-md;
 }
 
 .Card-back-md-20 {
-  @apply bg-black/20 rounded-md backdrop-filter backdrop-blur-md;
+  @apply bg-black/20 rounded-md backdrop-blur-md;
 }
 
 .Card-white-20 {
-  @apply bg-white rounded-md bg-opacity-20 backdrop-filter backdrop-blur-md;
+  @apply bg-white rounded-md bg-opacity-20 backdrop-blur-md;
 }
 
 .Border-white-40 {
-  @apply border border-solid border-white/40;
+  @apply border border-white/40;
 }
 
 .Border-white-40:focus,

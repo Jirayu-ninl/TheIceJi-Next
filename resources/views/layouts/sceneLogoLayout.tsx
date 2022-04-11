@@ -1,6 +1,5 @@
 import { Loader } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { NoToneMapping } from 'three'
 import { LayoutLogo as Scene } from 'views/assets/three/scenes'
 
 export default function SceneLayout({ children }) {

@@ -46,7 +46,7 @@ export default NextAuth({
       },
     }),
   ],
-  adapter: MongoDBAdapter(clientPromise),
+  // adapter: MongoDBAdapter(clientPromise),
   secret: process.env.TOKEN,
   session: {
     strategy: 'jwt',
@@ -56,13 +56,13 @@ export default NextAuth({
     colorScheme: 'dark',
   },
   callbacks: {
-    async signIn({
-      user,
-      account,
-      // isNewUser
-    }) {
-      return SignInProvider(user, account)
-    },
+    // async signIn({
+    //   user,
+    //   account,
+    //   // isNewUser
+    // }) {
+    //   return SignInProvider(user, account)
+    // },
     async redirect({
       // url,
       baseUrl,

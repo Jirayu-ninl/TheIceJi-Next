@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { useOnClickOutside } from '@libs/hooks'
 import { motion, AnimatePresence } from 'framer-motion'
 import { State, User, UI } from '@store'
+import UserBlock from './user'
 import { useSession, signOut } from 'next-auth/react'
 import Notification from './notification'
 import Cart from './cart'
@@ -17,7 +18,7 @@ import {
   CartIcon,
 } from '../assets'
 
-export default function IJNnav({
+export default function IJNNav({
   setToggleMenu,
   toggleMenu,
   useAudio,
@@ -84,10 +85,9 @@ export default function IJNnav({
             <h6 className='hidden px-5 sm:block'>{_page}</h6>
           </div>
           <div className='flex items-center h-full'>
-            <motion.div className='hidden space-x-7 fill-white md:flex'>
+            <div className='hidden space-x-7 fill-white md:flex'>
               <span
                 className='flex relative items-center h-full cursor-pointer'
-                // onClick={() => toast('Cart, coming soon!')}
                 onClick={() => {
                   setOpenCart(!OpenCart)
                   setOpenNoti(false)
@@ -120,17 +120,14 @@ export default function IJNnav({
                   {OpenNoti && <Notification key='NAV_Noti' />}
                 </AnimatePresence>
               </span>
-            </motion.div>
-            <div className='hidden px-8 sm:block'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='2'
-                height='23'
-                viewBox='0 0 2 23'
-              >
-                <rect width='2' height='23' rx='1' fill='#fff' opacity='0.2' />
-              </svg>
             </div>
+            {session && (
+              <>
+                <SeparatorLine />
+                <UserBlock signOut={signOut} user={session.user} />
+              </>
+            )}
+            <SeparatorLine />
             <motion.div
               className='flex space-x-4 fill-white'
               onMouseEnter={() => _setCursor('logo')}
@@ -164,3 +161,16 @@ export default function IJNnav({
     </nav>
   )
 }
+
+const SeparatorLine = () => (
+  <div className='hidden px-8 sm:block'>
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='2'
+      height='23'
+      viewBox='0 0 2 23'
+    >
+      <rect width='2' height='23' rx='1' fill='#fff' opacity='0.2' />
+    </svg>
+  </div>
+)

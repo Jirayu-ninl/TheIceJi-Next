@@ -15,8 +15,19 @@ const Portal = ({ providers, csrfToken }) => {
     _setPage('Login')
   }, [_setPage])
   useEffect(() => {
-    if (router.query.error === 'CredentialsSignin') {
+    if (router.query.error === undefined) {
+      return
+    }
+    
+    switch (router.query.error) {
+    case 'CredentialsSignin':
       toast.error('Invalid username or password')
+      break
+    case 'OAuthAccountNotLinked':
+      toast.error('Provider authorize error')
+      break
+    default:
+      toast.error('Error: ' + router.query.error)
     }
   }, [router.query.error])
   return (

@@ -5,7 +5,7 @@ import { signIn } from 'next-auth/react'
 const SignIn = ({ setIsSignIn, providers, csrfToken }) => {
   return (
     <>
-      <div className='relative h-full p-8 ml-2 rounded-lg Card-white-20 Border-white-40'>
+      <div className='relative p-8 ml-2 h-full rounded-lg Card-white-20 Border-white-40'>
         <h3 className='font-semibold uppercase'>Signin</h3>
         <form
           className='flex flex-col pt-6 Form-white'
@@ -14,14 +14,14 @@ const SignIn = ({ setIsSignIn, providers, csrfToken }) => {
         >
           <input name='csrfToken' type='hidden' defaultValue={csrfToken} />
           <input
-            className='Border-white-40 rounded-md'
+            className='rounded-md Border-white-40'
             type='email'
             name='email'
             placeholder='Email'
             required={true}
           />
           <input
-            className='mt-2 Border-white-40 rounded-md'
+            className='mt-2 rounded-md Border-white-40'
             type='password'
             name='password'
             placeholder='Password'
@@ -40,10 +40,10 @@ const SignIn = ({ setIsSignIn, providers, csrfToken }) => {
             </label>
           </div>
         </form>
-        <div className='flex justify-center w-full my-8'>
-          <div className=' w-12 h-px my-auto bg-white/30' />
+        <div className='flex justify-center my-8 w-full'>
+          <div className=' my-auto w-12 h-px bg-white/30' />
           <p className='px-3 text-xs'>or Continue with</p>
-          <div className=' w-12 h-px my-auto bg-white/30' />
+          <div className=' my-auto w-12 h-px bg-white/30' />
         </div>
         <div className='flex justify-center'>
           <div className=' p-2 bg-blue-500 rounded-full cursor-pointer'>
@@ -62,7 +62,7 @@ const SignIn = ({ setIsSignIn, providers, csrfToken }) => {
               onClick={() => signIn(providers.google.id)}
             />
           </div>
-          <div className='p-2 ml-3 rounded-full cursor-pointer bg-slate-800'>
+          <div className='p-2 ml-3 bg-slate-800 rounded-full cursor-pointer'>
             <FontAwesomeIcon
               icon={brands('github')}
               size='xs'

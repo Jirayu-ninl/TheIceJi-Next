@@ -84,7 +84,12 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    domains: ['media.graphcms.com', 'media.graphassets.com'],
+    domains: [
+      'media.graphcms.com',
+      'media.graphassets.com',
+      'avatars.githubusercontent.com',
+      'platform-lookaside.fbsbx.com',
+    ],
   },
 }
 
