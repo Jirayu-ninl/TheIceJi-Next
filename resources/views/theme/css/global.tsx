@@ -18,7 +18,6 @@ export const globalStyles = (Darkmode = true) => (
       body {
         width: 100%;
         height: 100vh;
-        margin: 0;
         padding: 0;
         font-size: 1rem;
         font-weight: 400;
@@ -40,19 +39,9 @@ export const globalStyles = (Darkmode = true) => (
         background: ${Color.primary[0]}; /* Gecko Browsers */
       }
 
-      html {
-        tab-size: 4;
-      }
-
       canvas {
         width: 100%;
         height: 100vh;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
       }
 
       [tabindex='-1']:focus:not(:focus-visible) {
@@ -69,80 +58,6 @@ export const globalStyles = (Darkmode = true) => (
 
       hr:not([size]) {
         height: 1px;
-      }
-
-      blockquote,
-      dl,
-      dd,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      hr,
-      figure,
-      p,
-      pre {
-        margin: 0;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: 500;
-        line-height: 1.2;
-      }
-
-      h1 {
-        font-size: calc(1.375rem + 1.5vw);
-      }
-
-      @media (min-width: 1200px) {
-        h1 {
-          font-size: 2.5rem;
-        }
-      }
-
-      h2 {
-        font-size: calc(1.325rem + 0.9vw);
-      }
-
-      @media (min-width: 1200px) {
-        h2 {
-          font-size: 2rem;
-        }
-      }
-
-      h3 {
-        font-size: calc(1.3rem + 0.6vw);
-      }
-
-      @media (min-width: 1200px) {
-        h3 {
-          font-size: 1.75rem;
-        }
-      }
-
-      h4 {
-        font-size: calc(1.275rem + 0.3vw);
-      }
-
-      @media (min-width: 1200px) {
-        h4 {
-          font-size: 1.5rem;
-        }
-      }
-
-      h5 {
-        font-size: 1.25rem;
-      }
-
-      h6 {
-        font-size: 1rem;
       }
 
       abbr[title],

@@ -9,19 +9,19 @@
 /* *! Animate */
 
 .Anim {
-  @apply transition hover:duration-200 duration-300;
+  @apply transition xl:hover:duration-200 duration-300;
 }
 
 .Anim-2 {
-  @apply transition hover:duration-500 duration-700;
+  @apply transition xl:hover:duration-500 duration-700;
 }
 
 .AnimScale {
-  @apply hover:scale-150;
+  @apply xl:hover:scale-150;
 }
 
 .AnimScale-sm {
-  @apply hover:scale-110;
+  @apply xl:hover:scale-110;
 }
 
 .AnimOpacity-40 {
@@ -46,7 +46,7 @@
 
 /* *! Text */
 
-.page-home-textOutline > h1 {
+.page-home-textOutline {
   -webkit-text-stroke: 2px #fff;
   @apply text-transparent text-6xl font-bold sm:text-7xl sm:-mb-2.5 md:text-8xl lg:-mb-5 lg:text-9xl xl:text-[200px] xxl:text-[276px];
 }
@@ -74,6 +74,10 @@
 
 .NotiBadge-secondary {
   @apply absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-secondary-0 rounded-full transform translate-x-1/2 -translate-y-1/2;
+}
+
+.Card-back-md-60 {
+  @apply bg-black/60 rounded-md backdrop-blur-md;
 }
 
 .Card-back-md-40 {

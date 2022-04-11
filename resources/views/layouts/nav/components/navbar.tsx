@@ -2,20 +2,19 @@
 import Link from 'next/link'
 import { useState, useRef } from 'react'
 import { useOnClickOutside } from '@libs/hooks'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { State, User, UI } from '@store'
 import UserBlock from './user'
 import { useSession, signOut } from 'next-auth/react'
-import Notification from './notification'
-import Cart from './cart'
+import NotificationBlock from './notification'
+import CartBlock from './cart'
 import {
   MenuIcon,
   CloseIcon,
   UserIcon,
   SoundOn,
   SoundOff,
-  NotiIcon,
-  CartIcon,
+  SeparatorLine,
 } from '../assets'
 
 export default function IJNNav({
@@ -32,15 +31,48 @@ export default function IJNNav({
   const _Notification = User((state) => state.notification)
   const _Cart = User((state) => state.cart)
 
-  const [OpenNoti, setOpenNoti] = useState(false)
-  const [OpenCart, setOpenCart] = useState(false)
+  const [PopupState, setPopupState] = useState({
+    notification: false,
+    cart: false,
+    userPanel: false,
+  })
 
   const NavRef = useRef(null)
-  useOnClickOutside(NavRef, () => resetPopup())
+  useOnClickOutside(NavRef, () => setNavPopupState('all'))
 
-  const resetPopup = () => {
-    setOpenNoti(false)
-    setOpenCart(false)
+  const setNavPopupState = (current: string) => {
+    switch (current) {
+      case 'notification':
+        setPopupState({
+          notification: !PopupState.notification,
+          cart: false,
+          userPanel: false,
+        })
+        break
+      case 'cart':
+        setPopupState({
+          notification: false,
+          cart: !PopupState.cart,
+          userPanel: false,
+        })
+        break
+      case 'userPanel':
+        setPopupState({
+          notification: false,
+          cart: false,
+          userPanel: !PopupState.userPanel,
+        })
+        break
+      case 'all':
+        setPopupState({
+          notification: false,
+          cart: false,
+          userPanel: false,
+        })
+        break
+      default:
+        break
+    }
   }
 
   const [audioPlaying, toggleAudio] = useAudio()
@@ -74,7 +106,7 @@ export default function IJNNav({
               </Link>
             </motion.div>
             <svg
-              className='hidden sm:block'
+              className='hidden md:block'
               xmlns='http://www.w3.org/2000/svg'
               width='2'
               height='23'
@@ -82,52 +114,60 @@ export default function IJNNav({
             >
               <rect width='2' height='23' rx='1' fill='#fff' opacity='0.2' />
             </svg>
-            <h6 className='hidden px-5 sm:block'>{_page}</h6>
+            <h6 className='hidden px-5 md:block'>{_page}</h6>
           </div>
           <div className='flex items-center h-full'>
+            {toggleMenu && (
+              <motion.div
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                className='flex absolute top-20 left-6 space-x-7 fill-white md:hidden'
+              >
+                <CartBlock
+                  OpenCart={PopupState.cart}
+                  setNavPopupState={setNavPopupState}
+                  _Cart={_Cart}
+                />
+                <NotificationBlock
+                  OpenNotification={PopupState.notification}
+                  setNavPopupState={setNavPopupState}
+                  _Notification={_Notification}
+                />
+              </motion.div>
+            )}
             <div className='hidden space-x-7 fill-white md:flex'>
-              <span
-                className='flex relative items-center h-full cursor-pointer'
-                onClick={() => {
-                  setOpenCart(!OpenCart)
-                  setOpenNoti(false)
-                }}
+              <CartBlock
+                OpenCart={PopupState.cart}
+                setNavPopupState={setNavPopupState}
+                _Cart={_Cart}
+              />
+              <NotificationBlock
+                OpenNotification={PopupState.notification}
+                setNavPopupState={setNavPopupState}
+                _Notification={_Notification}
+              />
+            </div>
+            <div className='hidden md:block md:px-8'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='2'
+                height='23'
+                viewBox='0 0 2 23'
               >
-                <div className='w-6 h-6 Anim AnimScale'>
-                  <CartIcon />
-                  {_Cart !== 0 && _Cart && (
-                    <span className='NotiBadge-primary'>{_Cart}</span>
-                  )}
-                </div>
-                <AnimatePresence>
-                  {OpenCart && <Cart key='NAV_Cart' />}
-                </AnimatePresence>
-              </span>
-              <span
-                className='flex relative items-center h-full cursor-pointer'
-                onClick={() => {
-                  setOpenNoti(!OpenNoti)
-                  setOpenCart(false)
-                }}
-              >
-                <div className='w-6 h-6 Anim AnimScale'>
-                  <NotiIcon />
-                  {_Notification !== 0 && _Notification && (
-                    <span className='NotiBadge-primary '>{_Notification}</span>
-                  )}
-                </div>
-                <AnimatePresence>
-                  {OpenNoti && <Notification key='NAV_Noti' />}
-                </AnimatePresence>
-              </span>
+                <rect width='2' height='23' rx='1' fill='#fff' opacity='0.2' />
+              </svg>
             </div>
             {session && (
               <>
+                <UserBlock
+                  signOut={signOut}
+                  user={session.user}
+                  setNavPopupState={setNavPopupState}
+                  OpenPanel={PopupState.userPanel}
+                />
                 <SeparatorLine />
-                <UserBlock signOut={signOut} user={session.user} />
               </>
             )}
-            <SeparatorLine />
             <motion.div
               className='flex space-x-4 fill-white'
               onMouseEnter={() => _setCursor('logo')}
@@ -139,17 +179,19 @@ export default function IJNNav({
               <a className='cursor-pointer' onClick={audioToggle}>
                 {audioPlaying ? <SoundOn /> : <SoundOff />}
               </a>
-              <Link href={session ? '/app/dashboard' : '/app/portal'}>
-                <a>
-                  <UserIcon />
-                </a>
-              </Link>
+              {!session && (
+                <Link href='/app/portal'>
+                  <a>
+                    <UserIcon />
+                  </a>
+                </Link>
+              )}
               <div
                 className='cursor-pointer'
                 onClick={() => {
                   setToggleMenu(!toggleMenu)
                   _setCursor(false)
-                  resetPopup()
+                  setNavPopupState('all')
                 }}
               >
                 {toggleMenu ? <CloseIcon /> : <MenuIcon />}
@@ -161,16 +203,3 @@ export default function IJNNav({
     </nav>
   )
 }
-
-const SeparatorLine = () => (
-  <div className='hidden px-8 sm:block'>
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      width='2'
-      height='23'
-      viewBox='0 0 2 23'
-    >
-      <rect width='2' height='23' rx='1' fill='#fff' opacity='0.2' />
-    </svg>
-  </div>
-)

@@ -1,8 +1,26 @@
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { User } from '@store'
+import { CartIcon } from '../../assets'
 
-const Notification = () => {
+const CartBlock = ({ OpenCart, setNavPopupState, _Cart }) => (
+  <span
+    className='flex relative items-center h-full cursor-pointer'
+    onClick={() => {
+      setNavPopupState('cart')
+    }}
+  >
+    <div className='w-6 h-6 Anim AnimScale'>
+      <CartIcon />
+      {_Cart !== 0 && _Cart && (
+        <span className='NotiBadge-primary'>{_Cart}</span>
+      )}
+    </div>
+    <AnimatePresence>{OpenCart && <Cart key='NAV_Cart' />}</AnimatePresence>
+  </span>
+)
+
+const Cart = () => {
   const _CartItems = User((state) => state.cartItems)
 
   const Amount = typeof _CartItems === 'boolean' ? 0 : _CartItems.length
@@ -12,7 +30,7 @@ const Notification = () => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className='flex absolute top-14 right-0 flex-col py-4 w-48 max-h-64  drop-shadow-md Card-back-md-40 '
+      className='flex absolute top-14 flex-col py-4 w-48 max-h-64 drop-shadow-md  md:right-0 Card-back-md-60 '
     >
       <h5 className='mb-2 text-base font-semibold text-center'>Cart</h5>
       {Amount === 0 || !_CartItems ? (
@@ -23,7 +41,7 @@ const Notification = () => {
         </div>
       ) : (
         <>
-          <NotificationItems list={_CartItems} />
+          <CartItems list={_CartItems} />
           <p className='pt-2 text-xs font-light text-center cursor-pointer Anim AnimOpacity-60'>
             open cart
           </p>
@@ -33,7 +51,7 @@ const Notification = () => {
   )
 }
 
-const NotificationItems = ({ list }) => (
+const CartItems = ({ list }) => (
   <div className='overflow-scroll h-full'>
     {list.map((v, i) => (
       <Link href={v.link} passHref key={i}>
@@ -49,4 +67,4 @@ const NotificationItems = ({ list }) => (
   </div>
 )
 
-export default Notification
+export default CartBlock

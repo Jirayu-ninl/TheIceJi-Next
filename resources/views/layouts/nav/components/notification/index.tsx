@@ -1,7 +1,31 @@
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { toast } from 'react-toastify'
 import { User } from '@store'
+import { NotiIcon } from '../../assets'
+
+const NotificationBlock = ({
+  OpenNotification,
+  setNavPopupState,
+  _Notification,
+}) => (
+  <span
+    className='flex relative items-center h-full cursor-pointer'
+    onClick={() => {
+      setNavPopupState('notification')
+    }}
+  >
+    <div className='w-6 h-6 Anim AnimScale'>
+      <NotiIcon />
+      {_Notification !== 0 && _Notification && (
+        <span className='NotiBadge-primary '>{_Notification}</span>
+      )}
+    </div>
+    <AnimatePresence>
+      {OpenNotification && <Notification key='NAV_Noti' />}
+    </AnimatePresence>
+  </span>
+)
 
 const Notification = ({ ref }) => {
   const _setNotification = User((state) => state.setNotification)
@@ -16,7 +40,7 @@ const Notification = ({ ref }) => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className='flex absolute top-14 right-0 flex-col py-4 w-48 max-h-64  drop-shadow-md Card-back-md-40 '
+      className='flex absolute top-14 flex-col py-4 w-48 max-h-64 drop-shadow-md  md:right-0 Card-back-md-60 '
     >
       <h5 className='mb-2 text-base font-semibold text-center'>Notification</h5>
       {Amount === 0 || !_NotificationItems ? (
@@ -59,4 +83,4 @@ const NotificationItems = ({ list }) => (
   </div>
 )
 
-export default Notification
+export default NotificationBlock

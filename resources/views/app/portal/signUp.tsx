@@ -85,7 +85,7 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
 
   return (
     <div className='relative p-8 ml-2 h-full rounded-lg Card-white-20 Border-white-40'>
-      <h3 className='font-semibold uppercase'>Signup</h3>
+      <h3 className='text-3xl font-semibold uppercase'>Signup</h3>
       <form className='flex flex-col pt-6 Form-white' onSubmit={handleSubmit}>
         <input
           className='rounded-md Border-white-40'

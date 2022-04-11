@@ -1,28 +1,28 @@
-import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 
-const User = ({ user, signOut }) => {
-  const [OpenPanel, setOpenPanel] = useState(false)
+const User = ({ OpenPanel, setNavPopupState, user, signOut }) => {
   const displayUser =
     user.name.length > 10 ? user.name.slice(0, 10) + '..' : user.name
 
   return (
     <>
       <div
-        className='flex relative cursor-pointer'
-        onClick={() => setOpenPanel(!OpenPanel)}
+        className='flex relative items-center cursor-pointer'
+        onClick={() => {
+          setNavPopupState('userPanel')
+        }}
       >
         <div className='mr-3'>
-          <h5 className='text-base font-bold text-right'>{displayUser}</h5>
-          <p className='-mt-1 text-xs text-right opacity-80'>admin</p>
+          <h5 className='text-xs font-bold text-right sm:text-base'>{displayUser}</h5>
+          <p className='-mt-1 text-2xs text-right opacity-80 sm:text-xs'>admin</p>
         </div>
         <div className='absolute right-0 bottom-0 z-10 w-3 h-3 bg-green-500 rounded-full border-2 border-white' />
         <div className='overflow-hidden relative w-9 h-9 rounded-full'>
           <Image src={user.image} alt='Profile' layout='fill' />
         </div>
         <AnimatePresence>
-          {OpenPanel && <Panel user={user} signOut={signOut} key='NAV_User'/>}
+          {OpenPanel && <Panel user={user} signOut={signOut} key='NAV_User' />}
         </AnimatePresence>
       </div>
     </>
