@@ -12,6 +12,10 @@
   @apply transition xl:hover:duration-200 duration-300;
 }
 
+.Anim-1 {
+  @apply transition xl:hover:duration-300 duration-500;
+}
+
 .Anim-2 {
   @apply transition xl:hover:duration-500 duration-700;
 }
@@ -25,23 +29,31 @@
 }
 
 .AnimOpacity-40 {
-  @apply opacity-40 hover:opacity-100;
+  @apply xl:opacity-40 xl:hover:opacity-100;
 }
 
 .AnimOpacity-60 {
-  @apply opacity-60 hover:opacity-100;
+  @apply xl:opacity-60 xl:hover:opacity-100;
 }
 
 .AnimOpacity-80 {
-  @apply opacity-80 hover:opacity-100;
+  @apply xl:opacity-80 xl:hover:opacity-100;
 }
 
 .AnimTranslate-10 {
-  @apply md:hover:-translate-x-2.5 md:hover:-translate-y-2.5;
+  @apply xl:hover:-translate-x-2.5 xl:hover:-translate-y-2.5;
+}
+
+.AnimRotate-1 {
+  @apply xl:hover:-rotate-1;
 }
 
 .AnimTranslate-4 {
-  @apply md:hover:-translate-x-1 md:hover:-translate-y-1;
+  @apply xl:hover:-translate-x-1 xl:hover:-translate-y-1;
+}
+
+.AnimSaturate-0 {
+  @apply xl:saturate-0 xl:hover:saturate-100;
 }
 
 /* *! Text */
@@ -155,4 +167,14 @@
   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
     4px -6px 0 white, 4px -8px 0 white;
   @apply absolute left-[2px] top-1 bg-white w-1 h-1 rotate-45;
+}
+
+/* *! Others */
+
+.Project-header > h3 {
+  @apply text-3xl font-semibold;
+}
+
+.Project-header > p {
+  @apply mt-6 opacity-80 font-light;
 }

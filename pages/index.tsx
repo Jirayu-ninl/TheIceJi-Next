@@ -145,3 +145,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
+Index.disableNav = true
+Index.disableFooter = true

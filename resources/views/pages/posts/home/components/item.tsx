@@ -65,7 +65,7 @@ function Item({ index, position, scale, c = new THREE.Color(), project }) {
       delta
     )
     ref.current.material.color.lerp(
-      c.set(hovered || clicked === index ? 'white' : '#2c2c2c'),
+      c.set(hovered || clicked === index ? 'white' : '#646464'),
       hovered ? 0.3 : 0.1
     )
   })

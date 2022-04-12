@@ -1,18 +1,15 @@
-import * as CSS from '../styles'
 import Image from 'next/image'
 
-export default function SectionMockup({ content }) {
+function SectionGallery({ content }) {
   return (
-    <div
-      className={CSS.Gallery}
-      // style={{ height: 350 * Math.ceil(content.length / 2) + 'px' }}
-    >
+    <div className='grid grid-cols-2 gap-4 mb-24'>
       {content.map((v: any, i: number) => (
         <div
-          // style={{ height: 670, width: 350 }}
+          className='overflow-hidden relative h-80 rounded-md hover:scale-95 Anim'
           key={i}
         >
           <Image
+            className='Anim AnimScale-sm'
             src={v.url}
             alt={'Gallery_' + i}
             layout='fill'
@@ -28,3 +25,5 @@ export default function SectionMockup({ content }) {
     </div>
   )
 }
+
+export default SectionGallery

@@ -1,7 +1,10 @@
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
 import { ParsedUrlQuery } from 'querystring'
-import { AppLayout, ProductLayout } from 'pages/project_old'
+import { Project } from 'pages/posts'
+
+import { State } from '@store'
+import { useEffect } from 'react'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_PROJECT_URL)
 
@@ -113,19 +116,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
 // Main UI
 
 export default function Post({ project }) {
-  if (project.projectType == 'App') {
-    return (
-      <>
-        <AppLayout content={project} />
-      </>
-    )
-  } else if (project.projectType == 'Product') {
-    return (
-      <>
-        <ProductLayout content={project} />
-      </>
-    )
-  } else {
-    return <h1>Nothing</h1>
-  }
+  const _setPage = State((state) => state.setPage)
+  useEffect(() => {
+    _setPage(project.title)
+  }, [project, _setPage])
+
+  return (
+    <>
+      <Project content={project} type={project.projectType} />
+    </>
+  )
 }
+
+Post.disableFooter = true

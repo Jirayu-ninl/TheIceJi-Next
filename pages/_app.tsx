@@ -17,14 +17,14 @@ import { app } from '@config'
 
 import MainLayout from 'layouts/MainLayout'
 import Toast from 'layouts/components/toast'
-import LayoutController from 'layouts/controller'
 
 import 'tailwindcss/tailwind.css'
 import 'views/theme/css/tailwind.css'
 
 type NextPageWithLayout = NextPage & {
   Layout?: (page: ReactElement) => ReactNode
-  auth?: boolean
+  disableFooter?: boolean
+  disableNav?: boolean
 }
 
 type AppPropsWithLayout = AppProps & {
@@ -54,8 +54,8 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     }
   }, [router.events])
 
-  const { showFooter, showNav } = LayoutController(router.pathname)
   const getLayout = Component.Layout ?? ((page) => page)
+
 
   return getLayout(
     <>
@@ -78,7 +78,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           description={pageProps.description}
           coverImg={pageProps.coverImg}
         />
-        <MainLayout showNav={showNav} showFooter={showFooter}>
+        <MainLayout showNav={!Component.disableNav} showFooter={!Component.disableFooter}>
           <PageTransition router={router}>
             <Component {...pageProps} />
           </PageTransition>

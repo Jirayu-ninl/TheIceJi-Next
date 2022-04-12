@@ -1,17 +1,11 @@
-import * as CSS from '../styles'
 import Image from 'next/image'
 
-export default function BannerImage({ content, color }) {
+function SectionBanner({ content, color }) {
   if (content.IsLogo) {
     return (
       <div
-        className={CSS.BannerImage}
-        style={{
-          backgroundColor: color,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
+        className='flex relative justify-center items-center w-full h-32 md:h-48 lg:h-60'
+        style={{ backgroundColor: color }}
       >
         <div style={{ width: '40%' }}>
           <Image
@@ -29,13 +23,12 @@ export default function BannerImage({ content, color }) {
     )
   } else {
     return (
-      <div className={CSS.BannerImage}>
+      <div className='relative w-full h-32 md:h-48 lg:h-60'>
         <Image
           src={content.Image}
           alt={content.Title}
           layout='fill'
           objectFit='cover'
-          quality={100}
           placeholder='blur'
           blurDataURL={
             'data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='
@@ -45,3 +38,5 @@ export default function BannerImage({ content, color }) {
     )
   }
 }
+
+export default SectionBanner
