@@ -6,7 +6,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import clientPromise from '@database/mongo/legacy'
 
-import SignInProvider from '@auth/signIn.Provider'
+import SignInProvider from '@auth/signIn.ProviderV3'
 import SignInCredentials from '@auth/signIn.Credentials'
 
 export default NextAuth({
@@ -14,7 +14,7 @@ export default NextAuth({
     signIn: '/app/portal',
     signOut: '/home',
     error: '/app/portal',
-    newUser: '/app/user/profile',
+    newUser: '/app/user',
   },
   providers: [
     GoogleProvider({
@@ -46,7 +46,7 @@ export default NextAuth({
       },
     }),
   ],
-  // adapter: MongoDBAdapter(clientPromise),
+  adapter: MongoDBAdapter(clientPromise),
   secret: process.env.TOKEN,
   session: {
     strategy: 'jwt',
@@ -56,18 +56,11 @@ export default NextAuth({
     colorScheme: 'dark',
   },
   callbacks: {
-    // async signIn({
-    //   user,
-    //   account,
-    //   // isNewUser
-    // }) {
-    //   return SignInProvider(user, account)
-    // },
-    async redirect({
-      // url,
-      baseUrl,
-    }) {
-      const appUrl = baseUrl + '/app/user/profile'
+    async signIn({ user, account }) {
+      return SignInProvider(user, account)
+    },
+    async redirect({ baseUrl }) {
+      const appUrl = baseUrl + '/app/user'
       return appUrl
     },
     async jwt({ token, user }) {
@@ -76,6 +69,10 @@ export default NextAuth({
         token.userRole = user.userRole
       }
       return token
+    },
+    async session({ session, token }) {
+      session.user.userRole = token.userRole
+      return session
     },
   },
 })

@@ -4,8 +4,14 @@ import bcrypt from 'bcrypt'
 const SignIn_Credentials = async (credentials) => {
   try {
     const { email, password } = credentials
-    const thisUser = await User.findOne({ email })
-    const correctPassword = await bcrypt.compare(password, thisUser.password)
+    const thisUser = await User.findOne({
+      provider: 'credentials',
+      'credential.email': email,
+    })
+    const correctPassword = await bcrypt.compare(
+      password,
+      thisUser.credential.password
+    )
     if (thisUser && correctPassword) {
       return thisUser
     }

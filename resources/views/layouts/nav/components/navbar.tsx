@@ -42,36 +42,36 @@ export default function IJNNav({
 
   const setNavPopupState = (current: string) => {
     switch (current) {
-      case 'notification':
-        setPopupState({
-          notification: !PopupState.notification,
-          cart: false,
-          userPanel: false,
-        })
-        break
-      case 'cart':
-        setPopupState({
-          notification: false,
-          cart: !PopupState.cart,
-          userPanel: false,
-        })
-        break
-      case 'userPanel':
-        setPopupState({
-          notification: false,
-          cart: false,
-          userPanel: !PopupState.userPanel,
-        })
-        break
-      case 'all':
-        setPopupState({
-          notification: false,
-          cart: false,
-          userPanel: false,
-        })
-        break
-      default:
-        break
+    case 'notification':
+      setPopupState({
+        notification: !PopupState.notification,
+        cart: false,
+        userPanel: false,
+      })
+      break
+    case 'cart':
+      setPopupState({
+        notification: false,
+        cart: !PopupState.cart,
+        userPanel: false,
+      })
+      break
+    case 'userPanel':
+      setPopupState({
+        notification: false,
+        cart: false,
+        userPanel: !PopupState.userPanel,
+      })
+      break
+    case 'all':
+      setPopupState({
+        notification: false,
+        cart: false,
+        userPanel: false,
+      })
+      break
+    default:
+      break
     }
   }
 

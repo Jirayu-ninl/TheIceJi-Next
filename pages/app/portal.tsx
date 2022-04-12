@@ -24,14 +24,14 @@ const Portal = ({ providers, csrfToken }) => {
       toast.error('Invalid username or password')
       break
     case 'OAuthAccountNotLinked':
-      toast.error('Provider authorize error')
+      toast.error('This email already signup with different social account')
       break
     default:
       toast.error('Error: ' + router.query.error)
     }
   }, [router.query.error])
   return (
-    <div className='flex justify-center items-center w-screen h-screen bg-gradient-to-tl from-indigo-500 to-cyan-500'>
+    <div className='flex justify-center items-center w-screen h-screen bg-gradient-to-tl from-indigo-600 to-indigo-400'>
       <div className='flex md:h-2/5'>
         <div className='hidden overflow-hidden relative w-96 h-full rounded-lg md:block'>
           <Image

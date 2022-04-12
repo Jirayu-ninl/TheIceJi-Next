@@ -6,13 +6,15 @@ class Mongo {
   }
 
   dbConnect = async () => {
-    const connection = {}
+    const connection: any = {}
     if (connection.isConnected) {
       return
     }
-    const dbConfig = {
+    const dbConfig: any = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      autoIndex : false,
+      maxPoolSize: 10,
     }
     const db = await mongoose.connect(this.URL, dbConfig)
     connection.isConnected = db.connections[0].readyState

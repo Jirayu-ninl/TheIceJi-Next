@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { v4 as uuidv4 } from 'uuid'
 import bcrypt from 'bcrypt'
-import { User } from '@models/database/mongo'
+import { User, Profile } from '@models/database/mongo'
 import Res from '@libs/utils/res/status'
 
 const Auth = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -19,24 +19,34 @@ const Auth = async (req: NextApiRequest, res: NextApiResponse) => {
         case 'signup':
           try {
             const { email, password } = req.body
-            const generatedUserId = uuidv4()
-            const hashedPassword = await bcrypt.hash(password, 10)
-            const existingEmail = await User.findOne({ email })
+            const existingEmail = await User.findOne({
+              credential: { email: email },
+            })
             if (existingEmail) {
               return setRes.success({
                 msg: 'User already exists. Please login',
               })
             }
+            const generatedUserId = uuidv4()
+            const hashedPassword = await bcrypt.hash(password, 10)
             const user = {
               userID: generatedUserId,
+              name: email.toLowerCase(),
+              image: '/user/default/profile.png',
               provider: 'credentials',
-              email: email.toLowerCase(),
-              password: hashedPassword,
+              credential: {
+                email: email.toLowerCase(),
+                password: hashedPassword,
+              },
               account: {},
-              userRole: 'user',
+              userRole: 'standard',
               active: 1,
             }
             await User.create(user)
+            const userProfile = {
+              userID: generatedUserId,
+            }
+            await Profile.create(userProfile)
             return setRes.created({
               userID: generatedUserId,
               email: email.toLowerCase(),

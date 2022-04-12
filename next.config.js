@@ -73,12 +73,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // swcMinify: true,
-  // experimental: {
-  //   concurrentFeatures: true,
-  //   serverComponents: true,
-  //   outputStandalone: true,
-  // },
   compiler: {
     styledComponents: true,
   },

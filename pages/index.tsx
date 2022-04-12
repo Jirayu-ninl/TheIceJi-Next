@@ -46,7 +46,7 @@ export default function Index() {
         ) : (
           <Link href='/home' passHref>
             <h2
-              className='cursor-pointer'
+              className='cursor-pointer text-3xl'
               onMouseEnter={() => {
                 !Push ? _setCursor('logo') : _setCursor(false)
               }}

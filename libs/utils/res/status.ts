@@ -16,6 +16,7 @@ export const RES = {
   requestTimeout: 408,
   conflict: 409,
   invalidHeader: 412,
+  unprocessableEntity: 422,
   tooManyRequestsHeader: 429,
   internalError: 500,
   serverError: 503,
@@ -156,6 +157,15 @@ export default class Res {
     return this.res.status(RES.invalidHeader).json({
       success: false,
       status: 'invalid header',
+      ...data,
+      ...this.initialData,
+    })
+  }
+
+  unprocessableEntity(data = {}) {
+    return this.res.status(RES.unprocessableEntity).json({
+      success: false,
+      status: 'unprocessable entity',
       ...data,
       ...this.initialData,
     })

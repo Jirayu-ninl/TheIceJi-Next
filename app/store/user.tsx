@@ -11,12 +11,12 @@ const store: tStore = (set) => ({
   cart: false,
   setCart: (n) => set(() => ({ cart: n })),
   cartItems: [
-    {
-      title: '1,350 Mobile Lr Preset',
-      description: '59$',
-      link: '',
-      time: 'Apr 10, 2022',
-    },
+    // {
+    //   title: '1,350 Mobile Lr Preset',
+    //   description: '59$',
+    //   link: '',
+    //   time: 'Apr 10, 2022',
+    // },
   ],
   setCartItems: (n) => set(() => ({ cartItems: n })),
 })
