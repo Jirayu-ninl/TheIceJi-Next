@@ -1,12 +1,11 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // If such a type existed...
-
 const path = require('path')
 // require("dotenv").config();
 const plugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
-
 const withOffline = require('next-offline')
 
 const nextConfig = {
