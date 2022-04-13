@@ -37,11 +37,17 @@ export default function Index({ content, type }) {
   }, [Data])
 
   const [pageHeight, setPageHeight] = useState(null)
+  const basePath = 'https://theiceji.com/project/'
+  const shareMedia = content.title + '|' + content.tagline
 
   return (
     <>
       <ScrollProgress pageHeight={pageHeight} />
-      <FloatingShare />
+      <FloatingShare
+        slug={content.slug}
+        basePath={basePath}
+        shareMedia={shareMedia}
+      />
       <UseSmoothScroll
         physics={{ damping: 9.5, mass: 0.4, stiffness: 70 }}
         Callback={setPageHeight}

@@ -2,16 +2,95 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { brands } from '@fortawesome/fontawesome-svg-core/import.macro'
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  PinterestShareButton,
+} from 'next-share'
 
-const FloatingShare = () => {
+const FloatingShare = ({ slug, basePath, shareMedia }) => {
   const [Show, setShow] = useState(false)
+  const projectURL = basePath + slug
+
+  const animList = {
+    initial: { x: 100 },
+    animate: {
+      x: 0,
+      transition: {
+        when: 'beforeChildren',
+        delay: 0.3,
+        staggerChildren: 0.3,
+      },
+    },
+    exit: { opacity: 0 },
+  }
+
+  const animItem = {
+    initial: { y: 30, opacity: 0, scale: 0 },
+    animate: { y: 0, opacity: 1, scale: 1 },
+    exit: { y: 30, opacity: 0, scale: 0 },
+    transition: { type: 'tween' },
+  }
 
   return (
-    <div
+    <motion.div
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
-      className='flex fixed right-6 bottom-6 z-10 flex-col-reverse items-center'
+      initial='initial'
+      animate='animate'
+      exit='exit'
+      variants={animList}
+      className='flex fixed right-6 bottom-6 z-10 flex-col items-center'
     >
+      <AnimatePresence>
+        {Show && (
+          <>
+            <FacebookShareButton url={projectURL} hashtag={'theiceji'}>
+              <motion.button
+                variants={animItem}
+                className='flex z-30 mb-4 w-8 h-8 bg-black hover:bg-blue-600 rounded-full drop-shadow-lg Anim-2'
+                key='Fs_facebook'
+              >
+                <FontAwesomeIcon
+                  icon={brands('facebook-f')}
+                  size='xs'
+                  className='m-auto h-4'
+                />
+              </motion.button>
+            </FacebookShareButton>
+            <TwitterShareButton
+              url={projectURL}
+              title={shareMedia}
+              hashtags={['theiceji']}
+            >
+              <motion.button
+                variants={animItem}
+                className='flex z-20 mb-4 w-8 h-8 bg-black hover:bg-sky-500 rounded-full drop-shadow-lg Anim AnimScale-2'
+                key='Fs_twitter'
+              >
+                <FontAwesomeIcon
+                  icon={brands('twitter')}
+                  size='xs'
+                  className='m-auto h-4'
+                />
+              </motion.button>
+            </TwitterShareButton>
+            <PinterestShareButton url={projectURL} media={shareMedia}>
+              <motion.button
+                variants={animItem}
+                className='flex z-10 mb-4 w-8 h-8 bg-black hover:bg-red-500 rounded-full drop-shadow-lg Anim AnimScale-2'
+                key='Fs_google'
+              >
+                <FontAwesomeIcon
+                  icon={brands('pinterest-p')}
+                  size='xs'
+                  className='m-auto h-4'
+                />
+              </motion.button>
+            </PinterestShareButton>
+          </>
+        )}
+      </AnimatePresence>
       <button className='flex z-40 w-12 h-12 bg-black rounded-full drop-shadow-lg'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
@@ -35,55 +114,7 @@ const FloatingShare = () => {
           </g>
         </svg>
       </button>
-      <AnimatePresence>
-        {Show && (
-          <>
-            <motion.button
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 30, opacity: 0 }}
-              transition={{ delay: 0, type: 'tween' }}
-              className='flex z-30 mb-4 w-8 h-8 bg-black hover:bg-blue-600 rounded-full drop-shadow-lg Anim-2'
-              key='Fs_facebook'
-            >
-              <FontAwesomeIcon
-                icon={brands('facebook-f')}
-                size='xs'
-                className='m-auto h-4'
-              />
-            </motion.button>
-            <motion.button
-              initial={{ y: 80, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 80, opacity: 0 }}
-              transition={{ delay: 0.2, type: 'tween' }}
-              className='flex z-20 mb-4 w-8 h-8 bg-black hover:bg-sky-500 rounded-full drop-shadow-lg Anim AnimScale-2'
-              key='Fs_twitter'
-            >
-              <FontAwesomeIcon
-                icon={brands('twitter')}
-                size='xs'
-                className='m-auto h-4'
-              />
-            </motion.button>
-            <motion.button
-              initial={{ y: 120, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 120, opacity: 0 }}
-              transition={{ delay: 0.4, type: 'tween' }}
-              className='flex z-10 mb-4 w-8 h-8 bg-black hover:bg-red-500 rounded-full drop-shadow-lg Anim AnimScale-2'
-              key='Fs_google'
-            >
-              <FontAwesomeIcon
-                icon={brands('google')}
-                size='xs'
-                className='m-auto h-4'
-              />
-            </motion.button>
-          </>
-        )}
-      </AnimatePresence>
-    </div>
+    </motion.div>
   )
 }
 
