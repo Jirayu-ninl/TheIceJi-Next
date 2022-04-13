@@ -8,7 +8,7 @@ function RelatedProjects({ content }) {
         <h6 className='mb-14 font-semibold'>Related Projects</h6>
         {content?.map((v, i) => (
           <Link href={v.slug} key={i} passHref>
-            <div className='overflow-hidden relative -mt-12 h-48 rounded-md drop-shadow-[-12px_-12px_25px_rgba(0,0,0,0.7)] xl:drop-shadow-none Anim AnimTranslate-10 AnimSaturate-0'>
+            <div className='overflow-hidden relative -mt-12 h-48 rounded-md drop-shadow-[-12px_-12px_25px_rgba(0,0,0,0.7)] cursor-pointer xl:drop-shadow-none Anim AnimTranslate-10 AnimSaturate-0'>
               <div className='absolute top-4 left-4 z-10'>
                 <h5 className='text-2xl font-bold'>{v.title}</h5>
                 <div>

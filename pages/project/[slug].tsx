@@ -1,10 +1,10 @@
+import { useEffect } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
 import { ParsedUrlQuery } from 'querystring'
 import { Project } from 'pages/posts'
 
 import { State } from '@store'
-import { useEffect } from 'react'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_PROJECT_URL)
 
@@ -118,7 +118,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function Post({ project }) {
   const _setPage = State((state) => state.setPage)
   useEffect(() => {
-    _setPage(project.title)
+    _setPage('PROJECT | ' + project.title)
   }, [project, _setPage])
 
   return (

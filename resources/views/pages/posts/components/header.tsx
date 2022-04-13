@@ -43,7 +43,7 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
         >
           {Tags.map((v: string, i: number) => (
             <motion.button
-              className='mr-2 hover:text-black uppercase hover:bg-primary-0 Btn-white-40 Anim AnimTranslate-4'
+              className='mt-2 mr-2 hover:text-black uppercase hover:bg-primary-0 Btn-white-40 Anim AnimTranslate-4'
               key={i}
               variants={animItem}
             >
@@ -54,7 +54,9 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
         <motion.h1
           initial={{ y: 300, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          style={{ fontFamily: lang === 'en' ? 'poppins' : 'athiti' }}
+          style={
+            lang === 'en' ? { fontFamily: 'poppins' } : { fontFamily: 'Prompt' }
+          }
           className='mt-1 mb-6 text-6xl font-bold md:mt-0 md:text-7xl xxl:text-8xl'
         >
           {Title}

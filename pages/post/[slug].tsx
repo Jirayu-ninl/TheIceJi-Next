@@ -1,9 +1,9 @@
-import * as React from 'react'
+import { useEffect } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
 import { ParsedUrlQuery } from 'querystring'
-
-import Blog from 'pages/post/blog'
+import { State } from '@store'
+import { Blog } from 'pages/posts'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_CONTENT_URL)
 
@@ -77,9 +77,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 export default function Post({ post }) {
+  const _setPage = State((state) => state.setPage)
+  useEffect(() => {
+    _setPage('BLOG | ' + post.title)
+  }, [post, _setPage])
+
   return (
     <>
       <Blog content={post} />
     </>
   )
 }
+
+Post.disableFooter = true

@@ -5,4 +5,6 @@ export { default as SectionBanner } from './sectionBanner'
 export { default as SectionMockup } from './sectionMockup'
 export { default as SectionColor } from './sectionColor'
 export { default as RelatedProjects } from './relatedProjects'
-export {default as SectionGallery} from './sectionGallery'
+export { default as SectionGallery } from './sectionGallery'
+
+export { default as BlogContentRaw } from './blogContentRaw'

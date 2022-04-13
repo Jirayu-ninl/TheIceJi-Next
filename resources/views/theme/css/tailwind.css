@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .TH {
-  font-family: 'Prompt';
+  font-family: 'Prompt' !important;
 }
 
 /* *! Animate */
@@ -177,4 +177,8 @@
 
 .Project-header > p {
   @apply mt-6 opacity-80 font-light;
+}
+
+.PostTextTab {
+  @apply pl-16
 }

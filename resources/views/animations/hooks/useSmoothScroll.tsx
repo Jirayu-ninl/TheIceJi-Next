@@ -15,9 +15,10 @@ import {
 
 const UseSmoothScroll = ({
   children,
-  physics = { damping: 15, mass: 0.27, stiffness: 55 },
+  physics = { damping: 13, mass: 0.1, stiffness: 55 },
   Callback
 }) => {
+  // const defaultPhysics = { damping: 15, mass: 0.27, stiffness: 55 }
   const scrollRef = useRef(null)
   const [pageHeight, setPageHeight] = useState(0)
 

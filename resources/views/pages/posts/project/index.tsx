@@ -48,10 +48,7 @@ export default function Index({ content, type }) {
         basePath={basePath}
         shareMedia={shareMedia}
       />
-      <UseSmoothScroll
-        physics={{ damping: 9.5, mass: 0.4, stiffness: 70 }}
-        Callback={setPageHeight}
-      >
+      <UseSmoothScroll Callback={setPageHeight}>
         <Header
           Title={content.title}
           Img={content.coverImage.url}

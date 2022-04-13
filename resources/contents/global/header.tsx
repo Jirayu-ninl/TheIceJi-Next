@@ -6,7 +6,7 @@ type S = string
 const titleDefault: S = 'TheIceJI - Jirayu Ninlapun Official Website'
 const url: S = 'https://TheIceJI.com'
 const descriptionDefault: S =
-  'I\'m Jirayu Ninlapun, studying Cinematic Art at Bangkok University. Experience: 7 years in Graphics Design, 5 years in VFX & Editor, and 2 years in Web Developer. '
+  "I'm Jirayu Ninlapun, studying Cinematic Art at Bangkok University. Experience: 7 years in Graphics Design, 5 years in VFX & Editor, and 2 years in Web Developer. "
 const author: S = 'Jirayu Ninlapun'
 const coverImgDefault: S = '/cover.jpg'
 
@@ -47,8 +47,8 @@ const Header = ({
         <link rel='mask-icon' color='#000000' href='/logo_white.svg' />
         <link rel='apple-touch-startup-image' href='/logo_white.svg' />
         {/* Meta Tags for HTML pages on Mobile */}
-        <meta name="format-detection" content="telephone=yes"/>
-        <meta name="HandheldFriendly" content="true"/> 
+        <meta name='format-detection' content='telephone=yes' />
+        <meta name='HandheldFriendly' content='true' />
         <meta
           name='viewport'
           content='width=device-width, minimum-scale=1, initial-scale=1.0'
@@ -57,12 +57,12 @@ const Header = ({
         <link rel='shortcut icon' href='/logo_white.svg' />
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:site' content='@ice14798' />
-        <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/css?family=Athiti:300,400,500,700&display=swap'
-        />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/css?family=Prompt:300,400,500,700&display=swap'
+        />
         <link
           href='https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap'
           rel='stylesheet'
