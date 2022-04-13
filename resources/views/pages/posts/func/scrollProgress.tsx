@@ -1,12 +1,10 @@
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-} from 'framer-motion'
+import { InnerHeight } from '@libs/hooks/v2/useWindowSize'
+import { motion, useViewportScroll, useTransform } from 'framer-motion'
 
 const ScrollProgress = ({ pageHeight }) => {
   const { scrollY } = useViewportScroll()
-  const X = useTransform(scrollY, [0, pageHeight], ['-100%', '24.5%'])
+  const windowHeight = InnerHeight(-1)
+  const X = useTransform(scrollY, [0, pageHeight - windowHeight], ['-100%', '0%'])
 
   return (
     <div className='flex fixed bottom-0 left-0 z-10'>
