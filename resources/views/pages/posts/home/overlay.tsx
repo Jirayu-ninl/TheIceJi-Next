@@ -27,6 +27,7 @@ const Overlay = () => {
                   duration: 0.3,
                 }}
                 className='text-sm uppercase md:text-lg lg:text-xl'
+                key='Title_tagline'
               >
                 {content.tagline}
               </motion.h2>
@@ -35,7 +36,8 @@ const Overlay = () => {
                 animate={{ scaleX: 1, opacity: 1 }}
                 exit={{ scaleX: 0.8, opacity: 0 }}
                 transition={{ delay: 0.3, duration: 0.3 }}
-                className='text-4xl font-semibold md:text-6xl lg:text-7xl x;:text-8xl sm:text-5xl xxl:text-9xl'
+                className='text-4xl x;:text-8xl font-semibold sm:text-5xl md:text-6xl lg:text-7xl xxl:text-9xl'
+                key='Title_title'
               >
                 {content.title}
               </motion.h1>
@@ -45,7 +47,10 @@ const Overlay = () => {
       </div>
       <AnimatePresence>
         {clicked !== null && (
-          <div className='pb-24 cursor-pointer pointer-events-auto xl:pb-12 xxl:pb-24'>
+          <div
+            className='pb-32 cursor-pointer pointer-events-auto md:pb-24 xl:pb-12 xxl:pb-24'
+            key='Btn_view'
+          >
             <Link href={'/project/' + content.slug} passHref>
               <motion.button
                 initial={{ opacity: 0 }}
@@ -74,7 +79,10 @@ const Overlay = () => {
       </AnimatePresence>
       <AnimatePresence>
         {clicked !== null && (
-          <div className='absolute flex flex-col items-end bottom-16 right-16'>
+          <div
+            className='hidden absolute right-5 bottom-10 flex-col items-end md:flex xxl:right-16 xxl:bottom-16'
+            key='Footer_detail'
+          >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -91,9 +99,9 @@ const Overlay = () => {
                 animate={{ y: 0 }}
                 exit={{ y: 100 }}
                 transition={{ duration: 0.5 }}
-                className='text-base uppercase tracking-[0.1rem] opacity-60'
+                className='text-xs tracking-[0.1rem] uppercase opacity-60 xxl:text-base'
               >
-                App UI Design
+                {content.tag[0] ? content.tag[0] : ''}
               </motion.h3>
             </div>
             <div className='overflow-hidden'>
@@ -102,9 +110,9 @@ const Overlay = () => {
                 animate={{ y: 0 }}
                 exit={{ y: 100 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className='-mt-1 text-base uppercase tracking-[0.1rem] opacity-80'
+                className='-mt-1 text-xs tracking-[0.1rem] uppercase opacity-80 xxl:text-base'
               >
-                KANDA Assistant
+                {content.title}
               </motion.h4>
             </div>
           </div>

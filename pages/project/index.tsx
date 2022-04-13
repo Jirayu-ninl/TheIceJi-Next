@@ -49,7 +49,7 @@ export default function Index({ projects }) {
       <div className='flex absolute z-10 flex-col justify-between items-center w-screen h-full pointer-events-none'>
         <Home.Projects.Overlay />
       </div>
-      <div className='flex justify-center items-end w-full h-full'>
+      <div className='flex justify-center items-end pb-16 w-full h-full md:pb-0'>
         <Home.Projects.Canvas3D />
       </div>
     </div>
