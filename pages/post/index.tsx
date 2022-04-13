@@ -1,7 +1,8 @@
+import { useEffect } from 'react'
 import { GetStaticProps } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
-
-import { Cards, Card } from 'pages/project_old/home'
+import { Home } from 'pages/posts'
+import { State } from '@store'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_CONTENT_URL)
 
@@ -35,12 +36,17 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Page({ posts }) {
+export default function Posts({ posts }) {
+  const _setPage = State((state) => state.setPage)
+  useEffect(() => {
+    _setPage('Blogs')
+  }, [_setPage])
+
   return (
-    <Cards>
-      {posts.map((v: never, i: number) => (
-        <Card data={v} key={i} slugPrefix='/post/' />
-      ))}
-    </Cards>
+    <div>
+      <Home.Blogs posts={posts} />
+    </div>
   )
 }
+
+Posts.disableFooter = true
