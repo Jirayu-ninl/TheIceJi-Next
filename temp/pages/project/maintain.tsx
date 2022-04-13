@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next'
 import { useEffect } from 'react'
 import { GraphQLClient, gql } from 'graphql-request'
-import { Home, Store } from 'pages/project'
+import { Home, Store } from 'pages/posts'
 import { State } from '@store'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_PROJECT_URL)
