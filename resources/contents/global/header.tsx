@@ -6,7 +6,7 @@ type S = string
 const titleDefault: S = 'TheIceJI - Jirayu Ninlapun Official Website'
 const url: S = 'https://TheIceJI.com'
 const descriptionDefault: S =
-  "I'm Jirayu Ninlapun, studying Cinematic Art at Bangkok University. Experience: 7 years in Graphics Design, 5 years in VFX & Editor, and 2 years in Web Developer. "
+  'I\'m Jirayu Ninlapun, and I\'m a Cinematic Art student at Bangkok University. I\'ve worked as a Web Developer for three years and am an expert in Front-end and Web-animation.'
 const author: S = 'Jirayu Ninlapun'
 const coverImgDefault: S = '/cover.jpg'
 
