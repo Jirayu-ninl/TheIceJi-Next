@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 function SectionGallery({ content }) {
   return (
-    <div className='grid grid-cols-2 gap-4 mb-24'>
+    <div className='grid grid-cols-1 gap-4 mb-24 md:grid-cols-2'>
       {content.map((v: any, i: number) => (
         <div
-          className='overflow-hidden relative h-80 rounded-md hover:scale-95 Anim'
+          className='overflow-hidden relative h-64 rounded-md xl:hover:scale-95 lg:h-80 Anim'
           key={i}
         >
           <Image
