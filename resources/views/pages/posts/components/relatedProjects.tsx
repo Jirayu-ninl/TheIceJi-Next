@@ -4,7 +4,7 @@ import Link from 'next/link'
 function RelatedProjects({ content }) {
   return (
     <>
-      <div className='pt-16 pb-24'>
+      <div className='pt-16 pb-48'>
         <h6 className='mb-14 font-semibold'>Related Projects</h6>
         {content?.map((v, i) => (
           <Link href={v.slug} key={i} passHref>

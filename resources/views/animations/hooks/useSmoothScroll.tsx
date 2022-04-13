@@ -16,6 +16,7 @@ import {
 const UseSmoothScroll = ({
   children,
   physics = { damping: 15, mass: 0.27, stiffness: 55 },
+  Callback
 }) => {
   const scrollRef = useRef(null)
   const [pageHeight, setPageHeight] = useState(0)
@@ -38,6 +39,10 @@ const UseSmoothScroll = ({
 
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
   const spring = useSpring(transform, physics)
+
+  if (Callback) {
+    Callback(pageHeight)
+  }
 
   return (
     <>

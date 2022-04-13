@@ -1,6 +1,8 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { dataMap } from '../utils'
 import { UseSmoothScroll } from 'views/animations/hooks'
+import { FooterPage } from 'views/layouts/footer'
+import { ScrollProgress, FloatingShare } from '../func'
 import {
   Header,
   ProjectInfo,
@@ -9,7 +11,7 @@ import {
   SectionMockup,
   SectionColor,
   RelatedProjects,
-  SectionGallery
+  SectionGallery,
 } from '../components'
 
 export default function Index({ content, type }) {
@@ -34,9 +36,16 @@ export default function Index({ content, type }) {
     }
   }, [Data])
 
+  const [pageHeight, setPageHeight] = useState(null)
+
   return (
     <>
-      <UseSmoothScroll physics={{ damping: 9.5, mass: 0.4, stiffness: 70 }}>
+      <ScrollProgress pageHeight={pageHeight} />
+      <FloatingShare />
+      <UseSmoothScroll
+        physics={{ damping: 9.5, mass: 0.4, stiffness: 70 }}
+        Callback={setPageHeight}
+      >
         <Header
           Title={content.title}
           Img={content.coverImage.url}
@@ -77,6 +86,7 @@ export default function Index({ content, type }) {
             <RelatedProjects content={content.relatedProject} />
           </div>
         </div>
+        <FooterPage />
       </UseSmoothScroll>
     </>
   )

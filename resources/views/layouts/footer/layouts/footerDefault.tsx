@@ -16,7 +16,7 @@ export default function Footer({ toggleAbout, setToggleAbout, toggleMenu }) {
             exit={{ y: '100%' }}
             animate={{ y: !toggleMenu ? 0 : '100%' }}
             transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-            className='fixed bottom-0 left-0 flex flex-col items-center justify-between w-screen px-5 py-3 md:flex-row z-10'
+            className='flex fixed bottom-0 left-0 z-10 flex-col justify-between items-center py-3 px-5 w-screen md:flex-row'
           >
             <div
               className='flex items-center space-x-4 md:space-x-7'
