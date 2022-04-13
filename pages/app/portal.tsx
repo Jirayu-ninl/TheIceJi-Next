@@ -32,7 +32,7 @@ const Portal = ({ providers, csrfToken }) => {
   }, [router.query.error])
   return (
     <div className='flex justify-center items-center w-screen h-screen bg-gradient-to-tl from-indigo-600 to-indigo-400'>
-      <div className='flex md:h-2/5'>
+      <div className='flex md:h-[410px]'>
         <div className='hidden overflow-hidden relative w-96 h-full rounded-lg md:block'>
           <Image
             src='/cover.jpg'

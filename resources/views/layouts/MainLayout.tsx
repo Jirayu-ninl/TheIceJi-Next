@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
 import { globalStyles } from 'views/theme/css/global'
-import { State, User, UI } from '@store'
+import { User } from '@store'
 
 // IJN Components
 import Cursor from './components/cursor'
