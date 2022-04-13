@@ -36,11 +36,10 @@ export const Header = ({ MenuSection, setMenuSection }) => {
           variants={children}
           className='mt-6 text-1xs font-light md:text-xs lg:text-base'
         >
-          I'm a Interactive Web Developer and Interactive Design.
+          I work as an Interactive Web Developer and Designer.
           <br />
-          I mostly use ReactJS, NextJS to create the web. I am
-          <br />
-          specialize in GSAP, WebGL to make website's real.
+          To build the website, I mostly use ReactJS and NextJS.
+          <br />I specialize in GSAP and WebGL to make websites come to life.
         </motion.p>
       </motion.div>
       <motion.div

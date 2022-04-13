@@ -45,10 +45,10 @@ export default function Facts({ animConf }) {
           className={CSS.FactsContent}
         >
           <motion.div variants={children}>
-            <p>I hate </p>
+            <p>I despise </p>
             <h6>CODING</h6>
-            <p> but love when it makes the</p>
-            <h5>world’s DIFFERENCE.</h5>
+            <p> but adore when it makes the</p>
+            <h5>world's DIFFERENCE.</h5>
           </motion.div>
           <motion.div variants={children}>
             <p>I'm an</p> <h6>introvert</h6>
@@ -58,28 +58,28 @@ export default function Facts({ animConf }) {
           <motion.div variants={children}>
             <p>I</p>
             <h6>CAN'T STOP</h6>
-            <p>develop and enhance </p>
+            <p>developing and amplifying </p>
             <h5>my skill.</h5>
           </motion.div>
           <motion.div variants={children}>
-            <p>I would love to</p>
+            <p>I would like to</p>
             <h6>travel</h6>
             <p>and</p>
             <h6>explore</h6>
             <p>the world</p>
           </motion.div>
           <motion.div variants={children}>
-            <p>I don't know what</p>
+            <p>I not sure know what</p>
             <h6>impossible means</h6>
-            <p>cause my mind is only</p>
+            <p>because it's only </p>
             <h5>POSSIBLE.</h5>
           </motion.div>
           <p></p>
           <motion.div variants={children}>
             <h6>I always</h6>
-            <p>do the thing I love and</p>
+            <p>do what I enjoy and</p>
             <h5>NEVER</h5>
-            <p>stop it.</p>
+            <p>stop doing it.</p>
           </motion.div>
         </motion.div>
       </Header>

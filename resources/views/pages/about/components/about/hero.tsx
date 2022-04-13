@@ -15,13 +15,11 @@ export default function Hero() {
         <Image src={ImgHeader} width={1160} height={712} alt='IceJI Photo' />
       </motion.div>
       <Header title='ABOUT' subTitle='Me?'>
-        <p className='text-xs font-light sm:text-sm md:text-xl xxl:text-3xl'>
-          Born to be an expert. <br />
-          I can't stop develop and enhance my skill sets.
-          <br />
-          I specialize in Front-end, WebGL, and Animation.
-          <br />
-          Mostly, I use ThreeJS, GSAP, and Framer Motion.
+        <p className='text-xs font-light md:text-xl xxl:text-2xl'>
+          &emsp;&emsp;&emsp;Expertise was instilled in me at a young age. I'm
+          unable to quit learning new things and expanding my skills. Front-end,
+          WebGL, and animation are my areas of expertise. ThreeJS, GSAP, and
+          Framer Motion are the most common tools I utilize.
         </p>
       </Header>
     </div>

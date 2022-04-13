@@ -2,19 +2,19 @@ export const Projects = [
   {
     name: 'FILMEX',
     type: 'Web-App',
-    description: 'A review-aggregation, community website for short films.',
+    description: 'A short film review aggregation and community website.',
     star: '99',
   },
   {
     name: 'AXIE ONE',
     type: 'Web-App',
-    description: 'Axie Infinity scholar and account management.',
+    description: 'Scholar and account management for Axie Infinity.',
     star: '99',
   },
   {
     name: 'ALR Network',
     type: 'Blockchain',
-    description: 'Metaverse Blockchain, bridge with Solana and BSC.',
+    description: 'Bridge with Solana and BSC on the Metaverse Blockchain.',
     star: '99',
   },
   {
@@ -123,13 +123,13 @@ export const Teams = [
   {
     name: 'WA Interactive Dev Team',
     location: 'Texas, usa',
-    description: `We are an Interactive Web Developer Team, specialize in GSAP, WebGL, and
-    Web Animation to make website designs that wow users.`,
+    description:
+      'We are an Interactive Web Developer Team that specializes in GSAP, WebGL, and Web Animation to create user-friendly website designs.',
   },
   {
     name: 'WAX Community Developer',
     location: 'Australia',
-    description: 'We are a NFT Game Developer based on WAX blockchain Technology',
+    description: 'We are a blockchain-based NFT game developer using WAX-Chain.',
   },
 ]
 
@@ -137,25 +137,25 @@ export const Works = [
   {
     company: 'Agital Advertise Co., Ltd.',
     position: 'WordPress DeveLoper',
-    description: 'Building a WordPress salepage and landing page.',
+    description: 'Creating a WordPress sale and landing page.',
     date: '2017 / Jun-2018',
   },
   {
     company: 'Freelancer',
     position: 'WordPress DeveLoper',
-    description: 'Building a Landing page and E-commerce websites',
+    description: 'Creating a landing page and an e-commerce site',
     date: '2018 / Sept-2019',
   },
   {
     company: 'Posxible Lab Co., Ltd.',
     position: 'Full-Stack Developer',
-    description: 'Working on Wednesday CMS that uses PHP, MySQL, and Apache',
+    description: 'Developing a Wednesday CMS, based on PHP, and MySQL',
     date: '2021 / Aug-2021',
   },
   {
     company: 'Infinity One Co., Ltd.',
     position: 'React Developer',
-    description: 'I\'m Front-end and Interactive web developer, built with NextJS',
+    description: "I'm a NextJS front-end and interactive web developer.",
     date: '2021 / Currently working',
   },
 ]
