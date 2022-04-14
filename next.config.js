@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // If such a type existed...
 const path = require('path')
-// require("dotenv").config();
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
 const plugins = require('next-compose-plugins')
@@ -102,42 +101,4 @@ if (process.env.EXPORT !== 'true') {
   }
 }
 
-module.exports = plugins(
-  [
-    withBundleAnalyzer,
-    [
-      withPWA,
-      [
-        withOffline,
-        {
-          workboxOpts: {
-            swDest: process.env.NEXT_EXPORT
-              ? 'service-worker.js'
-              : 'static/service-worker.js',
-            runtimeCaching: [
-              {
-                urlPattern: /^https?.*/,
-                handler: 'NetworkFirst',
-                options: {
-                  cacheName: 'offlineCache',
-                  expiration: {
-                    maxEntries: 200,
-                  },
-                },
-              },
-            ],
-          },
-          async rewrites() {
-            return [
-              {
-                source: '/service-worker.js',
-                destination: '/_next/static/service-worker.js',
-              },
-            ]
-          },
-        },
-      ],
-    ],
-  ],
-  nextConfig
-)
+module.exports = plugins([withBundleAnalyzer, [withPWA]], nextConfig)
