@@ -6,7 +6,7 @@ type S = string
 const titleDefault: S = 'TheIceJI - Jirayu Ninlapun Official Website'
 const url: S = 'https://TheIceJI.com'
 const descriptionDefault: S =
-  'I\'m Jirayu Ninlapun, and I\'m a Cinematic Art student at Bangkok University. I\'ve worked as a Web Developer for three years and am an expert in Front-end and Web-animation.'
+  "I'm Jirayu Ninlapun, and I'm a Cinematic Art student at Bangkok University. I've worked as a Web Developer for three years and am an expert in Front-end and Web-animation."
 const author: S = 'Jirayu Ninlapun'
 const coverImgDefault: S = '/cover.jpg'
 
@@ -33,30 +33,38 @@ const Header = ({
         <meta name='robots' content='index,follow' />
         <meta name='distribution' content='web' />
         <meta name='og:title' content={title} />
-        <meta name='og:type' content='site' />
+        <meta name='og:type' content='website' />
         <meta name='og:url' content={url} />
         <meta name='og:image' content={coverImg} />
         <meta name='og:site_name' content={title} />
         <meta name='og:description' content={description} />
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:url' content={url} />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={description} />
+        <meta name='twitter:image' content={coverImg} />
+        <meta name='twitter:creator' content='@theiceji' />
+        {/* PWA */}
+        <meta name='application-name' content='TheIceJi' />
+        <meta name='apple-mobile-web-app-capable' content='yes' />
+        <meta name='apple-mobile-web-app-status-bar-style' content='default' />
+        <meta name='apple-mobile-web-app-title' content='TheIceJi' />
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='msapplication-TileColor' content='#FFC900' />
+        <meta name='msapplication-tap-highlight' content='no' />
+        <meta name='theme-color' content='#1A1A1A' />
         <link rel='icon' href='/logo_white.svg' />
         <link rel='apple-touch-icon' href='/logo_white.svg' />
-        <link rel='apple-touch-icon' sizes='16x16' href='/logo_white.svg' />
-        <link rel='apple-touch-icon' sizes='32x32' href='/logo_white.svg' />
-        <link rel='apple-touch-icon' sizes='180x180' href='/logo_white.svg' />
+        <link rel='apple-touch-startup-image' href='/logo_white.svg' />
         <link rel='manifest' href='/manifest.json' />
         <link rel='mask-icon' color='#000000' href='/logo_white.svg' />
-        <link rel='apple-touch-startup-image' href='/logo_white.svg' />
-        {/* Meta Tags for HTML pages on Mobile */}
-        <meta name='format-detection' content='telephone=yes' />
+        <link rel='shortcut icon' href='/logo_white.svg' />
         <meta name='HandheldFriendly' content='true' />
         <meta
           name='viewport'
-          content='width=device-width, minimum-scale=1, initial-scale=1.0'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
         />
-        <meta name='theme-color' content='#000' />
-        <link rel='shortcut icon' href='/logo_white.svg' />
-        <meta name='twitter:card' content='summary' />
-        <meta name='twitter:site' content='@ice14798' />
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link

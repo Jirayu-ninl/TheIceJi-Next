@@ -112,8 +112,8 @@ module.exports = plugins(
         {
           workboxOpts: {
             swDest: process.env.NEXT_EXPORT
-              ? 'service-worker.js'
-              : 'static/service-worker.js',
+              ? 'sw.js'
+              : 'static/sw.js',
             runtimeCaching: [
               {
                 urlPattern: /^https?.*/,
@@ -126,6 +126,14 @@ module.exports = plugins(
                 },
               },
             ],
+          },
+          async rewrites() {
+            return [
+              {
+                source: '/sw.js',
+                destination: '/_next/static/sw.js',
+              },
+            ]
           },
         },
       ],
