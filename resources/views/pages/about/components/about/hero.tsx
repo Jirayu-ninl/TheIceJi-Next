@@ -5,12 +5,12 @@ import Header from './components/header'
 
 export default function Hero() {
   return (
-    <div className='relative flex items-center w-full h-full'>
+    <div className='flex relative items-center w-full h-full'>
       <motion.div
         initial={{ visibility: 'hidden', y: 50, opacity: 0 }}
         animate={{ visibility: 'visible', y: 0, opacity: 1 }}
         transition={{ delay: 1 }}
-        className='absolute flex items-start justify-center w-3/5 -mb-16 md:-mb-0 right-16 md:right-32 xxl:right-6 xxl:justify-end md:items-center xxl:w-full h-2/5 xxl:h-full'
+        className='flex absolute right-16 justify-center items-start -mb-16 w-3/5 h-2/5 md:right-32 md:items-center md:-mb-0 xxl:right-6 xxl:justify-end xxl:w-full xxl:h-full'
       >
         <Image src={ImgHeader} width={1160} height={712} alt='IceJI Photo' />
       </motion.div>

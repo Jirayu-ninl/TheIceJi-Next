@@ -16,22 +16,22 @@ export default function Facts({ animConf }) {
 
   return (
     <div className='relative w-full h-screen'>
-      <div className='absolute right-0 flex justify-end xxl:justify-center pr-12 xxl:px-0 items-center h-full'>
+      <div className='flex absolute right-0 justify-end items-center pr-12 h-full xxl:justify-center xxl:px-0'>
         <motion.div
           variants={newParent(0.7)}
           initial='hidden'
           animate='show'
-          className='relative flex flex-col items-end h-3/5 md:h-3/4 w-3/5 xxl:w-full'
+          className='flex relative flex-col items-end w-3/5 h-3/5 md:h-3/4 xxl:w-full'
         >
           <motion.div
             variants={children}
-            className='relative overflow-hidden right-20 md:right-40 xxl:right-32 rounded-xl'
+            className='overflow-hidden relative right-20 rounded-xl md:right-40 xxl:right-32'
           >
             <Image src={ImgFacts1} width={767} height={450} alt='IceJI Photo' />
           </motion.div>
           <motion.div
             variants={children}
-            className='-mt-8 sm:-mt-20 md:-mt-12 xxl:-mt-24 overflow-hidden rounded-xl'
+            className='overflow-hidden -mt-8 rounded-xl sm:-mt-20 md:-mt-12 xxl:-mt-24'
           >
             <Image src={ImgFacts2} width={447} height={450} alt='IceJI Photo' />
           </motion.div>
@@ -59,7 +59,7 @@ export default function Facts({ animConf }) {
             <p>I</p>
             <h6>CAN'T STOP</h6>
             <p>developing and amplifying </p>
-            <h5>my skill.</h5>
+            <h5>MY SKILLS.</h5>
           </motion.div>
           <motion.div variants={children}>
             <p>I would like to</p>

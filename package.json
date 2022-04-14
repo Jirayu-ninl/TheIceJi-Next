@@ -23,7 +23,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "NODE_ENV=production node server.js",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze-b": "cross-env BUNDLE_ANALYZE=both next build"
@@ -66,6 +65,7 @@
     "mongoose": "^6.2.10",
     "next": "^12.1.4",
     "next-auth": "^4.3.1",
+    "next-pwa": "^5.5.0",
     "next-share": "^0.13.0",
     "nprogress": "^0.2.0",
     "postprocessing": "^6.26.3",

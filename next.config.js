@@ -2,6 +2,8 @@
 // If such a type existed...
 const path = require('path')
 // require("dotenv").config();
+const withPWA = require('next-pwa')
+const runtimeCaching = require('next-pwa/cache')
 const plugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -82,8 +84,13 @@ const nextConfig = {
       'media.graphassets.com',
       'avatars.githubusercontent.com',
       'platform-lookaside.fbsbx.com',
-      'lh3.googleusercontent.com'
+      'lh3.googleusercontent.com',
     ],
+  },
+  pwa: {
+    disable: process.env.NODE_ENV !== 'production',
+    dest: 'public',
+    runtimeCaching,
   },
 }
 
@@ -97,37 +104,32 @@ if (process.env.EXPORT !== 'true') {
 
 module.exports = plugins(
   [
+    withBundleAnalyzer,
     [
-      withOffline,
-      {
-        workboxOpts: {
-          swDest: process.env.NEXT_EXPORT
-            ? 'service-worker.js'
-            : 'static/service-worker.js',
-          runtimeCaching: [
-            {
-              urlPattern: /^https?.*/,
-              handler: 'NetworkFirst',
-              options: {
-                cacheName: 'offlineCache',
-                expiration: {
-                  maxEntries: 200,
+      withPWA,
+      [
+        withOffline,
+        {
+          workboxOpts: {
+            swDest: process.env.NEXT_EXPORT
+              ? 'service-worker.js'
+              : 'static/service-worker.js',
+            runtimeCaching: [
+              {
+                urlPattern: /^https?.*/,
+                handler: 'NetworkFirst',
+                options: {
+                  cacheName: 'offlineCache',
+                  expiration: {
+                    maxEntries: 200,
+                  },
                 },
               },
-            },
-          ],
+            ],
+          },
         },
-        async rewrites() {
-          return [
-            {
-              source: '/service-worker.js',
-              destination: '/_next/static/service-worker.js',
-            },
-          ]
-        },
-      },
+      ],
     ],
-    withBundleAnalyzer,
   ],
   nextConfig
 )
