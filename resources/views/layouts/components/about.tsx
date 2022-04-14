@@ -44,7 +44,7 @@ export default function about({
                     <br />
                     DyedIn UI 1.0 | IJN App 3.0
                     <br />
-                    React 18.0 | NextJs 12.1.1
+                    React 18.0 | NextJs 12.1.5
                     <br />
                     Copyright&#169;TheIceJI.com <br />
                     All rights reserved

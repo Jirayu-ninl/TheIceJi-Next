@@ -7,8 +7,8 @@ const config: {
 } = {}
 
 config.NAME = 'TheIceJI'
-config.VERSION = '2022.04.1301'
-config.UPDATE_DATE = 'Apr 13, 2022'
+config.VERSION = '2022.04.1501'
+config.UPDATE_DATE = 'Apr 15, 2022'
 config.GOOGLE_ANALYTICS = 'UA-102194632-3'
 config.GOOGLE_TAG_MANAGER = 'GTM-KWRQQVP'
 
