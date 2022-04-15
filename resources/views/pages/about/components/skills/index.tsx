@@ -27,14 +27,14 @@ export const Header = ({ MenuSection, setMenuSection }) => {
       >
         <motion.h1
           variants={children}
-          className='text-3xl font-semibold text-primary-0 sm:text-4xl lg:text-5xl xl:text-6xl xxl:text-7xl'
+          className='text-3xl font-semibold text-primary-0 sm:text-4xl lg:text-5xl xxl:text-7xl'
         >
           Hello, I'm <br />
           Jirayu Ninlapun
         </motion.h1>
         <motion.p
           variants={children}
-          className='mt-6 text-1xs font-light md:text-xs lg:text-base'
+          className='mt-6 text-1xs font-light md:text-xs lg:text-base xl:mt-2 xxl:mt-6'
         >
           I work as an Interactive Web Developer and Designer.
           <br />
