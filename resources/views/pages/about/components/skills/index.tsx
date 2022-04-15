@@ -104,7 +104,6 @@ export const SkillSection = ({ MenuSection, data }) => {
           variants={parent(0.2)}
           initial='hidden'
           animate='show'
-          exit='ext'
           key='AboutSkill_01'
         >
           {data.Projects.map((v: any, i: number) => (
@@ -125,7 +124,6 @@ export const SkillSection = ({ MenuSection, data }) => {
           variants={parent(0.2)}
           initial='hidden'
           animate='show'
-          exit='ext'
           key='AboutSkill_02'
         >
           {data.DevSkills.map((v: any, i: number) => (
@@ -145,7 +143,6 @@ export const SkillSection = ({ MenuSection, data }) => {
           variants={parent(0.2)}
           initial='hidden'
           animate='show'
-          exit='ext'
           key='AboutSkill_03'
         >
           {data.Expertises.map((v: any, i: number) => (
@@ -165,7 +162,6 @@ export const SkillSection = ({ MenuSection, data }) => {
           variants={parent(0.2)}
           initial='hidden'
           animate='show'
-          exit='ext'
           key='AboutSkill_04'
         >
           {data.Certificates.map((v: any, i: number) => (
@@ -184,7 +180,6 @@ export const SkillSection = ({ MenuSection, data }) => {
           variants={parent(0.2)}
           initial='hidden'
           animate='show'
-          exit='ext'
           key='AboutSkill_05'
         >
           {data.Teams.map((v: any, i: number) => (
@@ -203,7 +198,6 @@ export const SkillSection = ({ MenuSection, data }) => {
           variants={parent(0.2)}
           initial='hidden'
           animate='show'
-          exit='ext'
           key='AboutSkill_06'
         >
           {data.Works.map((v: any, i: number) => (

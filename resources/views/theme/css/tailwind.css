@@ -29,15 +29,15 @@
 }
 
 .AnimOpacity-40 {
-  @apply xl:opacity-40 xl:hover:opacity-100;
+  @apply opacity-40 hover:opacity-100;
 }
 
 .AnimOpacity-60 {
-  @apply xl:opacity-60 xl:hover:opacity-100;
+  @apply opacity-60 hover:opacity-100;
 }
 
 .AnimOpacity-80 {
-  @apply xl:opacity-80 xl:hover:opacity-100;
+  @apply opacity-80 hover:opacity-100;
 }
 
 .AnimTranslate-10 {
