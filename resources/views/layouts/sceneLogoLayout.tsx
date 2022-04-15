@@ -1,6 +1,7 @@
 import { Loader } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { LayoutLogo as Scene } from 'views/assets/three/scenes'
+import { InnerWidth } from '@libs/hooks/v2/useWindowSize'
 
 export default function SceneLayout({ children }) {
   return (
@@ -14,13 +15,17 @@ export default function SceneLayout({ children }) {
 }
 
 const Home_3DScene = () => {
+  const Width = InnerWidth(-1)
+  const IsMobile = Width <= 1200
+
   return (
     <div className='overflow-hidden absolute w-screen h-screen'>
       <Canvas
+        dpr={IsMobile ? [0.5, 0.5] : [1, 1]}
         gl={{
-          powerPreference: 'high-performance',
+          powerPreference: IsMobile ? 'low-power' : 'high-performance',
           alpha: true,
-          antialias: true,
+          antialias: !IsMobile,
           stencil: false,
           depth: false,
         }}
