@@ -4,6 +4,7 @@ const path = require('path')
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
 const plugins = require('next-compose-plugins')
+const { withSentryConfig } = require('@sentry/nextjs')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -92,6 +93,10 @@ const nextConfig = {
   },
 }
 
+const sentryWebpackPluginOptions = {
+  silent: true,
+}
+
 // manage i18n
 if (process.env.EXPORT !== 'true') {
   nextConfig.i18n = {
@@ -100,4 +105,7 @@ if (process.env.EXPORT !== 'true') {
   }
 }
 
-module.exports = plugins([withBundleAnalyzer, [withPWA]], nextConfig)
+module.exports = plugins(
+  [[withSentryConfig, sentryWebpackPluginOptions], withBundleAnalyzer, withPWA],
+  nextConfig
+)

@@ -42,6 +42,7 @@
     "@react-three/fiber": "^8.0.11",
     "@react-three/flex": "^0.7.0",
     "@react-three/postprocessing": "^2.3.2",
+    "@sentry/nextjs": "^6.19.6",
     "@tailwindcss/typography": "^0.5.2",
     "@use-gesture/react": "^10.2.11",
     "axios": "^0.26.1",
