@@ -29,7 +29,15 @@
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze-b": "cross-env BUNDLE_ANALYZE=both next build",
-    "post": "next-sitemap --config sitemap.config.js"
+    "post": "next-sitemap --config sitemap.config.js",
+    "clean": "rimraf .next out",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint",
+      "pre-push": "yarn run test"
+    }
   },
   "dependencies": {
     "@emotion/css": "^11.9.0",
@@ -112,12 +120,14 @@
     "file-loader": "^6.2.0",
     "glslify": "^7.1.1",
     "glslify-loader": "^2.0.0",
+    "husky": "^7.0.4",
     "next-compose-plugins": "^2.2.1",
     "next-sitemap": "^2.5.20",
     "postcss": "^8.4.12",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.8",
     "raw-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
