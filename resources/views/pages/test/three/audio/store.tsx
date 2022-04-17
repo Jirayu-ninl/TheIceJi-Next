@@ -10,7 +10,7 @@ async function createAudio(url, { threshold, expire } = {}) {
   const data = new Uint8Array(analyser.frequencyBinCount)
   const source = context.createBufferSource()
   source.buffer = await new Promise((res) =>
-    context.decodeAudioData(buffer, res)
+    context.decodeAudioData(buffer, res),
   )
   source.loop = true
   const gainNode = context.createGain()

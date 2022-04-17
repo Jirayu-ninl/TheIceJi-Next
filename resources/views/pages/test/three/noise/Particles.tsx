@@ -19,16 +19,16 @@ export function Particles({
   // Set up FBO
   const [scene] = useState(() => new THREE.Scene())
   const [camera] = useState(
-    () => new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1)
+    () => new THREE.OrthographicCamera(-1, 1, 1, -1, 1 / Math.pow(2, 53), 1),
   )
   const [positions] = useState(
     () =>
       new Float32Array([
         -1, -1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0,
-      ])
+      ]),
   )
   const [uvs] = useState(
-    () => new Float32Array([0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0])
+    () => new Float32Array([0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0]),
   )
   const target = useFBO(size, size, {
     minFilter: THREE.NearestFilter,
@@ -58,23 +58,23 @@ export function Particles({
     renderRef.current.uniforms.uFocus.value = THREE.MathUtils.lerp(
       renderRef.current.uniforms.uFocus.value,
       focus,
-      0.1
+      0.1,
     )
     renderRef.current.uniforms.uFov.value = THREE.MathUtils.lerp(
       renderRef.current.uniforms.uFov.value,
       fov,
-      0.1
+      0.1,
     )
     renderRef.current.uniforms.uBlur.value = THREE.MathUtils.lerp(
       renderRef.current.uniforms.uBlur.value,
       (5.6 - aperture) * 9,
-      0.1
+      0.1,
     )
     simRef.current.uniforms.uTime.value = state.clock.elapsedTime * speed
     simRef.current.uniforms.uCurlFreq.value = THREE.MathUtils.lerp(
       simRef.current.uniforms.uCurlFreq.value,
       curl,
-      0.1
+      0.1,
     )
   })
   return (
@@ -98,7 +98,7 @@ export function Particles({
             />
           </bufferGeometry>
         </mesh>,
-        scene
+        scene,
       )}
       {/* The result of which is forwarded into a pointcloud via data-texture */}
       <points {...props}>

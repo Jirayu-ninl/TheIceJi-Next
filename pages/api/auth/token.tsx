@@ -22,7 +22,7 @@ const App = async (req: NextApiRequest, res: NextApiResponse) => {
               sameSite: 'lax',
               path: '/',
               maxAge: 60, // 1 min
-            })
+            }),
           )
           setRes.success({
             msg: 'Authorized',

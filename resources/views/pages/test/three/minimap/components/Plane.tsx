@@ -16,12 +16,12 @@ export default forwardRef(
       material.current.scale = THREE.MathUtils.lerp(
         material.current.scale,
         offsetFactor - top.current / ((pages - 1) * viewportWidth),
-        0.1
+        0.1,
       )
       material.current.shift = THREE.MathUtils.lerp(
         material.current.shift,
         -(top.current - last) / shift,
-        0.1
+        0.1,
       )
       last = top.current
     })
@@ -38,5 +38,5 @@ export default forwardRef(
         />
       </mesh>
     )
-  }
+  },
 )

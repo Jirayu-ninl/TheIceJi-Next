@@ -18,12 +18,12 @@ export default function Model(props) {
     group.current.position.x = THREE.MathUtils.lerp(
       group.current.position.x,
       state.mouse[0] / 2,
-      0.05
+      0.05,
     )
     group.current.position.z = THREE.MathUtils.lerp(
       group.current.position.z,
       state.mouse[1] / 4,
-      0.03
+      0.03,
     )
   })
   return (

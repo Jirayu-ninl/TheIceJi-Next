@@ -19,8 +19,9 @@
     "plugin:react/recommended",
     "next",
     "next/core-web-vitals",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -36,6 +37,8 @@
     "@typescript-eslint/ban-ts-ignore": "off",
     "react/no-unescaped-entities": "off",
     "@next/next/no-page-custom-font": "off",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "warn",
     "prettier/prettier": [
       "warn",
       {
@@ -43,8 +46,6 @@
         "endOfLine": "auto",
         "singleQuote": true
       }
-    ],
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "warn"
+    ]
   }
 }

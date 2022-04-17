@@ -21,7 +21,7 @@ export function Minimap() {
     ref.current.children.forEach((child, index) => {
       const y = scroll.curve(
         index / projects.length - 1.5 / projects.length,
-        4 / projects.length
+        4 / projects.length,
       )
       child.scale.y = damp(child.scale.y, 0.1 + y / 6, 8, delta)
     })

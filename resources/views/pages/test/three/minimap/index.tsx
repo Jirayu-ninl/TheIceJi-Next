@@ -22,7 +22,7 @@ function HeadsUpDisplay({ children }) {
   const { gl, camera } = useThree()
   useFrame(
     () => ((gl.autoClear = false), gl.clearDepth(), gl.render(scene, camera)),
-    2
+    2,
   )
   return createPortal(children, scene)
 }
@@ -34,7 +34,7 @@ function Marker() {
   const { sectionWidth } = useBlock()
   useEffect(
     () => void (document.body.style.cursor = hovered ? 'grab' : 'auto'),
-    [hovered]
+    [hovered],
   )
   useFrame(({ camera }) => {
     ref.current.rotation.z = THREE.MathUtils.lerp(
@@ -42,18 +42,18 @@ function Marker() {
       (state.top.current / state.zoom / sectionWidth / state.pages) *
         -Math.PI *
         2,
-      0.1
+      0.1,
     )
     const s = THREE.MathUtils.lerp(
       ref.current.scale.x,
       active || hovered ? 2 : 0.75,
-      0.1
+      0.1,
     )
     ref.current.scale.set(s, s, s)
     camera.zoom = THREE.MathUtils.lerp(
       camera.zoom,
       active || hovered ? 40 : state.zoom,
-      0.1
+      0.1,
     )
     camera.updateProjectionMatrix()
   })
@@ -63,7 +63,7 @@ function Marker() {
     ),
     {
       from: () => [(state.ref.scrollLeft * 0.5) / state.pages],
-    }
+    },
   )
   return (
     <group ref={ref} position={[0, 0, 2]}>
@@ -100,7 +100,7 @@ function Dot() {
   const { offset, sectionWidth } = useBlock()
   useEffect(
     () => void (document.body.style.cursor = hovered ? 'pointer' : 'auto'),
-    [hovered]
+    [hovered],
   )
   return (
     <Rect
@@ -181,7 +181,7 @@ export function App() {
   const onScroll = (e) => (state.top.current = e.target.scrollLeft)
   useEffect(
     () => void onScroll({ target: (state.ref = scrollArea.current) }),
-    []
+    [],
   )
 
   const CSS = css`

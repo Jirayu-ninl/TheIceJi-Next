@@ -15,7 +15,7 @@ const LoginAPI = (req, res) => {
         username,
         admin: username === 'admin' && password === 'admin',
       },
-      process.env.NEXTAUTH_SECRET
+      process.env.NEXTAUTH_SECRET,
     ),
   })
 }

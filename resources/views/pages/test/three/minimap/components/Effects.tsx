@@ -32,24 +32,24 @@ export default function Effects({ children }) {
   let last = state.top.current
   useEffect(
     () => void composer.current.setSize(size.width, size.height),
-    [size]
+    [size],
   )
   useFrame(() => {
     const { top } = state
     effect.current.factor = THREE.MathUtils.lerp(
       effect.current.factor,
       (top.current - last) / -30,
-      0.1
+      0.1,
     )
     bloom.current.strength = THREE.MathUtils.lerp(
       bloom.current.strength,
       Math.abs((top.current - last) / 200),
-      0.1
+      0.1,
     )
     water.current.factor = THREE.MathUtils.lerp(
       water.current.factor,
       Math.abs((top.current - last) / 30),
-      0.1
+      0.1,
     )
     last = top.current
     gl.autoClear = true
@@ -69,6 +69,6 @@ export default function Effects({ children }) {
       </effectComposer>
       {children}
     </>,
-    scene
+    scene,
   )
 }

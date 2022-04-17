@@ -18,16 +18,16 @@ function Triangle({ color, ...props }) {
   const [r] = useState(() => Math.random() * 10000)
   useFrame(
     (_) =>
-      (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10)
+      (ref.current.position.y = -1.75 + Math.sin(_.clock.elapsedTime + r) / 10),
   )
   const { paths: [path] } = useLoader(SVGLoader, '/mock/triangle.svg') // prettier-ignore
   const geom = useMemo(
     () =>
       SVGLoader.pointsToStroke(
         path.subPaths[0].getPoints(),
-        path.userData.style
+        path.userData.style,
       ),
-    []
+    [],
   )
   return (
     <group ref={ref}>
@@ -48,7 +48,7 @@ function Rig({ children }) {
     ref.current.rotation.y = THREE.MathUtils.lerp(
       ref.current.rotation.y,
       (-mouse.x * Math.PI) / 20,
-      0.1
+      0.1,
     )
   })
   return <group ref={ref}>{children}</group>

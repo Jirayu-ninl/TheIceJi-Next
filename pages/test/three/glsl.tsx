@@ -42,7 +42,7 @@ const WaveShaderMaterial = shaderMaterial(
         gl_FragColor = vec4(texture,1.0);
         // gl_FragColor = vec4(sin(vUv.y + uTime), vUv.y, 1.0, 1.0);
     }
-  `
+  `,
 )
 
 const Wave = () => {

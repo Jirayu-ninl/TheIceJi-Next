@@ -64,10 +64,10 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
               toast.warn(res.data.msg)
             }
           })
-          .catch(function (error) {
+          .catch((error) => {
             if (error.response) {
               toast.error(
-                `Error ${error.response.status}: ${error.response.data.error}`
+                `Error ${error.response.status}: ${error.response.data.error}`,
               )
             } else if (error.request) {
               toast.error(`Error: ${error.request.toString()}`)

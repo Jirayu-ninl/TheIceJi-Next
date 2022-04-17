@@ -7,7 +7,7 @@ const ScrollProgress = ({ pageHeight }) => {
   const X = useTransform(
     scrollY,
     [0, pageHeight - windowHeight],
-    ['-100%', '0%']
+    ['-100%', '0%'],
   )
 
   return (

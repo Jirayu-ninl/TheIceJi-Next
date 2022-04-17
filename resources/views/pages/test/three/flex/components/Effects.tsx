@@ -16,7 +16,7 @@ export default function Effects() {
   const { gl, size, camera, scene } = useThree()
   useEffect(
     () => void composer.current.setSize(size.width, size.height),
-    [size]
+    [size],
   )
   let last = state.top
   let index = 0
@@ -28,7 +28,7 @@ export default function Effects() {
     water.current.factor = THREE.MathUtils.lerp(
       water.current.factor,
       normalize / 20,
-      0.1
+      0.1,
     )
     last = top
     index = (index + 1) % 10

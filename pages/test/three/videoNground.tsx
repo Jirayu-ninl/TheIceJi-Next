@@ -15,7 +15,7 @@ function VideoText({ clicked, ...props }) {
       src: '/mock/video/drei.mp4',
       crossOrigin: 'Anonymous',
       loop: true,
-    })
+    }),
   )
   useEffect(() => void (clicked && video.play()), [video, clicked])
   return (
@@ -73,7 +73,7 @@ function Intro({ start, set }) {
     if (start) {
       state.camera.position.lerp(
         vec.set(state.mouse.x * 5, 3 + state.mouse.y * 2, 14),
-        0.05
+        0.05,
       )
       state.camera.lookAt(0, 0, 0)
     }

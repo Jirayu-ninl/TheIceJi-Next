@@ -119,7 +119,7 @@ function Layercard({
     const page = (pageLerp.current = THREE.MathUtils.lerp(
       pageLerp.current,
       state.top / size.height,
-      0.15
+      0.15,
     ))
     if (depth >= 0)
       ref.current.opacity =
@@ -166,7 +166,7 @@ function Content({ onReflow }) {
     const page = (pageLerp.current = THREE.MathUtils.lerp(
       pageLerp.current,
       state.top / size.height,
-      0.15
+      0.15,
     ))
     const y = page * viewport.height
     const sticky = state.threshold * viewport.height
@@ -174,14 +174,14 @@ function Content({ onReflow }) {
       vec.set(
         0,
         page < state.threshold ? y : sticky,
-        page < state.threshold ? 0 : page * 1.25
+        page < state.threshold ? 0 : page * 1.25,
       ),
-      0.15
+      0.15,
     )
   })
   const handleReflow = useCallback(
     (w, h) => onReflow((state.pages = h / viewport.height + 5.5)),
-    [onReflow, viewport.height]
+    [onReflow, viewport.height],
   )
   const sizesRef = useRef([])
   const scale = Math.min(1, viewport.width / 16)
@@ -203,7 +203,7 @@ function Content({ onReflow }) {
               state.threshold = Math.max(
                 4,
                 (4 / (15.8 * 3)) *
-                  sizesRef.current.reduce((acc, e) => acc + e, 0)
+                  sizesRef.current.reduce((acc, e) => acc + e, 0),
               )
             }}
             {...props}

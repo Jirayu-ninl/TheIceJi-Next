@@ -16,7 +16,7 @@ function Instances({ material }) {
       [14, -2, -23],
       [8, 10, -20],
     ],
-    []
+    [],
   )
   useFrame(() => {
     sphereRefs.forEach((el) => {

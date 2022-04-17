@@ -63,7 +63,7 @@ const Auth = async (req: NextApiRequest, res: NextApiResponse) => {
                 const thisUser = await User.findOne({ email })
                 const correctPassword = await bcrypt.compare(
                   password,
-                  thisUser.password
+                  thisUser.password,
                 )
                 if (thisUser && correctPassword) {
                   return setRes.accepted({

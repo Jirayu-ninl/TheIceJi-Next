@@ -24,12 +24,12 @@ function MainSphere({ material }) {
     main.current.rotation.y = THREE.MathUtils.lerp(
       main.current.rotation.y,
       mouse.x * Math.PI,
-      0.1
+      0.1,
     )
     main.current.rotation.x = THREE.MathUtils.lerp(
       main.current.rotation.x,
       mouse.y * Math.PI,
-      0.1
+      0.1,
     )
   })
   return (
@@ -95,7 +95,7 @@ function Scene({ props }) {
   const bumpMap = useLoader(THREE.TextureLoader, '/three/blob/bump.jpg')
   const envMap = useCubeTexture(
     ['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'],
-    { path: '/three/blob/cube/' }
+    { path: '/three/blob/cube/' },
   )
   // We use `useResource` to be able to delay rendering the spheres until the material is ready
   const [matRef, material] = useResource()

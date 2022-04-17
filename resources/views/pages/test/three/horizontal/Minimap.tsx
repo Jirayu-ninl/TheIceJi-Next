@@ -24,7 +24,7 @@ export function Minimap() {
       // **   make it a sine, so the value goes from 0 to 1 to 0.
       const y = scroll.curve(
         index / urls.length - 1.5 / urls.length,
-        4 / urls.length
+        4 / urls.length,
       )
       child.scale.y = damp(child.scale.y, 0.1 + y / 6, 8, delta)
     })

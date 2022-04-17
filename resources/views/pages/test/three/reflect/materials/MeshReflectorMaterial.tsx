@@ -37,7 +37,7 @@ export class MeshReflectorMaterial extends MeshStandardMaterial {
       '#include <project_vertex>',
       `#include <project_vertex>
         my_vUv = textureMatrix * vec4( position, 1.0 );
-        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );`
+        gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );`,
     )
     shader.fragmentShader = `
         uniform sampler2D tDiffuse;
@@ -79,7 +79,7 @@ export class MeshReflectorMaterial extends MeshStandardMaterial {
       }
       merge += mix(merge, base, depthFactor);
       diffuseColor.rgb = diffuseColor.rgb * ((1.0 - min(1.0, mirror)) + merge.rgb * mixStrength);           
-      diffuseColor = sRGBToLinear(diffuseColor);`
+      diffuseColor = sRGBToLinear(diffuseColor);`,
     )
   }
   get tDiffuse() {

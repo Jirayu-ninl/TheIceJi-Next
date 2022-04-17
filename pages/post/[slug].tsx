@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `,
     {
       slug: slug,
-    }
+    },
   )
 
   return {

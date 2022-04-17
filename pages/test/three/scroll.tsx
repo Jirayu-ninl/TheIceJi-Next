@@ -79,7 +79,7 @@ function Minimap() {
   const fbo = useFBO(512, 512, { encoding: THREE.sRGBEncoding })
   const camera = useRef()
   const [override] = useState(
-    () => new THREE.MeshBasicMaterial({ color: '#777' })
+    () => new THREE.MeshBasicMaterial({ color: '#777' }),
   )
   useFrame((state) => {
     state.gl.setRenderTarget(fbo)

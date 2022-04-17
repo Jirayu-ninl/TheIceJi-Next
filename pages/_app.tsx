@@ -87,7 +87,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           <Toast />
         </MainLayout>
       </SessionProvider>
-    </>
+    </>,
   )
 }
 

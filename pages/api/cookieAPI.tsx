@@ -10,7 +10,7 @@ const CookieAPI = (req, res) => {
       //   expires: new Date(0),
       sameSite: 'strict',
       path: '/',
-    })
+    }),
   )
   res.statusCode = 200
   res.json({ success: true })

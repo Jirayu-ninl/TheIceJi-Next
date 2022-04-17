@@ -30,7 +30,7 @@ const UseSmoothScroll = ({
 
   useLayoutEffect(() => {
     const resizeObserver = new ResizeObserver((entries) =>
-      resizePageHeight(entries)
+      resizePageHeight(entries),
     )
     scrollRef && resizeObserver.observe(scrollRef.current)
     return () => resizeObserver.disconnect()

@@ -34,7 +34,7 @@ class SimulationMaterial extends THREE.ShaderMaterial {
             512,
             512,
             THREE.RGBFormat,
-            THREE.FloatType
+            THREE.FloatType,
           ),
         },
         uTime: { value: 0 },

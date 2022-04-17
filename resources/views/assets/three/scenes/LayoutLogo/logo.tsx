@@ -13,12 +13,12 @@ function Logo({ material }) {
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
       mouse.y * Math.PI * -0.1,
-      0.02
+      0.02,
     )
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
       mouse.x * Math.PI * 0.3 + 0.5,
-      0.02
+      0.02,
     )
   })
 

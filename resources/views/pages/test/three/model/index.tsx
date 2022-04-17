@@ -43,8 +43,8 @@ function Model(props) {
         new FlakesTexture(),
         THREE.UVMapping,
         THREE.RepeatWrapping,
-        THREE.RepeatWrapping
-      )
+        THREE.RepeatWrapping,
+      ),
   )
   const { nodes, materials } = useGLTF('/mock/models/wraith.glb')
   useGLTF.preload('/wraith.glb')

@@ -92,7 +92,7 @@ export function Reflector({
       0.0,
       0.0,
       0.0,
-      1.0
+      1.0,
     )
     textureMatrix.multiply(virtualCamera.projectionMatrix)
     textureMatrix.multiply(virtualCamera.matrixWorldInverse)
@@ -105,7 +105,7 @@ export function Reflector({
       reflectorPlane.normal.x,
       reflectorPlane.normal.y,
       reflectorPlane.normal.z,
-      reflectorPlane.constant
+      reflectorPlane.constant,
     )
     const projectionMatrix = virtualCamera.projectionMatrix
     q.x =

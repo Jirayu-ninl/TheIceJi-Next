@@ -10,7 +10,7 @@ function Scene() {
   const bumpMap = useLoader(THREE.TextureLoader, '/three/blob/alphaMap.jpg')
   const envMap = useCubeTexture(
     ['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'],
-    { path: '/three/blob/cube/' }
+    { path: '/three/blob/cube/' },
   )
 
   const [matRef, material] = useResource()

@@ -19,13 +19,13 @@ function Image(props) {
       group.current.position.z,
       Math.max(0, data.delta * 50),
       4,
-      delta
+      delta,
     )
     ref.current.material.grayscale = THREE.MathUtils.damp(
       ref.current.material.grayscale,
       Math.max(0, 1 - data.delta * 1000),
       4,
-      delta
+      delta,
     )
   })
   return (

@@ -30,7 +30,7 @@ export default function IJNlayout({
 
   useEffect(() => {
     _setNotification(
-      typeof _NotificationItems === 'boolean' ? 0 : _NotificationItems.length
+      typeof _NotificationItems === 'boolean' ? 0 : _NotificationItems.length,
     )
     _setCart(typeof _CartItems === 'boolean' ? 0 : _CartItems.length)
   }, [_setNotification, _NotificationItems, _setCart, _CartItems])

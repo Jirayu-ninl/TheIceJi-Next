@@ -15,7 +15,7 @@ function Block({ children, offset, factor, ...props }) {
     ref.current.position.x = THREE.MathUtils.lerp(
       curY,
       (-curTop / state.zoom) * factor,
-      0.1
+      0.1,
     )
   })
   return (

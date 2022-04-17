@@ -25,22 +25,22 @@ function MainSphere({ material, Hover }) {
     main.current.rotation.y = THREE.MathUtils.lerp(
       main.current.rotation.y,
       mouse.x * Math.PI,
-      0.02
+      0.02,
     )
     main.current.rotation.x = THREE.MathUtils.lerp(
       main.current.rotation.x,
       mouse.y * Math.PI,
-      0.02
+      0.02,
     )
     main.current.position.x = THREE.MathUtils.lerp(
       main.current.position.x,
       hovered ? mouse.x / 2 : 0,
-      0.2
+      0.2,
     )
     main.current.position.y = THREE.MathUtils.lerp(
       main.current.position.y,
       Math.sin(clock.elapsedTime / 1.5) / 6 + (hovered ? mouse.y / 2 : 0),
-      0.2
+      0.2,
     )
   })
   return (
@@ -104,7 +104,7 @@ function Scene({ Hover }) {
   const bumpMap = useLoader(THREE.TextureLoader, '/three/blob/bump.jpg')
   const envMap = useCubeTexture(
     ['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'],
-    { path: '/three/blob/cube/' }
+    { path: '/three/blob/cube/' },
   )
   // We use `useResource` to be able to delay rendering the spheres until the material is ready
   const [matRef, material] = useResource(false)

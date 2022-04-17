@@ -8,7 +8,7 @@ const Scroll = () => {
   const Color = useTransform(
     scrollY,
     [0, 4000],
-    ['rgb(0,0,0)', 'rgb(255,255,255)']
+    ['rgb(0,0,0)', 'rgb(255,255,255)'],
   )
 
   const X = useTransform(scrollY, [0, 4000], [0, 500])

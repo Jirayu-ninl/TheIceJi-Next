@@ -49,7 +49,7 @@ function Bust() {
   // Play all actions (the fragments flying off)
   useEffect(
     () => Object.keys(actions).forEach((key) => actions[key].play()),
-    [actions]
+    [actions],
   )
   // Control the exploding statue and the inner materials color
   useFrame(() => {
@@ -59,8 +59,8 @@ function Bust() {
         (time.current = THREE.MathUtils.lerp(
           time.current,
           track.kicks * 1.25,
-          track.kicks === 0 ? 0.25 : 0.15
-        ))
+          track.kicks === 0 ? 0.25 : 0.15,
+        )),
       )
     materials.inner.color
       .copy(red)
@@ -84,7 +84,7 @@ function Explosion({ beat, ...props }) {
   const sphere = useRef()
   // The GLTF only contains a point-cloud and baked keyframes for the explosion
   const { scene: originalScene, animations } = useGLTF(
-    '/mock/models/explosion.glb'
+    '/mock/models/explosion.glb',
   )
   const scene = useMemo(() => originalScene.clone(true), [originalScene])
   const { actions, mixer } = useAnimations(animations, sceneRef)
@@ -106,14 +106,14 @@ function Explosion({ beat, ...props }) {
       vec.set(
         state.size * drums.gain,
         state.size * drums.gain,
-        state.size * drums.gain
+        state.size * drums.gain,
       ),
-      0.2
+      0.2,
     )
     sphere.current.children[0].intensity = drums.avg * drums.gain * 10
     // This code transforms the empty GLTF nodes into a single drawcall via instancing
     sceneRef.current.children.forEach((node, i) =>
-      instance.current.setMatrixAt(i, node.matrix)
+      instance.current.setMatrixAt(i, node.matrix),
     )
     instance.current.visible = !!drums.gain
     instance.current.instanceMatrix.needsUpdate = true
@@ -165,8 +165,8 @@ function DancingDot() {
     dot.current.rotation.set(
       Math.sin(_.clock.elapsedTime * 2) / 10 + (drums.avg * drums.gain) / 100,
       _.clock.elapsedTime + (snare.avg * snare.gain) / 100,
-      0
-    )
+      0,
+    ),
   )
   return (
     <group ref={dot}>
