@@ -33,6 +33,10 @@
     "clean": "rimraf .next out",
     "prepare": "husky install"
   },
+  "husky": {
+    "pre-commit": "yarn format",
+    "pre-push": "yarn build"
+  },
   "dependencies": {
     "@emotion/css": "^11.9.0",
     "@emotion/react": "^11.9.0",
