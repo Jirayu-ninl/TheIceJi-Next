@@ -16,7 +16,7 @@ import {
 const UseSmoothScroll = ({
   children,
   physics = { damping: 13, mass: 0.1, stiffness: 55 },
-  Callback
+  Callback,
 }) => {
   // const defaultPhysics = { damping: 15, mass: 0.27, stiffness: 55 }
   const scrollRef = useRef(null)
@@ -50,7 +50,7 @@ const UseSmoothScroll = ({
       <motion.div
         ref={scrollRef}
         style={{ y: spring }}
-        className='overflow-hidden overscroll-y-none fixed top-0 left-0 w-full will-change-transform'
+        className='fixed top-0 left-0 w-full overflow-hidden overscroll-y-none will-change-transform'
       >
         {children}
       </motion.div>
@@ -107,7 +107,7 @@ export function Legacy({ children }) {
   return (
     <div
       ref={refApp}
-      className='overflow-hidden fixed top-0 left-0 w-screen h-screen'
+      className='fixed top-0 left-0 h-screen w-screen overflow-hidden'
     >
       <div ref={refScroll}>{children}</div>
     </div>

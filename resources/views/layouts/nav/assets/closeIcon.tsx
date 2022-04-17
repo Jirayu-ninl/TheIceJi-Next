@@ -6,7 +6,7 @@ export default function close() {
         height='17.678'
         viewBox='0 0 17.678 17.678'
         xmlns='http://www.w3.org/2000/svg'
-        className='fill-inherit Anim AnimScale'
+        className='Anim AnimScale fill-inherit'
       >
         <g transform='translate(-1871.161 -37.661)'>
           <rect

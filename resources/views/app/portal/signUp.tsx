@@ -76,7 +76,7 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
             }
           })
       } catch (error) {
-        toast.error('Can\'t connect to server')
+        toast.error("Can't connect to server")
       }
     } catch (error) {
       toast.error(error.toString())
@@ -84,11 +84,11 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
   }
 
   return (
-    <div className='relative p-8 ml-2 h-full rounded-lg Card-white-20 Border-white-40'>
+    <div className='Card-white-20 Border-white-40 relative ml-2 h-full rounded-lg p-8'>
       <h3 className='text-3xl font-semibold uppercase'>Signup</h3>
-      <form className='flex flex-col pt-6 Form-white' onSubmit={handleSubmit}>
+      <form className='Form-white flex flex-col pt-6' onSubmit={handleSubmit}>
         <input
-          className='rounded-md Border-white-40'
+          className='Border-white-40 rounded-md'
           type='text'
           name='email'
           placeholder='Email'
@@ -96,7 +96,7 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
           onChange={handleChange}
         />
         <input
-          className='mt-2 rounded-md Border-white-40'
+          className='Border-white-40 mt-2 rounded-md'
           type='password'
           name='password'
           placeholder='Password'
@@ -105,7 +105,7 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
         />
 
         <input
-          className='mt-2 rounded-md Border-white-40'
+          className='Border-white-40 mt-2 rounded-md'
           type='password'
           name='confirm_password'
           placeholder='Confirm Password'
@@ -113,13 +113,13 @@ const SignUp = ({ setIsSignIn, csrfToken }) => {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
 
-        <button className='mt-5 Btn-white-40 Anim AnimOpacity-60' type='submit'>
+        <button className='Btn-white-40 Anim AnimOpacity-60 mt-5' type='submit'>
           Submit
         </button>
-        <div className='flex my-3 text-xs'>
+        <div className='my-3 flex text-xs'>
           <p className='mr-1 opacity-60'>Have an Account?</p>
           <p
-            className='font-bold uppercase opacity-80 hover:opacity-100 cursor-pointer Anim'
+            className='Anim cursor-pointer font-bold uppercase opacity-80 hover:opacity-100'
             onClick={() => setIsSignIn(true)}
           >
             SignIn

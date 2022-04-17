@@ -15,20 +15,20 @@ export default function About({ FreeTimeItems }: FreeTimeItemsType) {
   const _setPage = State((state) => state.setPage)
   useEffect(() => {
     switch (Page) {
-    case 0:
-      _setPage('About - Introduction')
-      break
-    case 1:
-      _setPage('About - Facts of me')
-      break
-    case 2:
-      _setPage('About - My hobbies')
-      break
-    case 3:
-      _setPage('About - More')
-      break
-    default:
-      break
+      case 0:
+        _setPage('About - Introduction')
+        break
+      case 1:
+        _setPage('About - Facts of me')
+        break
+      case 2:
+        _setPage('About - My hobbies')
+        break
+      case 3:
+        _setPage('About - More')
+        break
+      default:
+        break
     }
   }, [Page, _setPage])
 
@@ -36,7 +36,7 @@ export default function About({ FreeTimeItems }: FreeTimeItemsType) {
     <>
       {Page === 2 && <FreeTime data={FreeTimeItems} animConf={animConf} />}
       {!(Page === 2) && (
-        <div className='items-start w-screen h-screen px-4 mx-auto overflow-hidden sm:container xxl:w-[1440px] sm:px-0'>
+        <div className='mx-auto h-screen w-screen items-start overflow-hidden px-4 sm:container sm:px-0 xxl:w-[1440px]'>
           {Page === 0 && <Hero />}
           {Page === 1 && <Facts animConf={animConf} />}
           {Page === 3 && <CTA animConf={animConf} />}

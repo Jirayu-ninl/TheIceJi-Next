@@ -1,4 +1,13 @@
-import { Mesh, BufferGeometry, BufferAttribute, Camera, LinearFilter, Scene, WebGLRenderTarget, WebGLRenderer } from 'three'
+import {
+  Mesh,
+  BufferGeometry,
+  BufferAttribute,
+  Camera,
+  LinearFilter,
+  Scene,
+  WebGLRenderTarget,
+  WebGLRenderer,
+} from 'three'
 
 import { ConvolutionMaterial } from './ConvolutionMaterial'
 
@@ -17,7 +26,7 @@ export class BlurPass {
       magFilter: LinearFilter,
       stencilBuffer: false,
       depthBuffer: false,
-      encoding: gl.outputEncoding
+      encoding: gl.outputEncoding,
     })
     this.renderTargetB = this.renderTargetA.clone()
     this.convolutionMaterial = new ConvolutionMaterial()
@@ -39,8 +48,8 @@ export class BlurPass {
     const camera = this.camera
     const renderTargetA = this.renderTargetA
     const renderTargetB = this.renderTargetB
-    let material = this.convolutionMaterial
-    let uniforms = material.uniforms
+    const material = this.convolutionMaterial
+    const uniforms = material.uniforms
     const kernel = material.kernel
     let lastRT = inputBuffer
     let destRT

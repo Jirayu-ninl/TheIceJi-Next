@@ -24,20 +24,20 @@ const Nav = ({ Page, setPage, animConf }) => {
       variants={parent(0.3)}
       initial='hidden'
       animate='show'
-      className='fixed flex flex-col justify-center w-screen md:w-auto md:h-screen bottom-16 md:bottom-0 md:left-4 xxl:left-8'
+      className='fixed bottom-16 flex w-screen flex-col justify-center md:bottom-0 md:left-4 md:h-screen md:w-auto xxl:left-8'
     >
       <div className='flex flex-row items-center justify-center md:flex-col'>
         <motion.div
           variants={children}
           onClick={() => PageHandler('decrease')}
-          className='flex items-center justify-center w-8 h-8 border-2 border-white rounded-full md:w-12 md:h-12 xxl:w-16 xxl:h-16 bg-white/20 backdrop-filter backdrop-blur-md Anim AnimOpacity-40'
+          className='Anim AnimOpacity-40 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-white/20 backdrop-blur-md backdrop-filter md:h-12 md:w-12 xxl:h-16 xxl:w-16'
         >
           <Arrow left />
         </motion.div>
         <motion.div
           variants={children}
           onClick={() => PageHandler('increase')}
-          className='flex items-center justify-center w-8 h-8 ml-6 border-2 border-white rounded-full md:ml-0 md:w-12 md:h-12 xxl:w-16 xxl:h-16 md:mt-3 bg-white/20 backdrop-filter backdrop-blur-md Anim AnimOpacity-40'
+          className='Anim AnimOpacity-40 ml-6 flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-white/20 backdrop-blur-md backdrop-filter md:ml-0 md:mt-3 md:h-12 md:w-12 xxl:h-16 xxl:w-16'
         >
           <Arrow />
         </motion.div>
@@ -45,20 +45,20 @@ const Nav = ({ Page, setPage, animConf }) => {
       <motion.div
         variants={children}
         transition={{ delay: 1 }}
-        className='flex items-center justify-center pt-4 md:pt-0 md:flex-col'
+        className='flex items-center justify-center pt-4 md:flex-col md:pt-0'
       >
-        <div className='hidden h-16 bg-white md:block md:relative md:mx-auto md:my-12 xxl:my-16 md:rotate-0'>
+        <div className='hidden h-16 bg-white md:relative md:mx-auto md:my-12 md:block md:rotate-0 xxl:my-16'>
           <motion.div
             initial={{ height: 16 }}
             exit={{ height: 16 }}
             animate={{ height: 16 * (Page + 1) }}
             transition={transitionL}
-            className='absolute h-4 bg-white w-0.5'
+            className='absolute h-4 w-0.5 bg-white'
           ></motion.div>
-          <div className='absolute h-16 bg-white/20 w-0.5'></div>
+          <div className='absolute h-16 w-0.5 bg-white/20'></div>
         </div>
         <p className='md:rotate-90 md:pr-4'>0{Page + 1}</p>
-        <p className='md:rotate-90 opacity-40'>/ 04</p>
+        <p className='opacity-40 md:rotate-90'>/ 04</p>
       </motion.div>
     </motion.div>
   )

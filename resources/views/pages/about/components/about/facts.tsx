@@ -15,23 +15,23 @@ export default function Facts({ animConf }) {
   }
 
   return (
-    <div className='relative w-full h-screen'>
-      <div className='flex absolute right-0 justify-end items-center pr-12 h-full xxl:justify-center xxl:px-0'>
+    <div className='relative h-screen w-full'>
+      <div className='absolute right-0 flex h-full items-center justify-end pr-12 xxl:justify-center xxl:px-0'>
         <motion.div
           variants={newParent(0.7)}
           initial='hidden'
           animate='show'
-          className='flex relative flex-col items-end w-3/5 h-3/5 md:h-3/4 xxl:w-full'
+          className='relative flex h-3/5 w-3/5 flex-col items-end md:h-3/4 xxl:w-full'
         >
           <motion.div
             variants={children}
-            className='overflow-hidden relative right-20 rounded-xl md:right-40 xxl:right-32'
+            className='relative right-20 overflow-hidden rounded-xl md:right-40 xxl:right-32'
           >
             <Image src={ImgFacts1} width={767} height={450} alt='IceJI Photo' />
           </motion.div>
           <motion.div
             variants={children}
-            className='overflow-hidden -mt-8 rounded-xl sm:-mt-20 md:-mt-12 xxl:-mt-24'
+            className='-mt-8 overflow-hidden rounded-xl sm:-mt-20 md:-mt-12 xxl:-mt-24'
           >
             <Image src={ImgFacts2} width={447} height={450} alt='IceJI Photo' />
           </motion.div>

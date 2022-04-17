@@ -56,7 +56,7 @@ export default function Index({ content, type }) {
           ColorBg={content.color[1]?.codeColor}
         />
         <div className='flex w-screen' style={{ overflowX: 'hidden' }}>
-          <div className='container z-10 px-4 w-screen xxl:w-[1440px]'>
+          <div className='container z-10 w-screen px-4 xxl:w-[1440px]'>
             <ProjectInfo content={Data.Info} />
             <SectionContent
               content={Data.Introduction}

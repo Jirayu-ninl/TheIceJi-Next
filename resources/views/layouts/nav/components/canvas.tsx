@@ -42,16 +42,16 @@ export default function Canvas({
     <>
       <AnimatePresence>
         {toggleMenu && (
-          <div className='overflow-hidden fixed top-4 left-0 z-70 px-5 pb-8 w-screen h-screen'>
+          <div className='fixed top-4 left-0 z-70 h-screen w-screen overflow-hidden px-5 pb-8'>
             <motion.div
               initial={{ y: '-100%' }}
               exit={{ y: '-100%' }}
               animate={{ y: toggleMenu ? 0 : '-100%' }}
               key='Nav_Canvas'
               transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
-              className='overflow-hidden relative h-full bg-black/20 rounded-md shadow-xl backdrop-blur-lg'
+              className='relative h-full overflow-hidden rounded-md bg-black/20 shadow-xl backdrop-blur-lg'
             >
-              <div className='flex absolute justify-center items-center w-full h-full'>
+              <div className='absolute flex h-full w-full items-center justify-center'>
                 <motion.div
                   variants={parent}
                   initial='initial'

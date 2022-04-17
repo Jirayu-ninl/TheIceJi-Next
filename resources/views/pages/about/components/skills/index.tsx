@@ -60,7 +60,7 @@ export const Header = ({ MenuSection, setMenuSection }) => {
                   : { color: '#FFFFFF' }
               }
               transition={transition}
-              className='flex flex-col items-center pb-2 bg-white/10 cursor-pointer md:flex-row md:bg-transparent AnimOpacity-40 Anim'
+              className='AnimOpacity-40 Anim flex cursor-pointer flex-col items-center bg-white/10 pb-2 md:flex-row md:bg-transparent'
               style={MenuSection === i && { opacity: 1 }}
               onClick={() => setMenuSection(i)}
             >
@@ -68,7 +68,7 @@ export const Header = ({ MenuSection, setMenuSection }) => {
                 initial={{ opacity: 0 }}
                 exit={{ opacity: 0 }}
                 animate={{ opacity: MenuSection === i ? 1 : 0 }}
-                className='-mt-1 mb-2 w-3 h-3 bg-primary-0 rounded-md md:my-0 md:mr-3 md:-ml-2 md:w-5'
+                className='-mt-1 mb-2 h-3 w-3 rounded-md bg-primary-0 md:my-0 md:mr-3 md:-ml-2 md:w-5'
               ></motion.div>
               <p className='-mb-px w-4'>{v.number}</p>
               <motion.div
@@ -79,7 +79,7 @@ export const Header = ({ MenuSection, setMenuSection }) => {
                     ? { backgroundColor: Color.primary[0], width: 32 }
                     : { backgroundColor: '#FFFFFF', width: 16 }
                 }
-                className='hidden mx-3 w-6 h-px md:block Anim'
+                className='Anim mx-3 hidden h-px w-6 md:block'
               ></motion.div>
               <p className='text-xs md:text-base'>{v.name}</p>
             </motion.a>

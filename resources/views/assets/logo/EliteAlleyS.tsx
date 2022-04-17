@@ -1,4 +1,4 @@
-export default function EliteAlleyS({ fill = '#FFF' }: {fill: string}) {
+export default function EliteAlleyS({ fill = '#FFF' }: { fill: string }) {
   return (
     <>
       <svg

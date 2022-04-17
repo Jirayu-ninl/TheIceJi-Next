@@ -28,14 +28,44 @@ export default function SocialLinkIcon({
 
 const SocialIconGenerator = (name) => {
   if (name === 'Facebook') {
-    return <FontAwesomeIcon icon={brands('facebook-f')} size="xs" className="h-4 Anim AnimScale AnimOpacity-40" />
+    return (
+      <FontAwesomeIcon
+        icon={brands('facebook-f')}
+        size='xs'
+        className='Anim AnimScale AnimOpacity-40 h-4'
+      />
+    )
   } else if (name === 'Instagram') {
-    return <FontAwesomeIcon icon={brands('instagram')} size="xs" className="h-4 Anim AnimScale AnimOpacity-40" />
+    return (
+      <FontAwesomeIcon
+        icon={brands('instagram')}
+        size='xs'
+        className='Anim AnimScale AnimOpacity-40 h-4'
+      />
+    )
   } else if (name === 'Youtube') {
-    return <FontAwesomeIcon icon={brands('youtube')} size="xs" className="h-4 Anim AnimScale AnimOpacity-40" />
+    return (
+      <FontAwesomeIcon
+        icon={brands('youtube')}
+        size='xs'
+        className='Anim AnimScale AnimOpacity-40 h-4'
+      />
+    )
   } else if (name === 'Mail') {
-    return <FontAwesomeIcon icon={solid('envelope')} size="xs" className="h-4 Anim AnimScale AnimOpacity-40" />
+    return (
+      <FontAwesomeIcon
+        icon={solid('envelope')}
+        size='xs'
+        className='Anim AnimScale AnimOpacity-40 h-4'
+      />
+    )
   } else {
-    return <FontAwesomeIcon icon={brands('discord')} size="xs" className="h-4 Anim AnimScale AnimOpacity-40" />
+    return (
+      <FontAwesomeIcon
+        icon={brands('discord')}
+        size='xs'
+        className='Anim AnimScale AnimOpacity-40 h-4'
+      />
+    )
   }
 }

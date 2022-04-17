@@ -4,7 +4,7 @@ function SectionBanner({ content, color }) {
   if (content.IsLogo) {
     return (
       <div
-        className='flex relative justify-center items-center w-full h-32 md:h-48 lg:h-60'
+        className='relative flex h-32 w-full items-center justify-center md:h-48 lg:h-60'
         style={{ backgroundColor: color }}
       >
         <div style={{ width: '40%' }}>
@@ -23,7 +23,7 @@ function SectionBanner({ content, color }) {
     )
   } else {
     return (
-      <div className='relative w-full h-32 md:h-48 lg:h-60'>
+      <div className='relative h-32 w-full md:h-48 lg:h-60'>
         <Image
           src={content.Image}
           alt={content.Title}

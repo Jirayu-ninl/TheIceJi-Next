@@ -1,8 +1,8 @@
 const Dashboard = () => {
   return (
-    <div className='flex px-5 pt-28 pb-12 w-screen h-screen bg-gradient-to-tl from-indigo-500 to-cyan-500'>
-      <div className='p-6 w-24 Card-back-md-40'></div>
-      <div className='flex justify-center items-center ml-5 w-full Card-back-md-40'>
+    <div className='flex h-screen w-screen bg-gradient-to-tl from-indigo-500 to-cyan-500 px-5 pt-28 pb-12'>
+      <div className='Card-back-md-40 w-24 p-6'></div>
+      <div className='Card-back-md-40 ml-5 flex w-full items-center justify-center'>
         <p>Coming soon</p>
       </div>
     </div>
@@ -11,7 +11,7 @@ const Dashboard = () => {
 
 const Card = () => {
   return (
-    <div className='p-6 w-full Card-back-md-40'>
+    <div className='Card-back-md-40 w-full p-6'>
       <p>Hello</p>
     </div>
   )
@@ -19,7 +19,7 @@ const Card = () => {
 
 const CardsContainer = () => {
   return (
-    <div className='grid grid-cols-6 gap-8 p-6 ml-5 w-full Card-back-md-40'>
+    <div className='Card-back-md-40 ml-5 grid w-full grid-cols-6 gap-8 p-6'>
       <Card />
       <Card />
       <Card />

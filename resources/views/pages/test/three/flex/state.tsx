@@ -7,17 +7,29 @@ const state = {
     {
       tag: '00',
       text: 'The Bacchic\nand Dionysiac\nRites',
-      images: ['/mock/image/w01.jpg', '/mock/image/w02.jpg', '/mock/image/w03.jpg'],
+      images: [
+        '/mock/image/w01.jpg',
+        '/mock/image/w02.jpg',
+        '/mock/image/w03.jpg',
+      ],
     },
     {
       tag: '01',
       text: 'The Elysian\nMysteries',
-      images: ['/mock/image/w04.jpg', '/mock/image/w05.jpg', '/mock/image/w06.jpg'],
+      images: [
+        '/mock/image/w04.jpg',
+        '/mock/image/w05.jpg',
+        '/mock/image/w06.jpg',
+      ],
     },
     {
       tag: '02',
       text: 'The Hiramic\nLegend',
-      images: ['/mock/image/w07.jpg', '/mock/image/w08.jpg', '/mock/image/w10.jpg'],
+      images: [
+        '/mock/image/w07.jpg',
+        '/mock/image/w08.jpg',
+        '/mock/image/w10.jpg',
+      ],
     },
   ],
   depthbox: [

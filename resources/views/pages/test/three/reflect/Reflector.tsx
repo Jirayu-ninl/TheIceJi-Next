@@ -11,7 +11,7 @@ import {
   WebGLRenderTarget,
   DepthTexture,
   DepthFormat,
-  UnsignedShortType
+  UnsignedShortType,
 } from 'three'
 import { useFrame, useThree, extend } from '@react-three/fiber'
 import { BlurPass } from './materials/BlurPass'
@@ -76,7 +76,24 @@ export function Reflector({
     virtualCamera.updateMatrixWorld()
     virtualCamera.projectionMatrix.copy(camera.projectionMatrix)
     // Update the texture matrix
-    textureMatrix.set(0.5, 0.0, 0.0, 0.5, 0.0, 0.5, 0.0, 0.5, 0.0, 0.0, 0.5, 0.5, 0.0, 0.0, 0.0, 1.0)
+    textureMatrix.set(
+      0.5,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.5,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.5,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    )
     textureMatrix.multiply(virtualCamera.projectionMatrix)
     textureMatrix.multiply(virtualCamera.matrixWorldInverse)
     textureMatrix.multiply(meshRef.current.matrixWorld)
@@ -84,10 +101,19 @@ export function Reflector({
     // Paper explaining this technique: http://www.terathon.com/lengyel/Lengyel-Oblique.pdf
     reflectorPlane.setFromNormalAndCoplanarPoint(normal, reflectorWorldPosition)
     reflectorPlane.applyMatrix4(virtualCamera.matrixWorldInverse)
-    clipPlane.set(reflectorPlane.normal.x, reflectorPlane.normal.y, reflectorPlane.normal.z, reflectorPlane.constant)
+    clipPlane.set(
+      reflectorPlane.normal.x,
+      reflectorPlane.normal.y,
+      reflectorPlane.normal.z,
+      reflectorPlane.constant
+    )
     const projectionMatrix = virtualCamera.projectionMatrix
-    q.x = (Math.sign(clipPlane.x) + projectionMatrix.elements[8]) / projectionMatrix.elements[0]
-    q.y = (Math.sign(clipPlane.y) + projectionMatrix.elements[9]) / projectionMatrix.elements[5]
+    q.x =
+      (Math.sign(clipPlane.x) + projectionMatrix.elements[8]) /
+      projectionMatrix.elements[0]
+    q.y =
+      (Math.sign(clipPlane.y) + projectionMatrix.elements[9]) /
+      projectionMatrix.elements[5]
     q.z = -1.0
     q.w = (1.0 + projectionMatrix.elements[10]) / projectionMatrix.elements[14]
     // Calculate the scaled plane vector
@@ -104,7 +130,7 @@ export function Reflector({
       minFilter: LinearFilter,
       magFilter: LinearFilter,
       format: RGBFormat,
-      encoding: gl.outputEncoding
+      encoding: gl.outputEncoding,
     }
     const fbo1 = new WebGLRenderTarget(resolution, resolution, parameters)
     fbo1.depthBuffer = true
@@ -112,7 +138,12 @@ export function Reflector({
     fbo1.depthTexture.format = DepthFormat
     fbo1.depthTexture.type = UnsignedShortType
     const fbo2 = new WebGLRenderTarget(resolution, resolution, parameters)
-    const blurpass = new BlurPass({ gl, resolution, width: blur[0], height: blur[1] })
+    const blurpass = new BlurPass({
+      gl,
+      resolution,
+      width: blur[0],
+      height: blur[1],
+    })
     const reflectorProps = {
       mirror,
       textureMatrix,
@@ -124,10 +155,22 @@ export function Reflector({
       mixStrength,
       minDepthThreshold,
       maxDepthThreshold,
-      depthScale
+      depthScale,
     }
     return [fbo1, fbo2, blurpass, reflectorProps]
-  }, [gl, blur, textureMatrix, resolution, mirror, hasBlur, mixBlur, mixStrength, minDepthThreshold, maxDepthThreshold, depthScale])
+  }, [
+    gl,
+    blur,
+    textureMatrix,
+    resolution,
+    mirror,
+    hasBlur,
+    mixBlur,
+    mixStrength,
+    minDepthThreshold,
+    maxDepthThreshold,
+    depthScale,
+  ])
 
   useFrame(() => {
     if (!meshRef?.current) return
@@ -143,7 +186,11 @@ export function Reflector({
   return (
     <mesh ref={meshRef} {...props}>
       <planeBufferGeometry args={args} />
-      {children ? children('meshReflectorMaterial', reflectorProps) : <meshReflectorMaterial {...reflectorProps} />}
+      {children ? (
+        children('meshReflectorMaterial', reflectorProps)
+      ) : (
+        <meshReflectorMaterial {...reflectorProps} />
+      )}
     </mesh>
   )
 }

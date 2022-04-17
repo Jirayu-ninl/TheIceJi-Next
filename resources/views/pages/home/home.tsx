@@ -24,7 +24,7 @@ export default function Home() {
           initial={Init}
           animate={Animated}
           transition={transition(0.5)}
-          className='text-5xl font-semibold sm:text-6xl sm:-mb-8 md:text-7xl lg:-mb-12 lg:text-8xl xl:-mb-24 xl:text-9xl xxl:text-10xl'
+          className='text-5xl font-semibold sm:-mb-8 sm:text-6xl md:text-7xl lg:-mb-12 lg:text-8xl xl:-mb-24 xl:text-9xl xxl:text-10xl'
         >
           I AM
         </motion.h2>
@@ -35,7 +35,7 @@ export default function Home() {
               initial={Init}
               animate={Animated}
               transition={transition(1.5)}
-              className='m-2 Btn-white-40 Anim AnimOpacity-60'
+              className='Btn-white-40 Anim AnimOpacity-60 m-2'
             >
               About me
             </motion.button>
@@ -45,7 +45,7 @@ export default function Home() {
               initial={Init}
               animate={Animated}
               transition={transition(2)}
-              className='m-2 Btn-white-40 Anim AnimOpacity-60'
+              className='Btn-white-40 Anim AnimOpacity-60 m-2'
             >
               Skill
             </motion.button>
@@ -86,13 +86,10 @@ const AnimatedTitle = () => {
         initial='initial'
         animate='animate'
         variants={banner}
-        className='flex page-home-textOutline'
+        className='page-home-textOutline flex'
       >
         {[...TitleArr].map((letter, i) => (
-          <motion.h1
-            variants={letterAnim}
-            key={i}
-          >
+          <motion.h1 variants={letterAnim} key={i}>
             {letter}
           </motion.h1>
         ))}

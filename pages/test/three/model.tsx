@@ -10,7 +10,6 @@ export default function index() {
     /* background: lightblue; */
     font-family: 'Inter var', sans-serif;
     background-color: #000;
-
   `
   return (
     <div className={CSS}>

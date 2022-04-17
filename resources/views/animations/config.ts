@@ -45,7 +45,6 @@ export const stagger_yUp = {
   },
 }
 
-
 export const stagger_xLeft_O = {
   parent: (delay: number) => ({
     hidden: { visibility: 'hidden', x: 100, opacity: 0 },

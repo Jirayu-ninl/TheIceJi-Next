@@ -1,5 +1,10 @@
 import Image from 'next/image'
-import { motion, useViewportScroll, useTransform, useSpring } from 'framer-motion'
+import {
+  motion,
+  useViewportScroll,
+  useTransform,
+  useSpring,
+} from 'framer-motion'
 
 function SectionMockup({ content }) {
   const { scrollY } = useViewportScroll()
@@ -8,11 +13,14 @@ function SectionMockup({ content }) {
   return (
     <motion.div className='w-full'>
       <motion.div
-        style={{x: springX}}
-        className='inline-flex overflow-visible space-x-6'
+        style={{ x: springX }}
+        className='inline-flex space-x-6 overflow-visible'
       >
         {content.map((v: any, i: number) => (
-          <div className='relative w-[140px] sm:w-[180px] h-[300px] sm:h-[380px] xxl:w-[300px] xxl:h-[600px]' key={i}>
+          <div
+            className='relative h-[300px] w-[140px] sm:h-[380px] sm:w-[180px] xxl:h-[600px] xxl:w-[300px]'
+            key={i}
+          >
             <Image
               className='pointer-events-none'
               src={v.url}

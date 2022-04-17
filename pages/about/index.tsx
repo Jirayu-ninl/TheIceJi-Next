@@ -11,8 +11,8 @@ const AboutPage = () => {
   }, [_setPage])
 
   return (
-    <div className='flex relative justify-center items-center w-screen h-screen bg-gradient-to-r from-indigo-900 to-cyan-900'>
-      <div className='flex absolute z-10 justify-end items-center w-full'>
+    <div className='relative flex h-screen w-screen items-center justify-center bg-gradient-to-r from-indigo-900 to-cyan-900'>
+      <div className='absolute z-10 flex w-full items-center justify-end'>
         <About FreeTimeItems={FreeTimeItems} />
       </div>
     </div>

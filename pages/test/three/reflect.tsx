@@ -8,7 +8,7 @@ export default function index() {
     margin: 0;
     padding: 0;
     /* background-color: #101010; */
-    background-color: #FFF;
+    background-color: #fff;
   `
   return (
     <div className={CSS}>

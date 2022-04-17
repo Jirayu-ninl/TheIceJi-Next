@@ -42,36 +42,36 @@ export default function IJNNav({
 
   const setNavPopupState = (current: string) => {
     switch (current) {
-    case 'notification':
-      setPopupState({
-        notification: !PopupState.notification,
-        cart: false,
-        userPanel: false,
-      })
-      break
-    case 'cart':
-      setPopupState({
-        notification: false,
-        cart: !PopupState.cart,
-        userPanel: false,
-      })
-      break
-    case 'userPanel':
-      setPopupState({
-        notification: false,
-        cart: false,
-        userPanel: !PopupState.userPanel,
-      })
-      break
-    case 'all':
-      setPopupState({
-        notification: false,
-        cart: false,
-        userPanel: false,
-      })
-      break
-    default:
-      break
+      case 'notification':
+        setPopupState({
+          notification: !PopupState.notification,
+          cart: false,
+          userPanel: false,
+        })
+        break
+      case 'cart':
+        setPopupState({
+          notification: false,
+          cart: !PopupState.cart,
+          userPanel: false,
+        })
+        break
+      case 'userPanel':
+        setPopupState({
+          notification: false,
+          cart: false,
+          userPanel: !PopupState.userPanel,
+        })
+        break
+      case 'all':
+        setPopupState({
+          notification: false,
+          cart: false,
+          userPanel: false,
+        })
+        break
+      default:
+        break
     }
   }
 
@@ -84,12 +84,12 @@ export default function IJNNav({
   const { data: session } = useSession()
 
   return (
-    <nav className='fixed top-0 left-0 z-80 py-4 px-5 w-screen' ref={NavRef}>
-      <div className='bg-black/40 rounded-md shadow-xl backdrop-blur-md'>
-        <div className='flex justify-between items-center px-6 h-16'>
-          <div className='flex items-center h-full'>
+    <nav className='fixed top-0 left-0 z-80 w-screen py-4 px-5' ref={NavRef}>
+      <div className='rounded-md bg-black/40 shadow-xl backdrop-blur-md'>
+        <div className='flex h-16 items-center justify-between px-6'>
+          <div className='flex h-full items-center'>
             <motion.div
-              className='flex items-center py-3 pr-6 h-full cursor-pointer'
+              className='flex h-full cursor-pointer items-center py-3 pr-6'
               onMouseEnter={() => {
                 _setCursor('logo')
               }}
@@ -116,12 +116,12 @@ export default function IJNNav({
             </svg>
             <h6 className='hidden px-5 md:block'>{_page}</h6>
           </div>
-          <div className='flex items-center h-full'>
+          <div className='flex h-full items-center'>
             {toggleMenu && (
               <motion.div
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                className='flex absolute top-20 left-6 space-x-7 fill-white md:hidden'
+                className='absolute top-20 left-6 flex space-x-7 fill-white md:hidden'
               >
                 <CartBlock
                   OpenCart={PopupState.cart}

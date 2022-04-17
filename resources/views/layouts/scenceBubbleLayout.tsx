@@ -4,8 +4,8 @@ import { LayoutBubble as Scene } from 'views/assets/three/scenes'
 
 export default function SceneLayout({ children }) {
   return (
-    <div className='flex relative justify-center items-center w-screen h-screen bg-gradient-to-r from-background-2 to-background-1'>
-      <div className='flex absolute z-10 justify-end items-center w-full'>
+    <div className='relative flex h-screen w-screen items-center justify-center bg-gradient-to-r from-background-2 to-background-1'>
+      <div className='absolute z-10 flex w-full items-center justify-end'>
         {children}
       </div>
       <Home_3DScene />
@@ -15,7 +15,7 @@ export default function SceneLayout({ children }) {
 
 const Home_3DScene = () => {
   return (
-    <div className='hidden overflow-hidden absolute w-screen h-screen xl:block'>
+    <div className='absolute hidden h-screen w-screen overflow-hidden xl:block'>
       <Canvas
         gl={{
           powerPreference: 'high-performance',

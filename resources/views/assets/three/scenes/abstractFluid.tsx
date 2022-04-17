@@ -33,7 +33,6 @@ export default function Scene() {
     }
   })
 
-
   return (
     <>
       <PerspectiveCamera makeDefault position={[0, 0, 4]} fov={75}>

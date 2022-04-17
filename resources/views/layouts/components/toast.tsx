@@ -29,7 +29,7 @@ const Toast = () => {
 }
 
 const ToastCloseButton = ({ closeToast }) => (
-  <div className='w-3 h-3 m-1 fill-white'>
+  <div className='m-1 h-3 w-3 fill-white'>
     <svg onClick={closeToast} aria-hidden='true' viewBox='0 0 14 16'>
       <path
         fillRule='evenodd'

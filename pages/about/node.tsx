@@ -9945,9 +9945,7 @@ const AboutNode = () => {
                   stroke='#4b4076'
                   strokeWidth='2'
                 />
-                <g
-                  transform='translate(-7736 -692)'
-                >
+                <g transform='translate(-7736 -692)'>
                   <g
                     transform='translate(8093 881)'
                     fill='#474747'
@@ -10058,10 +10056,7 @@ const AboutNode = () => {
                     <circle cx='5' cy='5' r='5' stroke='none' />
                     <circle cx='5' cy='5' r='4.5' fill='none' />
                   </g>
-                  <g
-                    id='Group_3462-2'
-                    transform='translate(866 5)'
-                  >
+                  <g id='Group_3462-2' transform='translate(866 5)'>
                     <g
                       transform='matrix(1, 0, 0, 1, 6993, 845)'
                       filter='url(#Rectangle_17522-40)'
@@ -10383,9 +10378,7 @@ const AboutNode = () => {
                     <circle cx='5' cy='5' r='5' stroke='none' />
                     <circle cx='5' cy='5' r='4.5' fill='none' />
                   </g>
-                  <g
-                    transform='translate(-341)'
-                  >
+                  <g transform='translate(-341)'>
                     <g
                       transform='matrix(1, 0, 0, 1, 7223, 793)'
                       filter='url(#Rectangle_17522-41)'

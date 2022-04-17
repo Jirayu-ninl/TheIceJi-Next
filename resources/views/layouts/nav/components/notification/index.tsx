@@ -10,12 +10,12 @@ const NotificationBlock = ({
   _Notification,
 }) => (
   <span
-    className='flex relative items-center h-full cursor-pointer'
+    className='relative flex h-full cursor-pointer items-center'
     onClick={() => {
       setNavPopupState('notification')
     }}
   >
-    <div className='w-6 h-6 Anim AnimScale'>
+    <div className='Anim AnimScale h-6 w-6'>
       <NotiIcon />
       {_Notification !== 0 && _Notification && (
         <span className='NotiBadge-primary '>{_Notification}</span>
@@ -40,12 +40,12 @@ const Notification = ({ ref }) => {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -10 }}
-      className='flex absolute top-14 flex-col py-4 w-48 max-h-64 drop-shadow-md  md:right-0 Card-back-md-60 '
+      className='Card-back-md-60 absolute top-14 flex max-h-64 w-48 flex-col py-4  drop-shadow-md md:right-0 '
     >
-      <h5 className='mb-2 text-base font-semibold text-center'>Notification</h5>
+      <h5 className='mb-2 text-center text-base font-semibold'>Notification</h5>
       {Amount === 0 || !_NotificationItems ? (
-        <div className='flex justify-center items-center h-24'>
-          <p className='text-xs font-light text-center opacity-60'>
+        <div className='flex h-24 items-center justify-center'>
+          <p className='text-center text-xs font-light opacity-60'>
             notification is empty
           </p>
         </div>
@@ -53,7 +53,7 @@ const Notification = ({ ref }) => {
         <>
           <NotificationItems list={_NotificationItems} />
           <p
-            className='pt-2 text-xs font-light text-center opacity-60 cursor-pointer'
+            className='cursor-pointer pt-2 text-center text-xs font-light opacity-60'
             onClick={() => {
               _setNotification(0)
               toast.success('Mark notification as read')
@@ -68,13 +68,13 @@ const Notification = ({ ref }) => {
 }
 
 const NotificationItems = ({ list }) => (
-  <div className='overflow-scroll h-full'>
+  <div className='h-full overflow-scroll'>
     {list.map((v, i) => (
       <Link href={v.link} passHref key={i}>
-        <div className='p-2 mt-1 w-full bg-black/20 border-2 border-transparent border-l-primary-0 cursor-pointer Anim AnimOpacity-80'>
+        <div className='Anim AnimOpacity-80 mt-1 w-full cursor-pointer border-2 border-transparent border-l-primary-0 bg-black/20 p-2'>
           <h6 className='text-xs'>{v.title}</h6>
           <p className='mt-1 text-xs font-light opacity-80'>{v.description}</p>
-          <p className='mt-1 -mb-1 text-2xs font-light text-right opacity-80'>
+          <p className='mt-1 -mb-1 text-right text-2xs font-light opacity-80'>
             {v.time}
           </p>
         </div>

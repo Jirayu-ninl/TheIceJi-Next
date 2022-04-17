@@ -1,27 +1,24 @@
 import { css } from '@emotion/css'
-import React, { useRef, Suspense } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React, { useRef, Suspense } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber'
 import { useControls } from 'leva'
-import Material from 'component-material';
-import { Color } from 'three';
-import { Environment, Sphere } from '@react-three/drei';
-import glsl from 'glslify';
+import Material from 'component-material'
+import { Color } from 'three'
+import { Environment, Sphere } from '@react-three/drei'
+import glsl from 'glslify'
 
 function Scene({ radius = 4 }) {
-  const material = useRef();
-  const {
-    radiusVariationAmplitude,
-    radiusNoiseFrequency,
-    ...props
-  } = useControls({
-    metalness: { value: 0.9, min: 0, max: 1 },
-    clearcoat: { value: 0.1, min: 0, max: 1 },
-    roughness: { value: 0.7, min: 0, max: 1 },
-    envMapIntensity: { value: 1, min: 0, max: 1 },
-    radiusVariationAmplitude: { value: 1, min: 0, max: 5 },
-    radiusNoiseFrequency: { value: 0.3, min: 0, max: 2 }
-  });
-  useFrame(({ clock }) => (material.current.time = clock.getElapsedTime()));
+  const material = useRef()
+  const { radiusVariationAmplitude, radiusNoiseFrequency, ...props } =
+    useControls({
+      metalness: { value: 0.9, min: 0, max: 1 },
+      clearcoat: { value: 0.1, min: 0, max: 1 },
+      roughness: { value: 0.7, min: 0, max: 1 },
+      envMapIntensity: { value: 1, min: 0, max: 1 },
+      radiusVariationAmplitude: { value: 1, min: 0, max: 5 },
+      radiusNoiseFrequency: { value: 0.3, min: 0, max: 2 },
+    })
+  useFrame(({ clock }) => (material.current.time = clock.getElapsedTime()))
   return (
     <Sphere args={[radius, 512, 512]}>
       <Material
@@ -33,9 +30,9 @@ function Scene({ radius = 4 }) {
           color: { value: new Color('white'), type: 'vec3' },
           radiusVariationAmplitude: {
             value: radiusVariationAmplitude,
-            type: 'float'
+            type: 'float',
           },
-          radiusNoiseFrequency: { value: radiusNoiseFrequency, type: 'float' }
+          radiusNoiseFrequency: { value: radiusNoiseFrequency, type: 'float' },
         }}
       >
         <Material.Vert.Head>{
@@ -86,7 +83,7 @@ function Scene({ radius = 4 }) {
         }</Material.Frag.Body>
       </Material>
     </Sphere>
-  );
+  )
 }
 function App() {
   return (
@@ -102,12 +99,12 @@ function App() {
       <Scene />
       <Suspense fallback={null}>
         <Environment
-          files="https://rawcdn.githack.com/emmelleppi/component-material/9c967a77c15c84ee5c0be417c4440f6bdcebdb2f/example/studio_small_04_1k.hdr"
-          path=""
+          files='https://rawcdn.githack.com/emmelleppi/component-material/9c967a77c15c84ee5c0be417c4440f6bdcebdb2f/example/studio_small_04_1k.hdr'
+          path=''
         />
       </Suspense>
     </Canvas>
-  );
+  )
 }
 
 export default function Index() {

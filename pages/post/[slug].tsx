@@ -1,15 +1,10 @@
 import { useEffect } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { GraphQLClient, gql } from 'graphql-request'
-import { ParsedUrlQuery } from 'querystring'
 import { State } from '@store'
 import { Blog } from 'pages/posts'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_CONTENT_URL)
-
-interface IParams extends ParsedUrlQuery {
-  slug: string
-}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const { posts } = await graphcms.request(gql`
@@ -27,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params as IParams
+  const { slug } = context.params
   const { post } = await graphcms.request(
     gql`
       query PostsPage($slug: String!) {

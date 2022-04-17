@@ -9,21 +9,21 @@ const User = ({ OpenPanel, setNavPopupState, user, signOut }) => {
   return (
     <>
       <div
-        className='flex relative items-center'
+        className='relative flex items-center'
         onClick={() => {
           setNavPopupState('userPanel')
         }}
       >
         <div className='mr-3  cursor-pointer'>
-          <h5 className='text-xs font-bold text-right sm:text-base'>
+          <h5 className='text-right text-xs font-bold sm:text-base'>
             {displayUser}
           </h5>
-          <p className='-mt-1 text-2xs text-right opacity-80 sm:text-xs'>
+          <p className='-mt-1 text-right text-2xs opacity-80 sm:text-xs'>
             {user.userRole}
           </p>
         </div>
-        <div className='absolute right-0 bottom-0 z-10 w-3 h-3 bg-green-500 rounded-full border-2 border-white' />
-        <div className='overflow-hidden relative w-9 h-9 rounded-full cursor-pointer'>
+        <div className='absolute right-0 bottom-0 z-10 h-3 w-3 rounded-full border-2 border-white bg-green-500' />
+        <div className='relative h-9 w-9 cursor-pointer overflow-hidden rounded-full'>
           <Image src={user.image} alt='Profile' layout='fill' />
         </div>
         <AnimatePresence>
@@ -41,22 +41,22 @@ const Panel = ({ user, signOut }) => {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}
-        className='flex absolute top-14 right-0 flex-col p-4 w-48 max-h-64 drop-shadow-md Card-back-md-40'
+        className='Card-back-md-40 absolute top-14 right-0 flex max-h-64 w-48 flex-col p-4 drop-shadow-md'
       >
         <Link href='/app/user' passHref>
-          <div className='text-center cursor-pointer'>
+          <div className='cursor-pointer text-center'>
             <h5 className='text-base font-semibold'>{user.name}</h5>
             <h6 className='text-xs opacity-80'>{user.email}</h6>
           </div>
         </Link>
-        <div className='flex justify-center items-center h-24'>
-          <p className='text-xs font-light text-center opacity-60'>
+        <div className='flex h-24 items-center justify-center'>
+          <p className='text-center text-xs font-light opacity-60'>
             Nothing here now
           </p>
         </div>
         <button
           onClick={() => signOut()}
-          className='py-1 px-2 mx-auto text-xs text-center bg-black/10 rounded border border-white/40 backdrop-blur-md cursor-pointer'
+          className='mx-auto cursor-pointer rounded border border-white/40 bg-black/10 py-1 px-2 text-center text-xs backdrop-blur-md'
         >
           LOGOUT
         </button>

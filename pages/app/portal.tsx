@@ -18,22 +18,22 @@ const Portal = ({ providers, csrfToken }) => {
     if (router.query.error === undefined) {
       return
     }
-    
+
     switch (router.query.error) {
-    case 'CredentialsSignin':
-      toast.error('Invalid username or password')
-      break
-    case 'OAuthAccountNotLinked':
-      toast.error('This email already signup with different social account')
-      break
-    default:
-      toast.error('Error: ' + router.query.error)
+      case 'CredentialsSignin':
+        toast.error('Invalid username or password')
+        break
+      case 'OAuthAccountNotLinked':
+        toast.error('This email already signup with different social account')
+        break
+      default:
+        toast.error('Error: ' + router.query.error)
     }
   }, [router.query.error])
   return (
-    <div className='flex justify-center items-center w-screen h-screen bg-gradient-to-tl from-indigo-600 to-indigo-400'>
+    <div className='flex h-screen w-screen items-center justify-center bg-gradient-to-tl from-indigo-600 to-indigo-400'>
       <div className='flex md:h-[410px]'>
-        <div className='hidden overflow-hidden relative w-96 h-full rounded-lg md:block'>
+        <div className='relative hidden h-full w-96 overflow-hidden rounded-lg md:block'>
           <Image
             src='/cover.jpg'
             layout='fill'

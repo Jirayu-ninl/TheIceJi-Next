@@ -9,7 +9,9 @@ async function createAudio(url, { threshold, expire } = {}) {
   analyser.fftSize = 2048
   const data = new Uint8Array(analyser.frequencyBinCount)
   const source = context.createBufferSource()
-  source.buffer = await new Promise((res) => context.decodeAudioData(buffer, res))
+  source.buffer = await new Promise((res) =>
+    context.decodeAudioData(buffer, res)
+  )
   source.loop = true
   const gainNode = context.createGain()
   gainNode.gain.value = 1
@@ -18,14 +20,14 @@ async function createAudio(url, { threshold, expire } = {}) {
   analyser.connect(gainNode)
 
   let time = Date.now()
-  let state = {
+  const state = {
     source,
     data,
     gain: 1,
     signal: false,
     avg: 0,
     update: () => {
-      let now = Date.now()
+      const now = Date.now()
       let value = 0
       analyser.getByteFrequencyData(data)
       for (let i = 0; i < data.length; i++) value += data[i]
@@ -46,8 +48,14 @@ async function createAudio(url, { threshold, expire } = {}) {
 const mockData = () => ({ signal: false, avg: 0, gain: 1, data: [] })
 
 const useStore = create((set, get) => {
-  const drums = createAudio('/audio/test/drums.mp3', { threshold: 10, expire: 500 })
-  const snare = createAudio('/audio/test/snare.mp3', { threshold: 40, expire: 500 })
+  const drums = createAudio('/audio/test/drums.mp3', {
+    threshold: 10,
+    expire: 500,
+  })
+  const snare = createAudio('/audio/test/snare.mp3', {
+    threshold: 40,
+    expire: 500,
+  })
   const synth = createAudio('/audio/test/synth.mp3')
   return {
     loaded: false,

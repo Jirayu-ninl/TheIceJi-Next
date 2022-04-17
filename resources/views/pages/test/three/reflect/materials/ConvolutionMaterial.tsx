@@ -9,7 +9,7 @@ export class ConvolutionMaterial extends ShaderMaterial {
         texelSize: new Uniform(new Vector2()),
         halfTexelSize: new Uniform(new Vector2()),
         kernel: new Uniform(0.0),
-        scale: new Uniform(1.0)
+        scale: new Uniform(1.0),
       },
       fragmentShader: `#include <common>
         #include <dithering_pars_fragment>      
@@ -45,7 +45,7 @@ export class ConvolutionMaterial extends ShaderMaterial {
         }`,
       blending: NoBlending,
       depthWrite: false,
-      depthTest: false
+      depthTest: false,
     })
 
     this.toneMapped = false

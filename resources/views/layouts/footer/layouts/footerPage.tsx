@@ -8,7 +8,7 @@ export default function Footer() {
   const _setCursor = UI((state) => state.setCursor)
   return (
     <>
-      <div className='flex fixed bottom-0 left-0 z-10 flex-col justify-between items-center py-3 px-5 w-screen md:flex-row'>
+      <div className='fixed bottom-0 left-0 z-10 flex w-screen flex-col items-center justify-between py-3 px-5 md:flex-row'>
         <div
           className='flex items-center space-x-4 md:space-x-7'
           onMouseEnter={() => {
@@ -31,9 +31,9 @@ export default function Footer() {
             />
           ))}
         </div>
-        <div className='flex items-center mt-2 text-xs md:mt-0 md:text-base'>
+        <div className='mt-2 flex items-center text-xs md:mt-0 md:text-base'>
           <p>
-            <a className='pr-2 cursor-pointer Anim AnimOpacity-60'>
+            <a className='Anim AnimOpacity-60 cursor-pointer pr-2'>
               TheIceJI Next
             </a>
             <span className='opacity-40'>

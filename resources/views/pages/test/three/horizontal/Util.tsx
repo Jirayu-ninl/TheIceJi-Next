@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware'
 
 export const damp = THREE.MathUtils.damp
 
-let store = (set) => ({
+const store = (set) => ({
   clicked: null,
   setClicked: (v) => set(() => ({ clicked: v })),
   urls: [
@@ -33,6 +33,5 @@ let store = (set) => ({
 
 export const useStore = create(persist(store, { name: 'item_select' }))
 
-
 const click = () =>
-    setClicked(index) === clicked ? setClicked(null) : setClicked(index)
+  setClicked(index) === clicked ? setClicked(null) : setClicked(index)

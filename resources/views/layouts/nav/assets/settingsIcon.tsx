@@ -6,7 +6,7 @@ export default function SettingsIcon() {
         width='15.551'
         height='16.369'
         viewBox='0 0 15.551 16.369'
-        className='fill-inherit Anim AnimScale'
+        className='Anim AnimScale fill-inherit'
       >
         <path
           d='M0,2.316A2.342,2.342,0,0,1,2.375,0a2.312,2.312,0,1,1,0,4.624A2.335,2.335,0,0,1,0,2.316Z'

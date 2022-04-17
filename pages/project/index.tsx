@@ -45,11 +45,11 @@ export default function Index({ projects }) {
   }, [projects, _setPage, setProjects])
 
   return (
-    <div className='relative w-screen h-screen bg-gradient-to-r from-black via-background-2 to-black'>
-      <div className='flex absolute z-10 flex-col justify-between items-center w-screen h-full pointer-events-none'>
+    <div className='relative h-screen w-screen bg-gradient-to-r from-black via-background-2 to-black'>
+      <div className='pointer-events-none absolute z-10 flex h-full w-screen flex-col items-center justify-between'>
         <Home.Projects.Overlay />
       </div>
-      <div className='flex justify-center items-end pb-16 w-full h-full md:pb-0'>
+      <div className='flex h-full w-full items-end justify-center pb-16 md:pb-0'>
         <Home.Projects.Canvas3D />
       </div>
     </div>

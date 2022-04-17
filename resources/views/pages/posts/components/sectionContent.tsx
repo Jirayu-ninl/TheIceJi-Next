@@ -5,7 +5,10 @@ function SectionContent({ content, refElement }) {
         <span className='pr-2 text-xs text-primary-0'>/{content.number}</span>
         {content.title}
       </h2>
-      <div className='mt-4 md:-mt-2 md:w-9/12 lg:w-3/5 Project-header' ref={refElement}></div>
+      <div
+        className='Project-header mt-4 md:-mt-2 md:w-9/12 lg:w-3/5'
+        ref={refElement}
+      ></div>
     </div>
   )
 }

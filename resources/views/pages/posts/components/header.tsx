@@ -31,10 +31,10 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
 
   return (
     <div
-      className='flex overflow-hidden relative justify-center items-end h-screen'
+      className='relative flex h-screen items-end justify-center overflow-hidden'
       style={{ backgroundColor: ColorBg }}
     >
-      <div className='container z-10 px-4 w-screen xxl:w-[1440px]'>
+      <div className='container z-10 w-screen px-4 xxl:w-[1440px]'>
         <motion.div
           variants={animList}
           initial='initial'
@@ -43,7 +43,7 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
         >
           {Tags.map((v: string, i: number) => (
             <motion.button
-              className='mt-2 mr-2 hover:text-black uppercase hover:bg-primary-0 Btn-white-40 Anim AnimTranslate-4'
+              className='Btn-white-40 Anim AnimTranslate-4 mt-2 mr-2 uppercase hover:bg-primary-0 hover:text-black'
               key={i}
               variants={animItem}
             >
@@ -62,7 +62,7 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
           {Title}
         </motion.h1>
       </div>
-      <motion.div className='absolute w-screen h-screen' style={{ y: springY }}>
+      <motion.div className='absolute h-screen w-screen' style={{ y: springY }}>
         <Image
           src={Img}
           alt={Title}
@@ -75,7 +75,7 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
           }
         />
       </motion.div>
-      <div className='absolute w-screen h-80 bg-gradient-to-t from-background-1 to-background-1/0'></div>
+      <div className='absolute h-80 w-screen bg-gradient-to-t from-background-1 to-background-1/0'></div>
     </div>
   )
 }

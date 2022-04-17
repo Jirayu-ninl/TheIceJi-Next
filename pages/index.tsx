@@ -36,7 +36,7 @@ export default function Index() {
       style={{ backgroundColor: '#000' }}
     >
       <motion.div
-        className='h-screen w-full overflow-hidden flex flex-col justify-center items-center z-60 text-center'
+        className='z-60 flex h-screen w-full flex-col items-center justify-center overflow-hidden text-center'
         animate={{ backgroundColor: Color.background[3] }}
         initial={{ backgroundColor: '#000' }}
         transition={{ delay: 3, duration: 1, ease: [0.33, 1, 0.68, 1] }}
@@ -99,7 +99,7 @@ function LoadScreen({ Loading }) {
 
   return (
     <>
-      <div className='w-[165px] relative'>
+      <div className='relative w-[165px]'>
         <motion.div
           className='absolute'
           animate={{ strokeDasharray: 100 }}
@@ -116,16 +116,16 @@ function LoadScreen({ Loading }) {
           <TheIceJIlogo Darkmode={Darkmode} style={{ strokeOpacity: 0.5 }} />
         </motion.div>
       </div>
-      <div className='text-4xl flex justify-center'>
+      <div className='flex justify-center text-4xl'>
         {Loading ? <Counter from={0} to={100} /> : <h2>100</h2>}
         <h2>%</h2>
       </div>
       <div
-        className='w-[224px] h-[10px] rounded-md mt-5 mb-3'
+        className='mt-5 mb-3 h-[10px] w-[224px] rounded-md'
         style={{ border: Darkmode ? 'solid 1px #fff' : 'solid 1px #000' }}
       >
         <motion.div
-          className='h-[4px] m-0.5 rounded-md bg-primary-0'
+          className='m-0.5 h-[4px] rounded-md bg-primary-0'
           animate={{ width: 218 }}
           initial={{ width: 0 }}
           transition={MotionTransition(0, 3)}

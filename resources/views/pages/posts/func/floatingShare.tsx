@@ -40,7 +40,7 @@ const FloatingShare = ({ slug, basePath, shareMedia }) => {
       animate='animate'
       exit='exit'
       variants={animList}
-      className='flex fixed right-6 bottom-6 z-10 flex-col items-center'
+      className='fixed right-6 bottom-6 z-10 flex flex-col items-center'
     >
       <AnimatePresence>
         {Show && (
@@ -55,7 +55,7 @@ const FloatingShare = ({ slug, basePath, shareMedia }) => {
             <FacebookShareButton url={projectURL} hashtag={'theiceji'}>
               <motion.button
                 variants={animItem}
-                className='flex z-30 mb-4 w-8 h-8 bg-black hover:bg-blue-600 rounded-full drop-shadow-lg Anim-2'
+                className='Anim-2 z-30 mb-4 flex h-8 w-8 rounded-full bg-black drop-shadow-lg hover:bg-blue-600'
                 key='Fs_facebook'
               >
                 <FontAwesomeIcon
@@ -72,7 +72,7 @@ const FloatingShare = ({ slug, basePath, shareMedia }) => {
             >
               <motion.button
                 variants={animItem}
-                className='flex z-20 mb-4 w-8 h-8 bg-black hover:bg-sky-500 rounded-full drop-shadow-lg Anim AnimScale-2'
+                className='Anim AnimScale-2 z-20 mb-4 flex h-8 w-8 rounded-full bg-black drop-shadow-lg hover:bg-sky-500'
                 key='Fs_twitter'
               >
                 <FontAwesomeIcon
@@ -85,7 +85,7 @@ const FloatingShare = ({ slug, basePath, shareMedia }) => {
             <PinterestShareButton url={projectURL} media={shareMedia}>
               <motion.button
                 variants={animItem}
-                className='flex z-10 mb-4 w-8 h-8 bg-black hover:bg-red-500 rounded-full drop-shadow-lg Anim AnimScale-2'
+                className='Anim AnimScale-2 z-10 mb-4 flex h-8 w-8 rounded-full bg-black drop-shadow-lg hover:bg-red-500'
                 key='Fs_google'
               >
                 <FontAwesomeIcon
@@ -98,7 +98,10 @@ const FloatingShare = ({ slug, basePath, shareMedia }) => {
           </>
         )}
       </AnimatePresence>
-      <button className='flex z-40 w-12 h-12 bg-black hover:bg-indigo-500 rounded-full drop-shadow-lg Anim focus:border-0' onClick={() => window.scrollTo(0, 0)}>
+      <button
+        className='Anim z-40 flex h-12 w-12 rounded-full bg-black drop-shadow-lg hover:bg-indigo-500 focus:border-0'
+        onClick={() => window.scrollTo(0, 0)}
+      >
         {!Show ? (
           <svg
             xmlns='http://www.w3.org/2000/svg'

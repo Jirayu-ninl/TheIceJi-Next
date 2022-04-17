@@ -1,4 +1,4 @@
-const IceJIlogo = ({ Darkmode, style }: { Darkmode: boolean; style: any }) => {
+const IceJIlogo = ({ Darkmode, style }: { Darkmode: boolean, style: any }) => {
   return (
     <>
       <svg style={{ stroke: Darkmode ? '#FFF' : '#000', ...style }}>

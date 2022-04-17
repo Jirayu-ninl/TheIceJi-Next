@@ -10,11 +10,11 @@ export const App = () => {
   const constraintsRef = useRef(null)
 
   return (
-    <motion.div ref={constraintsRef} className='w-screen h-screen'>
+    <motion.div ref={constraintsRef} className='h-screen w-screen'>
       <motion.div
         drag='x'
         dragConstraints={constraintsRef}
-        className='flex justify-center items-center space-x-4 w-full h-full'
+        className='flex h-full w-full items-center justify-center space-x-4'
       >
         {projects.map((v, i) => (
           <Item project={v} key={i} />
@@ -26,7 +26,7 @@ export const App = () => {
 
 const Item = ({ project }) => {
   return (
-    <div className='overflow-hidden relative w-[110px] h-[400px]'>
+    <div className='relative h-[400px] w-[110px] overflow-hidden'>
       <Image
         className='pointer-events-none'
         src={project.coverImage.url}

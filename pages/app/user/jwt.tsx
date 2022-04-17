@@ -19,11 +19,15 @@ const Index = () => {
   }, [session])
 
   return (
-    <div className='flex flex-col justify-center items-center w-screen h-screen'>
+    <div className='flex h-screen w-screen flex-col items-center justify-center'>
       <h6 className='mb-2 text-3xl'>Session</h6>
-      <pre className='py-4 px-16 bg-black/20 rounded-lg border border-white/10'>{JSON.stringify(session, null, 2)}</pre>
+      <pre className='rounded-lg border border-white/10 bg-black/20 py-4 px-16'>
+        {JSON.stringify(session, null, 2)}
+      </pre>
       <h6 className='mt-6 mb-2 text-3xl'>JWT</h6>
-      <pre className='py-4 px-16 bg-black/20 rounded-lg border border-white/10'>{JWTdata}</pre>
+      <pre className='rounded-lg border border-white/10 bg-black/20 py-4 px-16'>
+        {JWTdata}
+      </pre>
     </div>
   )
 }

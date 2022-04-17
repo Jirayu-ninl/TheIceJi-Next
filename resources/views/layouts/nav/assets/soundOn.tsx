@@ -6,7 +6,7 @@ export default function soundOn() {
         width='20.007'
         height='16.369'
         viewBox='0 0 20.007 16.369'
-        className='fill-inherit Anim AnimScale'
+        className='Anim AnimScale fill-inherit'
       >
         <g transform='translate(-0.707 -2.213)'>
           <path

@@ -9,9 +9,7 @@ export default function Icon() {
         viewBox='0 0 39 54'
       >
         <g transform='translate(8.51 9.478)' opacity='0.8'>
-          <g
-            transform='matrix(1, 0, 0, 1, -8.51, -9.48)'
-          >
+          <g transform='matrix(1, 0, 0, 1, -8.51, -9.48)'>
             <g
               transform='translate(9 9)'
               fill='none'
@@ -22,9 +20,7 @@ export default function Icon() {
               <rect x='1' y='1' width='19' height='34' rx='9.5' fill='none' />
             </g>
           </g>
-          <g
-            transform='matrix(1, 0, 0, 1, -8.51, -9.48)'
-          >
+          <g transform='matrix(1, 0, 0, 1, -8.51, -9.48)'>
             <rect
               width='3'
               height='7'

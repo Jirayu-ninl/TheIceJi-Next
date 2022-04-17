@@ -6,7 +6,7 @@ export default function menu() {
         width='16.185'
         height='16'
         viewBox='0 0 16.185 16'
-        className='fill-inherit Anim AnimScale'
+        className='Anim AnimScale fill-inherit'
       >
         <g transform='translate(-0.185)'>
           <path

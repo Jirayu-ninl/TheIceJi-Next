@@ -15,7 +15,6 @@ export default function FreeTime({ data, animConf }) {
     return () => {
       document.removeEventListener('mousemove', onMouseMove)
     }
-
   }, [])
 
   const [Content, setContent] = useState('')
@@ -34,18 +33,18 @@ export default function FreeTime({ data, animConf }) {
 
   return (
     <>
-      <div className='flex fixed bottom-48 flex-col justify-end items-center w-screen md:bottom-20'>
+      <div className='fixed bottom-48 flex w-screen flex-col items-center justify-end md:bottom-20'>
         <h1 className='text-base font-bold md:text-2xl xxl:text-4xl'>
           {Content.title}
         </h1>
       </div>
-      <div className='overflow-hidden absolute w-screen h-screen xl:w-[180%] xl:translate-x-[12%]'>
+      <div className='absolute h-screen w-screen overflow-hidden xl:w-[180%] xl:translate-x-[12%]'>
         <motion.div
           variants={parent(0.3)}
           initial='hidden'
           animate='show'
           ref={BigImg}
-          className='flex absolute justify-center items-center w-full h-full'
+          className='absolute flex h-full w-full items-center justify-center'
         >
           <CoverImg
             data={data[0]}
@@ -64,7 +63,7 @@ export default function FreeTime({ data, animConf }) {
           />
         </motion.div>
       </div>
-      <div className='overflow-hidden items-start px-4 mx-auto w-screen h-screen sm:container sm:px-0 xxl:w-[1440px]'>
+      <div className='mx-auto h-screen w-screen items-start overflow-hidden px-4 sm:container sm:px-0 xxl:w-[1440px]'>
         <Header title='HOBBIES' subTitle="What's my" icon className='-mt-36' />
       </div>
     </>
@@ -75,7 +74,7 @@ const CoverImg = ({ data, setContent, animChildren }) => {
   return (
     <motion.div
       variants={animChildren}
-      className='overflow-hidden relative mx-4 w-3/5 h-2/5 rounded-md opacity-10 hover:opacity-100 md:mx-8 md:h-3/5 Anim'
+      className='Anim relative mx-4 h-2/5 w-3/5 overflow-hidden rounded-md opacity-10 hover:opacity-100 md:mx-8 md:h-3/5'
       onMouseOver={() => setContent(data)}
     >
       <Image

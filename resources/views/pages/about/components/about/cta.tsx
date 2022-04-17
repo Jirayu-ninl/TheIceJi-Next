@@ -9,11 +9,11 @@ export default function CTA({ animConf }) {
       variants={parent(0.2)}
       initial='hidden'
       animate='show'
-      className='flex flex-col items-center justify-center w-full h-full'
+      className='flex h-full w-full flex-col items-center justify-center'
     >
       <motion.h3
         variants={children}
-        className='text-base font-semibold uppercase lg:text-3xl xxl:text-4xl text-primary-0'
+        className='text-base font-semibold uppercase text-primary-0 lg:text-3xl xxl:text-4xl'
       >
         Anything else?
       </motion.h3>
@@ -22,12 +22,12 @@ export default function CTA({ animConf }) {
         className='flex flex-col items-center justify-center'
       >
         <Link href='about/skills' passHref>
-          <a className='text-5xl font-bold uppercase text-outline lg:text-8xl xxl:text-10xl Anim-2 AnimOpacity-40 AnimScale-sm'>
+          <a className='text-outline Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl'>
             My skills?
           </a>
         </Link>
         <Link href='/project' passHref>
-          <a className='text-5xl font-bold uppercase text-outline lg:text-8xl xxl:text-10xl Anim-2 AnimOpacity-40 AnimScale-sm'>
+          <a className='text-outline Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl'>
             projects
           </a>
         </Link>

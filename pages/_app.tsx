@@ -56,7 +56,6 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   const getLayout = Component.Layout ?? ((page) => page)
 
-
   return getLayout(
     <>
       <Script
@@ -78,7 +77,10 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           description={pageProps.description}
           coverImg={pageProps.coverImg}
         />
-        <MainLayout showNav={!Component.disableNav} showFooter={!Component.disableFooter}>
+        <MainLayout
+          showNav={!Component.disableNav}
+          showFooter={!Component.disableFooter}
+        >
           <PageTransition router={router}>
             <Component {...pageProps} />
           </PageTransition>

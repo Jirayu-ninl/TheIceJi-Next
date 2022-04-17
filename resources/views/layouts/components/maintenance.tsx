@@ -1,10 +1,16 @@
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { css } from "@emotion/css";
-import { useGlobalStateContext } from "@contexts/globalContext";
+import React from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { css } from '@emotion/css'
+import { useGlobalStateContext } from '@contexts/globalContext'
 
-export default function Maintenance({ ModalState, setModalState }: { ModalState: boolean, setModalState: any }) {
-  const { userName } = useGlobalStateContext();
+export default function Maintenance({
+  ModalState,
+  setModalState,
+}: {
+  ModalState: boolean
+  setModalState: any
+}) {
+  const { userName } = useGlobalStateContext()
   const Container = css`
     position: absolute;
     left: 35%;
@@ -43,7 +49,7 @@ export default function Maintenance({ ModalState, setModalState }: { ModalState:
         transition-duration: 750ms;
       }
     }
-  `;
+  `
 
   return (
     <>
@@ -51,10 +57,10 @@ export default function Maintenance({ ModalState, setModalState }: { ModalState:
         {ModalState && (
           <motion.div
             className={Container}
-            initial={{ y: "80%", opacity: 0 }}
-            exit={{ y: "80%", opacity: 0 }}
+            initial={{ y: '80%', opacity: 0 }}
+            exit={{ y: '80%', opacity: 0 }}
             animate={{
-              y: ModalState ? 0 : "80%",
+              y: ModalState ? 0 : '80%',
               opacity: ModalState ? 1 : 0,
             }}
             transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
@@ -67,7 +73,7 @@ export default function Maintenance({ ModalState, setModalState }: { ModalState:
             </p>
             <button
               onClick={() => {
-                setModalState(false);
+                setModalState(false)
               }}
             >
               I Understand
@@ -76,5 +82,5 @@ export default function Maintenance({ ModalState, setModalState }: { ModalState:
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }
