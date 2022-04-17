@@ -4,5 +4,5 @@ module.exports = {
   siteUrl: 'https://theiceji.com',
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  exclude: ['/test/*']
+  exclude: ['/test/*'],
 }

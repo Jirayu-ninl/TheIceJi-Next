@@ -10,6 +10,6 @@ module.exports = {
   background: {
     1: '#1A1A1A',
     2: '#03131a',
-    3: '#072c3b'
+    3: '#072c3b',
   },
 }

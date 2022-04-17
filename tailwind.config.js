@@ -6,12 +6,12 @@ module.exports = {
   content: [
     './pages/**/**/**/*.{js,ts,jsx,tsx}',
     './resources/views/**/**/**/**/*.{js,ts,jsx,tsx}',
-    './resources/contents/mock/**/*.{js,ts,jsx,tsx}'
+    './resources/contents/mock/**/*.{js,ts,jsx,tsx}',
   ],
   purge: [
     './pages/**/**/**/*.{js,ts,jsx,tsx}',
     './resources/views/**/**/**/**/*.{js,ts,jsx,tsx}',
-    './resources/contents/mock/**/*.{js,ts,jsx,tsx}'
+    './resources/contents/mock/**/*.{js,ts,jsx,tsx}',
   ],
   darkMode: 'class',
   theme: {
