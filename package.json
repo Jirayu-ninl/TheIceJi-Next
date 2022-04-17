@@ -34,8 +34,10 @@
     "prepare": "husky install"
   },
   "husky": {
-    "pre-commit": "yarn format",
-    "pre-push": "yarn build"
+    "hooks": {
+      "pre-commit": "yarn format",
+      "pre-push": "yarn build"
+    }
   },
   "dependencies": {
     "@emotion/css": "^11.9.0",
