@@ -26,6 +26,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "server": "NODE_ENV=production node server.js",
     "export": "EXPORT=true next build && EXPORT=true next export",
     "analyze": "cross-env ANALYZE=true next build",
     "analyze-b": "cross-env BUNDLE_ANALYZE=both next build",
