@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 const config: {
   NAME?: string
   VERSION?: string
@@ -7,8 +8,8 @@ const config: {
 } = {}
 
 config.NAME = 'TheIceJI'
-config.VERSION = '2022.04.1501'
-config.UPDATE_DATE = 'Apr 15, 2022'
+config.VERSION = '2022.04.2001'
+config.UPDATE_DATE = 'Apr 20, 2022'
 config.GOOGLE_ANALYTICS = 'UA-102194632-3'
 config.GOOGLE_TAG_MANAGER = 'GTM-KWRQQVP'
 

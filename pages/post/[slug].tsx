@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { useRouter } from 'next/router'
 import { GraphQLClient, gql } from 'graphql-request'
-import { State } from '@store'
 import { Blog } from 'pages/posts'
+import { State } from '@store'
+import { ErrorPage } from 'pages/misc/components'
 
 const graphcms = new GraphQLClient(process.env.GRAPHQL_CONTENT_URL)
 
@@ -16,8 +18,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   `)
 
   return {
-    paths: posts.map(({ slug }: { slug: string }) => ({ params: { slug } })),
-    fallback: false,
+    paths:
+      posts.map(({ slug }: { slug: string }) => ({ params: { slug } })) || [],
+    fallback: true,
   }
 }
 
@@ -62,10 +65,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      title: `TheIceJI Blog | ${post.title}`,
-      description: post.excerpt,
+      title: `TheIceJI Blog | ${post?.title || null}`,
+      description: post?.excerpt || null,
       coverImg: '',
-      post,
+      post: post || null,
     },
     revalidate: 180,
   }
@@ -74,12 +77,23 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function Post({ post }) {
   const _setPage = State((state) => state.setPage)
   useEffect(() => {
-    _setPage('BLOG | ' + post.title)
+    _setPage('BLOG | ' + post?.title || 'not found')
   }, [post, _setPage])
+
+  const router = useRouter()
+  if (!router.isFallback && !post?.slug) {
+    return <ErrorPage err='404' msg='not found' />
+  }
 
   return (
     <>
-      <Blog content={post} />
+      {router.isFallback ? (
+        <div className='flex h-screen w-screen items-center justify-center'>
+          <p>Loading...</p>
+        </div>
+      ) : (
+        <Blog content={post} />
+      )}
     </>
   )
 }
