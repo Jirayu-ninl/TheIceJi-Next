@@ -14,7 +14,7 @@ const nextConfig = {
     config.plugins.push(
       new webpack.ProvidePlugin({
         React: 'react',
-      })
+      }),
     )
 
     config.resolve.alias['@app'] = path.join(__dirname, 'app')
@@ -22,21 +22,21 @@ const nextConfig = {
     config.resolve.alias['@auth'] = path.join(__dirname, 'app/auth')
     config.resolve.alias['contents'] = path.join(
       __dirname,
-      'resources/contents'
+      'resources/contents',
     )
     config.resolve.alias['views'] = path.join(__dirname, 'resources/views')
     config.resolve.alias['layouts'] = path.join(
       __dirname,
-      'resources/views/layouts'
+      'resources/views/layouts',
     )
     config.resolve.alias['pages'] = path.join(
       __dirname,
-      'resources/views/pages'
+      'resources/views/pages',
     )
     config.resolve.alias['@models'] = path.join(__dirname, 'app/models')
     config.resolve.alias['@database'] = path.join(
       __dirname,
-      'app/models/database'
+      'app/models/database',
     )
     config.resolve.alias['@libs'] = path.join(__dirname, 'libs')
     config.resolve.alias['@contexts'] = path.join(__dirname, 'app/contexts')
@@ -107,5 +107,5 @@ if (process.env.EXPORT !== 'true') {
 
 module.exports = plugins(
   [[withSentryConfig, sentryWebpackPluginOptions], withBundleAnalyzer, withPWA],
-  nextConfig
+  nextConfig,
 )

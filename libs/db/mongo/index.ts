@@ -13,7 +13,7 @@ class Mongo {
     const dbConfig: any = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      autoIndex : false,
+      autoIndex: false,
       maxPoolSize: 10,
     }
     const db = await mongoose.connect(this.URL, dbConfig)
@@ -23,4 +23,5 @@ class Mongo {
   useMongo = mongoose
 }
 
+export { default as query } from './query'
 export default Mongo
