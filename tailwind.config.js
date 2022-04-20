@@ -2,13 +2,7 @@
 const Color = require('./resources/views/theme/color')
 
 module.exports = {
-  mode: 'jit',
   content: [
-    './pages/**/**/**/*.{js,ts,jsx,tsx}',
-    './resources/views/**/**/**/**/*.{js,ts,jsx,tsx}',
-    './resources/contents/mock/**/*.{js,ts,jsx,tsx}',
-  ],
-  purge: [
     './pages/**/**/**/*.{js,ts,jsx,tsx}',
     './resources/views/**/**/**/**/*.{js,ts,jsx,tsx}',
     './resources/contents/mock/**/*.{js,ts,jsx,tsx}',
@@ -54,9 +48,6 @@ module.exports = {
       },
       colors: { ...Color },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [require('@tailwindcss/typography')],
 }
