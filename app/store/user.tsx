@@ -1,5 +1,5 @@
 import create from 'zustand'
-import Notification from 'app/data/notification'
+import Notification from '@services/notification'
 
 const store: tStore = (set) => ({
   user: false,

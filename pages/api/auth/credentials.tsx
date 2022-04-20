@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { v4 as uuidv4 } from 'uuid'
 import bcrypt from 'bcrypt'
-import { User, Profile } from '@models/database/mongo'
+import { User, Profile } from '@database/mongo'
 import Res from '@libs/utils/res/status'
 
 const Auth = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -20,7 +20,8 @@ const Auth = async (req: NextApiRequest, res: NextApiResponse) => {
               try {
                 const { email, password } = req.body
                 const existingEmail = await User.findOne({
-                  credential: { email: email },
+                  provider: 'credentials',
+                  'credential.email': email,
                 })
                 if (existingEmail) {
                   return setRes.success({

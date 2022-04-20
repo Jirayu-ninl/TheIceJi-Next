@@ -22,10 +22,10 @@
     "paths": {
       "@config": ["app/config"],
       "@app/*": ["app/*"],
-      "@models/*": ["app/models/*"],
-      "@database/*": ["app/models/database/*"],
       "@libs/*": ["libs/*"],
-      "@contexts/*": ["app/contexts/*"],
+      "@services/*": ["app/services/*"],
+      "@database/*": ["app/database/*"],
+      "@database": ["app/database"],
       "@store": ["app/store"],
       "@auth/*": ["app/auth/*"],
       "contents/*": ["resources/contents/*"],

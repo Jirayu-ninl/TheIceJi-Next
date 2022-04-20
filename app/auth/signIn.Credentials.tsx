@@ -1,4 +1,4 @@
-import { User } from '@models/database/mongo'
+import { User } from '@database/mongo'
 import bcrypt from 'bcrypt'
 
 const SignIn_Credentials = async (credentials) => {

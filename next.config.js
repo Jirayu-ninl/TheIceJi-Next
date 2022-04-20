@@ -33,13 +33,9 @@ const nextConfig = {
       __dirname,
       'resources/views/pages',
     )
-    config.resolve.alias['@models'] = path.join(__dirname, 'app/models')
-    config.resolve.alias['@database'] = path.join(
-      __dirname,
-      'app/models/database',
-    )
+    config.resolve.alias['@services'] = path.join(__dirname, 'app/services')
+    config.resolve.alias['@database'] = path.join(__dirname, 'app/database')
     config.resolve.alias['@libs'] = path.join(__dirname, 'libs')
-    config.resolve.alias['@contexts'] = path.join(__dirname, 'app/contexts')
     config.resolve.alias['@store'] = path.join(__dirname, 'app/store')
     config.resolve.alias['public'] = path.join(__dirname, 'public')
 

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import { User, Profile } from '@models/database/mongo'
+import { User, Profile } from '@database/mongo'
 
 const SignIn_Provider = async (user, account) => {
   const isAllowedToSignIn = true
