@@ -77,6 +77,7 @@ const nextConfig = {
     domains: [
       'media.graphcms.com',
       'media.graphassets.com',
+      'images.prismic.io',
       'avatars.githubusercontent.com',
       'platform-lookaside.fbsbx.com',
       'lh3.googleusercontent.com',
