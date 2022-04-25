@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { css } from '@emotion/css'
 import { motion } from 'framer-motion'
 
 const TimerChar = (props) => {
@@ -96,18 +97,31 @@ const Timer: React.FC = () => {
   }
 
   return (
-    <div className='relative rounded-lg bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-500'>
+    <div className='relative scale-[0.2] rounded-lg bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-500 sm:scale-[0.3] md:scale-[0.4] lg:scale-[0.6] xl:scale-[0.7] xxl:scale-[1]'>
       <div className='relative z-10 m-px flex items-center overflow-hidden rounded-lg bg-black px-6'>
         {getChars()}
       </div>
-      <div className='absolute top-0 h-full w-full scale-y-[1.2] scale-x-110 bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-500 opacity-50 blur-[45px]'></div>
+      {/* <div className='absolute top-0 h-full w-full scale-y-[1.2] scale-x-110 bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-500 opacity-50 blur-[45px]' /> */}
+      <div className='absolute top-0 h-full w-full scale-y-[1.2] scale-x-110 opacity-50 blur-[45px]'>
+        <motion.div
+          animate={{
+            opacity: [1, 0.7, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            ease: 'linear',
+          }}
+          className='h-full w-full bg-gradient-to-tl from-indigo-500 via-purple-500 to-pink-500'
+        />
+      </div>
     </div>
   )
 }
 
 const App = () => {
   return (
-    <div className='flex h-screen w-screen items-center justify-center bg-black'>
+    <div className='flex h-screen w-screen items-center justify-center overflow-hidden bg-black'>
       <Timer />
     </div>
   )
