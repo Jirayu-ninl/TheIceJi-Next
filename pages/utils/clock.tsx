@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import Head from 'next/head'
 import { motion } from 'framer-motion'
 
 const TimerChar = (props) => {
@@ -26,8 +27,10 @@ const TimerChar = (props) => {
               ? { opacity: 1, transform: 'scale(1)' }
               : { opacity: 0, transform: 'scale(0)' }
           }
+          transition={{ duration: 0.15 }}
           key={i}
-          className='h-[160px] w-[180px] text-10xl leading-[150px] duration-200'
+          className='h-[160px] w-[180px] text-10xl leading-[150px]'
+          style={{ fontFamily: 'Orbitron' }}
         >
           {i}
         </motion.span>,
@@ -121,9 +124,21 @@ const Timer: React.FC = () => {
 
 const App = () => {
   return (
-    <div className='flex h-screen w-screen items-center justify-center overflow-hidden bg-black'>
-      <Timer />
-    </div>
+    <>
+      <Head>
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link
+          rel='stylesheet'
+          href='https://fonts.googleapis.com/css?family=Orbitron:300,400,500,700&display=swap'
+        />
+      </Head>
+      <div
+        className='flex h-screen w-screen items-center justify-center overflow-hidden bg-black'
+      >
+        <Timer />
+      </div>
+    </>
   )
 }
 
