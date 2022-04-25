@@ -133,13 +133,21 @@ const App = () => {
           href='https://fonts.googleapis.com/css?family=Orbitron:300,400,500,700&display=swap'
         />
       </Head>
-      <div
-        className='flex h-screen w-screen items-center justify-center overflow-hidden bg-black'
-      >
+      <div className='flex h-screen w-screen items-center justify-center overflow-hidden bg-black'>
         <Timer />
       </div>
     </>
   )
+}
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      title: 'Productivity | Clock',
+      description: 'a simple clock, nothing else',
+      coverImg: '/page/productivity/clock.png',
+    },
+  }
 }
 
 App.disableNav = true
