@@ -16,7 +16,7 @@ const TimerChar = (props) => {
   const number: number = parseInt(props.char)
 
   const getCharSlider = () => {
-    let options = []
+    const options = []
 
     for (let i = 0; i <= 9; i++) {
       options.push(
