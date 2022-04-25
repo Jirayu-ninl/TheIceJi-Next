@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { css } from '@emotion/css'
 import { motion } from 'framer-motion'
 
 const TimerChar = (props) => {
@@ -20,17 +19,18 @@ const TimerChar = (props) => {
 
     for (let i = 0; i <= 9; i++) {
       options.push(
-        <span
-          key={i}
-          className='h-[160px] w-[180px] text-10xl leading-[150px] duration-200'
-          style={
+        <motion.span
+          initial={{ opacity: 0, transform: 'scale(0)' }}
+          animate={
             number === i
               ? { opacity: 1, transform: 'scale(1)' }
               : { opacity: 0, transform: 'scale(0)' }
           }
+          key={i}
+          className='h-[160px] w-[180px] text-10xl leading-[150px] duration-200'
         >
           {i}
-        </span>,
+        </motion.span>,
       )
     }
 
