@@ -48,14 +48,12 @@ export default class Res {
   }
 
   noContent(data = {}) {
-    return this.res
-      .status(RES.noContent)
-      .json({
-        success: false,
-        status: 'no content',
-        ...data,
-        ...this.initialData,
-      })
+    return this.res.status(RES.noContent).json({
+      success: false,
+      status: 'no content',
+      ...data,
+      ...this.initialData,
+    })
   }
 
   movedPermanently(data = {}) {
@@ -86,25 +84,21 @@ export default class Res {
   }
 
   badRequest(data = {}) {
-    return this.res
-      .status(RES.badRequest)
-      .json({
-        success: false,
-        status: 'bad request',
-        ...data,
-        ...this.initialData,
-      })
+    return this.res.status(RES.badRequest).json({
+      success: false,
+      status: 'bad request',
+      ...data,
+      ...this.initialData,
+    })
   }
 
   unauthorized(data = {}) {
-    return this.res
-      .status(RES.unauthorized)
-      .json({
-        success: false,
-        status: 'unauthorized',
-        ...data,
-        ...this.initialData,
-      })
+    return this.res.status(RES.unauthorized).json({
+      success: false,
+      status: 'unauthorized',
+      ...data,
+      ...this.initialData,
+    })
   }
 
   blocked(data = {}) {
@@ -114,14 +108,12 @@ export default class Res {
   }
 
   notFound(data = {}) {
-    return this.res
-      .status(RES.notFound)
-      .json({
-        success: false,
-        status: 'not found',
-        ...data,
-        ...this.initialData,
-      })
+    return this.res.status(RES.notFound).json({
+      success: false,
+      status: 'not found',
+      ...data,
+      ...this.initialData,
+    })
   }
 
   invalidMethod(data = {}) {
@@ -143,14 +135,12 @@ export default class Res {
   }
 
   conflict(data = {}) {
-    return this.res
-      .status(RES.conflict)
-      .json({
-        success: false,
-        status: 'conflict',
-        ...data,
-        ...this.initialData,
-      })
+    return this.res.status(RES.conflict).json({
+      success: false,
+      status: 'conflict',
+      ...data,
+      ...this.initialData,
+    })
   }
 
   invalidHeader(data = {}) {
@@ -190,13 +180,11 @@ export default class Res {
   }
 
   serverError(data = {}) {
-    return this.res
-      .status(RES.serverError)
-      .json({
-        success: false,
-        status: 'server error',
-        ...data,
-        ...this.initialData,
-      })
+    return this.res.status(RES.serverError).json({
+      success: false,
+      status: 'server error',
+      ...data,
+      ...this.initialData,
+    })
   }
 }
