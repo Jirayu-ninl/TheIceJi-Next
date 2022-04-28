@@ -21,7 +21,7 @@
     "prettier-page": "prettier --write \"./pages/**/**/**/*.{js,ts,jsx,tsx}\"",
     "lint:css": "stylelint \"./resources/views/**/**/**/**/*.{js,ts,jsx,tsx}\"",
     "dev": "next dev",
-    "build": "npx prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "server": "NODE_ENV=production node server.js",
     "export": "EXPORT=true next build && EXPORT=true next export",
