@@ -5,7 +5,6 @@ export const globalStyles = (Darkmode = true) => (
   <Global
     styles={css`
       * {
-        font-family: 'Poppins';
         margin: 0;
         padding: 0;
         -ms-overflow-style: none; /* IE and Edge */
@@ -24,12 +23,18 @@ export const globalStyles = (Darkmode = true) => (
         line-height: 1.5;
         color: ${Darkmode ? '#FFF' : '#000'};
         background-color: ${Darkmode ? Color.background[1] : '#FFF'};
+        font-family: 'Poppins', 'Prompt';
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
+      :lang(TH),
+      :lang(EN) {
+        font-size: normal;
+      }
+
       ::selection {
         color: #000;
         background: ${Color.primary[0]}; /* WebKit/Blink Browsers */

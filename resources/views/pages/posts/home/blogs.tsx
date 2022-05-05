@@ -25,7 +25,7 @@ const Blogs = ({ posts }) => {
           {posts.map((v, i) => (
             <Link href={'/post/' + v.slug} passHref key={i}>
               <div className='AnimOpacity-80 relative flex h-48 cursor-pointer items-end border border-white/20 p-2 hover:border-white/100 sm:h-64 md:p-4 lg:h-80'>
-                <h2 className='TH pointer-events-none z-20 lg:text-2xl'>
+                <h2 className='pointer-events-none z-20 lg:text-2xl'>
                   {v.title}
                 </h2>
                 <div className='Anim opacity-60 xl:opacity-10 xl:hover:opacity-100'>

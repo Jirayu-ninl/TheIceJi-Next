@@ -54,9 +54,6 @@ const Header = ({ Title, Img, Tags, lang = 'en', ColorBg = '#000000' }) => {
         <motion.h1
           initial={{ y: 300, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          style={
-            lang === 'en' ? { fontFamily: 'poppins' } : { fontFamily: 'Prompt' }
-          }
           className='mt-1 mb-6 text-6xl font-bold md:mt-0 md:text-7xl xxl:text-8xl'
         >
           {Title}
