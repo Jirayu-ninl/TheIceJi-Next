@@ -7,7 +7,7 @@
 
 :root {
   --author: 'Jirayu Ninlapun';
-  --version: '1.0.1';
+  --version: '1.1.1';
   --date: 'June 25, 2022';
   --theme-bg-url: url('https://theiceji.com/t6iAssets/discord/glassUI/wallpaper/default.jpg');
   --theme-hue: 250;
@@ -375,19 +375,15 @@ nav.wrapper-1_HaEi.guilds-2JjMmN {
 }
 
 .wrapper-1_HaEi.guilds-2JjMmN {
-  /* height: 300px; */
   height: 76px;
   background-color: transparent;
 }
 
 .scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt {
   width: 100%;
-  /* display: flex; */
-  display: grid;
-  grid-template-columns: 64px 0px auto 64px 64px;
+  display: flex;
   overflow: scroll hidden !important;
   background-color: transparent;
-  /* overflow: hidden; */
 }
 
 .unreadMentionsIndicatorBottom-3RJMnQ {
@@ -403,9 +399,20 @@ nav.wrapper-1_HaEi.guilds-2JjMmN {
   display: flex;
 }
 
+.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt
+  > div:not(.tutorialContainer-1pL9QS, .tutorialContainer-2jwoiB, .listItem-3SmSlK, [aria-label='Servers'], [aria-label='เซิร์ฟเวอร์']) {
+  display: flex;
+  height: 100% !important;
+}
+
 /* **! ##################### */
 /* **!    Guild Separator    */
 /* **! ##################### */
+
+.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt
+  > .listItem-3SmSlK:nth-last-child(5) {
+  display: none;
+}
 
 .listItem-3SmSlK {
   width: 64px;
@@ -423,7 +430,8 @@ nav.wrapper-1_HaEi.guilds-2JjMmN {
 /* **!        Discord Server     */
 /* **! ######################### */
 
-div[aria-label='Servers'] {
+div[aria-label='Servers'],
+div[aria-label='เซิร์ฟเวอร์'] {
   width: 98%;
   margin: 6px auto;
   padding-top: 0px;
@@ -944,7 +952,7 @@ main.chatContent-3KubbW {
   right: -4px !important;
 }
 
-.horizontal-30-DXt>:not(:first-child) {
+.horizontal-30-DXt > :not(:first-child) {
   margin-left: 0px !important;
   border: solid 1px var(--brand-experiment-660);
   border-style: none none none solid;
