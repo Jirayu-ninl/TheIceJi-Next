@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import { globalStyles } from 'views/theme/css/global'
-import { User } from '@store'
+import { getGPUTier } from 'detect-gpu'
+import { User, UI } from '@store'
 
 // IJN Components
 import Cursor from './components/cursor'
@@ -27,6 +28,19 @@ export default function IJNlayout({
   const _NotificationItems = User((state) => state.notificationItems)
   const _setCart = User((state) => state.setCart)
   const _CartItems = User((state) => state.cartItems)
+  const _appInfo = UI((state) => state.appInfo)
+  const _setAppInfo = UI((state) => state.setAppInfo)
+  // const _gpuTier = UI((state) => state.gpuTier)
+  const _setGpuTier = UI((state) => state.setGpuTier)
+
+  useEffect(() => {
+    async function initGPUdata() {
+      const gpuTier = await getGPUTier()
+      _setGpuTier(gpuTier)
+      console.log({ status: 'set GPU complete', GPUdata: gpuTier })
+    }
+    initGPUdata()
+  }, [_setGpuTier])
 
   useEffect(() => {
     _setNotification(
@@ -37,7 +51,6 @@ export default function IJNlayout({
 
   const Darkmode = true
   const [toggleMenu, setToggleMenu] = useState(false)
-  const [toggleAbout, setToggleAbout] = useState(false)
 
   useEffect(() => {
     console.log(IJNconsole)
@@ -52,7 +65,7 @@ export default function IJNlayout({
 
   return (
     <>
-      <About toggleAbout={toggleAbout} setToggleAbout={setToggleAbout} />
+      <About toggleAbout={_appInfo} setToggleAbout={_setAppInfo} />
       {globalStyles(Darkmode)}
       {showNav && (
         <>
@@ -67,8 +80,8 @@ export default function IJNlayout({
       {children}
       {showFooter && (
         <Footer
-          toggleAbout={toggleAbout}
-          setToggleAbout={setToggleAbout}
+          toggleAbout={_appInfo}
+          setToggleAbout={_setAppInfo}
           toggleMenu={toggleMenu}
         />
       )}

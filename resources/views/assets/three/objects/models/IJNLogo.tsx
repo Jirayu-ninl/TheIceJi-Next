@@ -1,25 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as THREE from 'three'
 import React, { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
-import { GLTF } from 'three-stdlib'
 
-type GLTFResult = GLTF & {
-  nodes: {
-    Logo: THREE.Mesh
-  }
-  materials: {
-    ['default']: THREE.MeshStandardMaterial
-  }
-}
+// type GLTFResult = GLTF & {
+//   nodes: {
+//     Logo: THREE.Mesh
+//   }
+//   materials: {
+//     ['default']: THREE.MeshStandardMaterial
+//   }
+// }
 
 const IJNLogo = ({ material }) => {
   const main = useRef<THREE.Mesh>()
   const group = useRef<THREE.Group>()
-  const { nodes } = useGLTF('three/model/ver1.glb') as GLTFResult
 
   useFrame(({ clock, mouse }) => {
-    group.current.rotation.z = Math.sin(clock.getElapsedTime()) * 0.05
+    group.current.rotation.z = 0.05 + Math.sin(clock.getElapsedTime()) * 0.05
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
       mouse.y * Math.PI * -0.1,
@@ -32,6 +31,8 @@ const IJNLogo = ({ material }) => {
     )
   })
 
+  const { nodes, materials } = useGLTF('three/model/HomeLogo/Scene.gltf')
+
   return (
     <group
       ref={group}
@@ -40,18 +41,16 @@ const IJNLogo = ({ material }) => {
       position={[-1.5, 0, 0]}
     >
       <mesh
-        geometry={nodes.Logo.geometry}
         ref={main}
-        position={[-2.5, -2.4, 0]}
-        scale={-0.44}
-        rotation={[-Math.PI / 2, -0.01, Math.PI]}
+        position={[-1.8, -2.4, 0]}
+        scale={0.42}
+        geometry={nodes.Logo_1.geometry}
+        material={materials.LogoShader}
       >
         <meshStandardMaterial
+          {...materials.LogoShader}
+          emissiveIntensity={0.15}
           envMap={material.envMap}
-          bumpMap={material.bumpMap}
-          color={'#ffd60a'}
-          roughness={0.1}
-          metalness={1}
         />
       </mesh>
     </group>

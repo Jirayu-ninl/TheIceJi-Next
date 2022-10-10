@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { app } from '@config'
 import IceJIlogo from 'views/assets/logo/IceJIlogoS'
@@ -25,8 +26,8 @@ export default function about({
             className='fixed z-90 flex h-screen w-screen items-center justify-center'
             onClick={() => setToggleAbout(false)}
           >
-            <div className="h-[182px] w-[339px] overflow-hidden rounded-md bg-[url('/gui/SplashBG.png')] drop-shadow-xl md:h-[363px] md:w-[677px]">
-              <div className='h-full w-[150px] bg-[#02717C]/30 text-white backdrop-blur-md md:w-1/3'>
+            <div className="h-[182px] w-[339px] overflow-hidden rounded-md bg-[url('/gui/SplashBG.png')] bg-cover drop-shadow-xl md:h-[363px] md:w-[677px]">
+              <div className='h-full w-[150px] bg-[#BC3539]/30 text-white backdrop-blur-md md:w-1/3'>
                 <div className='flex h-full flex-col justify-between p-5 md:py-10 md:pl-10'>
                   <div className='hidden md:block'>
                     <IceJIlogo fill='#FFF' />
@@ -42,13 +43,19 @@ export default function about({
                   <p className='text-2xs font-light opacity-60 md:text-1xs'>
                     Engine:
                     <br />
-                    DyedIn UI 1.0 | IJN App 3.0
+                    DyedIn UI 1.1 | IJN App 3.1
                     <br />
-                    React 18.0 | NextJs 12.1.5
+                    React 18.2.0 | NextJs 12.3.1
                     <br />
                     Copyright&#169;TheIceJI.com <br />
                     All rights reserved
+                    <Link passHref href='/changelog'>
+                      <p className='text-2xs font-light opacity-80 hover:opacity-100 md:text-1xs cursor-pointer'>
+                        changelog
+                      </p>
+                    </Link>
                   </p>
+
                   <div className='hidden md:block'>
                     <RealMotionS fill='#FFF' />
                   </div>

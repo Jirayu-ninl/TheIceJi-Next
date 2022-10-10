@@ -96,6 +96,7 @@ export default function IJNNav({
               onMouseLeave={() => {
                 _setCursor(false)
               }}
+              onClick={() => setToggleMenu(false)}
             >
               <Link href='/home' passHref>
                 <img
@@ -181,7 +182,7 @@ export default function IJNNav({
               </a>
               {!session && (
                 <Link href='/app/portal'>
-                  <a>
+                  <a onClick={() => setToggleMenu(false)}>
                     <UserIcon />
                   </a>
                 </Link>

@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+/**
+ * @type {import('next').NextConfig}
+ */
 // If such a type existed...
 const path = require('path')
 const withPWA = require('next-pwa')
@@ -10,7 +13,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 
 const nextConfig = {
-  webpack(config, { webpack, dev, isServer }) {
+  webpack: (config, { webpack, dev, isServer }) => {
     config.plugins.push(
       new webpack.ProvidePlugin({
         React: 'react',
@@ -76,6 +79,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     domains: [
       'media.graphcms.com',
+      'media.hygraph.com',
       'media.graphassets.com',
       'images.prismic.io',
       'avatars.githubusercontent.com',
@@ -84,8 +88,9 @@ const nextConfig = {
     ],
   },
   pwa: {
-    disable: process.env.NODE_ENV !== 'production',
+    // disable: process.env.NODE_ENV !== 'production',
     dest: 'public',
+    register: true,
     runtimeCaching,
   },
 }

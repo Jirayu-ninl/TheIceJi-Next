@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 import { useEffect } from 'react'
 import { State } from '@store'
 
-import { home as HomePage } from 'pages/home'
+import { home as HomePage, Sidebar, Footer } from 'pages/home'
 import SceneLayout from 'views/layouts/sceneLogoLayout'
 
 export default function Main() {
@@ -13,9 +13,13 @@ export default function Main() {
   }, [_setPage])
 
   return (
-    <SceneLayout>
-      <HomePage />
-    </SceneLayout>
+    <>
+      <SceneLayout>
+        <HomePage />
+      </SceneLayout>
+      <Sidebar />
+      <Footer />
+    </>
   )
 }
 
@@ -26,3 +30,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
+
+Main.disableFooter = true

@@ -27,7 +27,7 @@ export const navRoutes: navRouteType[] = [
   {
     id: 4,
     number: '03',
-    title: 'PORTFOLIO',
+    title: 'PROJECTS',
     path: '/project',
   },
   {
