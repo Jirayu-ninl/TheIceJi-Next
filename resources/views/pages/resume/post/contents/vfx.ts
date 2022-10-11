@@ -30,7 +30,7 @@ const listVFX = [
     name: 'Launched',
     year: '2021',
     tag: ['Illustration', 'Motion Graphics', '2.5D Composition'],
-    img: '/page/portfolio/vfx/Launched.png',
+    img: '/page/portfolio/vfx/launched.png',
     link: [{ title: 'watch', url: 'https://youtu.be/k4Zbvje5OKM' }],
     description:
       'ผลงานชิ้นนี้เป็นส่วนหนึ่งของวิชา FM365 Visual Effects for Film โจทย์คือให้สร้างซีนจากโปรแกรม Illustrator และ export ไปทำ Motion Graphics ในโปรแกรม After Effects',
