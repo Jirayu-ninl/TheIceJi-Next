@@ -77,6 +77,15 @@
   @apply text-transparent;
 }
 
+/* .bullet-sm {
+  @apply 
+} */
+
+.bullet-sm:before {
+  content: '';
+  @apply h-1 w-1 rounded-full;
+}
+
 @media (min-width: 768px) {
   .text-outline {
     -webkit-text-stroke: 2px #fff;
