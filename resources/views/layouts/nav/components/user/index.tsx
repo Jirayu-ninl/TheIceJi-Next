@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 const User = ({ OpenPanel, setNavPopupState, user, signOut }) => {
   const displayUser =

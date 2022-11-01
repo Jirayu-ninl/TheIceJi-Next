@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 function SectionBanner({ content, color }) {
   if (content.IsLogo) {

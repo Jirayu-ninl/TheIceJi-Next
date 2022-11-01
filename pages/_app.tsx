@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable prettier/prettier */
 import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
@@ -30,6 +31,7 @@ type NextPageWithLayout = NextPage & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout
+  pageProps: any
 }
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {

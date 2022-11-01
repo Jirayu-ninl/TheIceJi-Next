@@ -21,15 +21,17 @@ export default function CTA({ animConf }) {
         variants={children}
         className='flex flex-col items-center justify-center'
       >
-        <Link href='about/skills' passHref>
-          <a className='text-outline Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl'>
-            My skills?
-          </a>
+        <Link
+          href='about/skills'
+          className='text-outline Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl'
+        >
+          My skills?
         </Link>
-        <Link href='/project' passHref>
-          <a className='text-outline Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl'>
-            projects
-          </a>
+        <Link
+          href='/project'
+          className='text-outline Anim-2 AnimOpacity-40 AnimScale-sm text-5xl font-bold uppercase lg:text-8xl xxl:text-10xl'
+        >
+          projects
         </Link>
       </motion.div>
     </motion.div>

@@ -98,7 +98,7 @@ export default function IJNNav({
               }}
               onClick={() => setToggleMenu(false)}
             >
-              <Link href='/home' passHref>
+              <Link href='/home' passHref legacyBehavior>
                 <img
                   className='h-full'
                   src='/logo_white.svg'
@@ -181,10 +181,8 @@ export default function IJNNav({
                 {audioPlaying ? <SoundOn /> : <SoundOff />}
               </a>
               {!session && (
-                <Link href='/app/portal'>
-                  <a onClick={() => setToggleMenu(false)}>
-                    <UserIcon />
-                  </a>
+                <Link href='/app/portal' onClick={() => setToggleMenu(false)}>
+                  <UserIcon />
                 </Link>
               )}
               <div

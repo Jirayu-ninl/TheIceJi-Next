@@ -43,9 +43,9 @@ export default function about({
                   <p className='text-2xs font-light opacity-60 md:text-1xs'>
                     Engine:
                     <br />
-                    DyedIn UI 1.1 | IJN App 3.1
+                    DyedIn UI 1.2 | IJN App 3.2
                     <br />
-                    React 18.2.0 | NextJs 12.3.1
+                    React 18.2.0 | NextJs 13.0.1
                     <br />
                     Copyright&#169;TheIceJI.com <br />
                     All rights reserved

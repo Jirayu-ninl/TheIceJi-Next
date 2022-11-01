@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import { useRouter } from 'next/router'
 import { SignIn, SignUp } from 'views/app/portal'
-import { getProviders } from 'next-auth/react'
-import { getCsrfToken } from 'next-auth/react'
+import { getProviders, getCsrfToken } from 'next-auth/react'
 import { toast } from 'react-toastify'
 import { State } from '@store'
 

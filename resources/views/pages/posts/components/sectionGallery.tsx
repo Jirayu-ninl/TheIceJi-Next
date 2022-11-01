@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 function SectionGallery({ content }) {
   return (
@@ -11,6 +11,8 @@ function SectionGallery({ content }) {
           <Image
             className='Anim AnimScale-sm'
             src={v.url}
+            // width={v.width}
+            // height={v.height}
             alt={'Gallery_' + i}
             layout='fill'
             objectFit='cover'
