@@ -20,7 +20,7 @@ const nextConfig = {
       }),
     )
 
-    config.resolve.alias['@app'] = path.join(__dirname, 'server')
+    config.resolve.alias['@app'] = path.join(__dirname, 'app')
     config.resolve.alias['@config'] = path.join(__dirname, 'app/config')
     config.resolve.alias['@auth'] = path.join(__dirname, 'app/auth')
     config.resolve.alias['contents'] = path.join(
