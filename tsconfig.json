@@ -21,7 +21,7 @@
     "baseUrl": "./",
     "paths": {
       "@config": ["app/config"],
-      "@app/*": ["app/*"],
+      "@app/*": ["server/*"],
       "@libs/*": ["libs/*"],
       "@services/*": ["app/services/*"],
       "@database/*": ["app/database/*"],
