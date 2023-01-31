@@ -63,7 +63,7 @@ export default function Maintenance({
               y: ModalState ? 0 : '80%',
               opacity: ModalState ? 1 : 0,
             }}
-            transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+            transition={{ duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }}
           >
             <h1>Maintenance mode</h1>
             <p>

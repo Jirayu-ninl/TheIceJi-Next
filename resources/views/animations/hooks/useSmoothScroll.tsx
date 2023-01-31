@@ -6,12 +6,7 @@ import {
   useEffect,
 } from 'react'
 import { ResizeObserver } from '@juggle/resize-observer'
-import {
-  useViewportScroll,
-  useTransform,
-  useSpring,
-  motion,
-} from 'framer-motion'
+import { useScroll, useTransform, useSpring, motion } from 'framer-motion'
 
 const UseSmoothScroll = ({
   children,
@@ -36,7 +31,7 @@ const UseSmoothScroll = ({
     return () => resizeObserver.disconnect()
   }, [scrollRef, resizePageHeight])
 
-  const { scrollY } = useViewportScroll()
+  const { scrollY } = useScroll()
 
   const transform = useTransform(scrollY, [0, pageHeight], [0, -pageHeight])
   const spring = useSpring(transform, physics)

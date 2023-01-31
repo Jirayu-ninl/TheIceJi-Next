@@ -48,7 +48,7 @@ export default function Canvas({
               exit={{ y: '-100%' }}
               animate={{ y: toggleMenu ? 0 : '-100%' }}
               key='Nav_Canvas'
-              transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+              transition={{ duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }}
               className='relative h-full overflow-hidden rounded-md bg-black/20 shadow-xl backdrop-blur-lg'
             >
               <div className='absolute flex h-full w-full items-center justify-center'>
@@ -88,7 +88,7 @@ export default function Canvas({
                         animate={{ x: MenuHover ? 0 : '-20%', opacity: 0.03 }}
                         transition={{
                           duration: 0.8,
-                          ease: [0.6, 0.05, -0.01, 0.9],
+                          ease: [0.6, 0.05, 0.01, 0.9],
                         }}
                       >
                         {MenuHover} {MenuHover}
@@ -103,7 +103,7 @@ export default function Canvas({
                         transition={{
                           duration: 0.8,
                           delay: 0.1,
-                          ease: [0.6, 0.05, -0.01, 0.9],
+                          ease: [0.6, 0.05, 0.01, 0.9],
                         }}
                       >
                         {MenuHover} {MenuHover}

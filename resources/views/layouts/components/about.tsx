@@ -22,7 +22,7 @@ export default function about({
               y: toggleAbout ? 0 : '80%',
               opacity: toggleAbout ? 1 : 0,
             }}
-            transition={{ duration: 0.8, ease: [0.6, 0.05, -0.01, 0.9] }}
+            transition={{ duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }}
             className='fixed z-90 flex h-screen w-screen items-center justify-center'
             onClick={() => setToggleAbout(false)}
           >
@@ -45,7 +45,7 @@ export default function about({
                     <br />
                     DyedIn UI 1.2 | IJN App 3.2
                     <br />
-                    React 18.2.0 | NextJs 13.0.1
+                    React 18.2.0 | NextJs 13.1.0
                     <br />
                     Copyright&#169;TheIceJI.com <br />
                     All rights reserved

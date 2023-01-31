@@ -37,12 +37,12 @@ export const DevSkills = [
     level: 'Expert',
   },
   {
-    name: ['NodeJS', 'Express'],
+    name: ['NodeJS', 'Express', 'GraphQL'],
     type: ['Back-end'],
     level: 'Skilled',
   },
   {
-    name: ['GraphQL', 'MongoDB', 'MySQL'],
+    name: ['MongoDB', 'Redis', 'MySQL'],
     type: ['Database'],
     level: 'Average',
   },
@@ -54,7 +54,7 @@ export const DevSkills = [
   {
     name: ['ThreeJS', 'GLSL'],
     type: ['WebGL'],
-    level: 'Skilled',
+    level: 'Average',
   },
 ]
 
@@ -129,7 +129,8 @@ export const Teams = [
   {
     name: 'WAX Community Developer',
     location: 'Australia',
-    description: 'We are a blockchain-based NFT game developer using WAX-Chain.',
+    description:
+      'We are a blockchain-based NFT game developer using WAX-Chain.',
   },
 ]
 
@@ -157,5 +158,12 @@ export const Works = [
     position: 'React Developer',
     description: "I'm a NextJS front-end and interactive web developer.",
     date: '2021 / Currently working',
+  },
+  {
+    company: 'Insight Technology Co., Ltd.',
+    position: 'Post-Production Artist',
+    description:
+      'Manage Post-Production pipeline, creating VFX, CGI, and compose sound for film',
+    date: '2022 / Currently working',
   },
 ]
