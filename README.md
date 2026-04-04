@@ -10,4 +10,4 @@ your own website, but! not allow you to clone
 and launch this website as if you owned it
 ````
 
-see at: [**TheIceJi**](https://theiceji.com)
+see at: [**TheIceJi**](https://theiceji.com)a
